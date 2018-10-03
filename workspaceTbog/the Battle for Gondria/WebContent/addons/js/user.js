@@ -192,6 +192,8 @@ $(document).ready(function(){
 	 * =============================================
 	 */
 
+	
+//	var menuFases = new MenuFase();
 
 
 	/*Função que carrega os dados das páginas quando ativas*/
@@ -242,6 +244,7 @@ $(document).ready(function(){
 			break;
 		case 'jogo':
 			document.title = 'Jogo';
+			
 			break;
 		}
 	}
@@ -338,6 +341,7 @@ $(document).ready(function(){
 		var hoje = moment().format("YYYY-MM-DD"); 
 		return hoje;
 	}
+	
 
 
 });
