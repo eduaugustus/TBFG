@@ -1,0 +1,25 @@
+package br.com.tbog.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.tbog.classes.Criptografia;
+import br.com.tbog.classes.Usuario;
+import br.com.tbog.jdbcinterfaces.UsuarioDAO;
+
+public class JDBCUsuarioDAO implements UsuarioDAO {
+
+	private Connection conexao;
+
+	public JDBCUsuarioDAO(Connection conexao) {
+		this.conexao = conexao;
+	}
+
+	
+
+}

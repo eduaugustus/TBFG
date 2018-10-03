@@ -1,0 +1,84 @@
+<h1>Controle de Usuário</h1>
+<hr id="hr_controle">
+
+<div id="div_buscar">
+
+  <h3>Controle de jogador</h3>
+  <form >
+    <table id="table_buscar">
+      <tbody>
+        <tr>
+          <td>
+            <label for="input_consultar">Nick do jogador:</label>
+          </td>
+          <td>
+            <input type="text" name="txt_consultar" id="input_consultar" placeholder="Digite o nickname do jogador">
+          </td>
+          <td>
+            <button type="button" name="btn_buscar" class="btn btn-primary">Buscar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+  <div id="div_jogador">
+    <table>
+      <thead>
+        <tr>
+          <th>Nickname</th>
+          <th>Nome</th>
+          <th>e-mail</th>
+          <th>Data de nascimento</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="td_BanNick">Zezinho</td>
+          <td>Pai de jesus</td>
+          <td>josé_nazare@ceu.com</td>
+          <td>00/00/0000</td>
+          <td>
+            <button class="btn btn-danger" type="button" id="btn_excluir" data-toggle="modal" data-target="#exclui_jogador">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table> 
+  </div>
+
+</div>
+    
+<!-- Inicio Modal - Excluír jogador -->
+<div class="modal fade " id="exclui_jogador" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Exclusão de jogador</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <div id="div_banidoPor"></div>
+        <div id="div_motivos">
+          <label for="banir_1">Uso de Cheating</label>
+          <input type="radio" name="rd_banir" id="banir_1" value="1"><br>
+          <label for="banir_2">Uso de Hack</label>
+          <input type="radio" name="rd_banir" id="banir_2" value="2"><br>
+          <label for="banir_3">E-mail Falso</label>
+          <input type="radio" name="rd_banir" id="banir_3" value="3"><br>
+          <label for="banir_4">Nome Ofensivo</label>
+          <input type="radio" name="rd_banir" id="banir_4" value="4"><br>
+          <label for="banir_5">Outro Motivo</label>
+          <input type="radio" name="rd_banir" id="banir_5" value="5">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" name="btn_excluiJogador" class="btn btn-danger">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fim Modal - Excluír jogador -->

@@ -1,0 +1,185 @@
+/* INICIO - LAYOUT GERAL */
+*{
+    margin:0;
+    padding:0;
+}
+
+p, h1, h2, h3, h4, h5{
+    color: rgba(0, 0, 0, 1);
+}
+
+p{
+    text-indent: 25px;
+    text-align: justify;
+}
+
+header{
+    width: 100%;
+    height: auto;
+}
+
+.img_header img{
+    width: 100%;
+    height: 100%;
+}
+.img_header{
+    float: left;
+    width: 20%;;
+    height: 20%;
+    margin-left: 18%;
+    margin-top:1.75%;
+    margin-bottom: 1.75%;
+}
+
+#header_links{
+    float: right;
+    width: 40%;
+    margin-top: 7.5%;
+    margin-right: 5%;
+}
+
+#div_menu a{
+    text-decoration: none;
+}
+
+#div_menu a:hover{
+    text-decoration: none;
+}
+
+#div_menu div{
+    display:inline;
+    padding: 2% 3%;
+    margin: 0px;
+    color: black;
+    background-color: grey;
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+
+section{
+    text-align: center;
+}
+
+#content{
+    text-align: center;
+    margin-bottom: 2vw;
+    height: auto;
+    width: 100%;
+    float: left;
+}
+
+.h1_content{
+    font-size: 30pt;
+}
+
+#hr_inicio{
+  height: 4px;
+  width: 100px;
+  margin: 0px auto;
+  color: rgba(255, 255, 255, 1);
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#hr_screenshots{
+  height: 4px;
+  width: 220px;
+  margin: 0px auto;
+  color: rgba(255, 255, 255, 1);
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#hr_contato{
+  height: 4px;
+  width: 150px;
+  margin: 0px auto;
+  color: rgba(255, 255, 255, 1);
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#hr_cadastro{
+  height: 4px;
+  width: 160px;
+  margin: 0px auto;
+  color: rgba(255, 255, 255, 1);
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#hr_dev{
+  height: 4px;
+  width: 260px;
+  margin: 0px auto;
+  color: rgba(255, 255, 255, 1);
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#hr_ranking{
+  height: 4px;
+  width: 155px;
+  margin: 0px auto;
+  color: rgba(255, 255, 255, 1);
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#hr_perfil{
+  height: 4px;
+  width: 100px;
+  margin: 0px auto;
+  color: rgba(255, 255, 255, 1);
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+footer{
+    height: 100px;
+    width: 100%;
+    clear: both;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+footer p{
+  padding-top:20px;
+  text-align: center;
+  width: auto;
+  color: rgba(255, 255, 255, 1);
+}
+
+#img_duvida{
+    margin: 5vw 90vw 10vw 0;
+}
+
+/* FIM - LAYOUT GERAL */
+
+#login_modal {
+    margin: 50px 75px;
+}
+#login_modal tbody tr td input{
+    width: 300px;
+}
+#login_modal tbody tr td{
+    padding:5px;
+}
+.modal-title{
+    margin: 0%;
+    display: inline;
+}
+#login_modal button.btn-primary{
+    margin-left: 50%;
+}
+#senha_modal tr td{
+    width: 50%;
+    padding: 5px;
+}
+
+#senha_modal button{
+  float: right;
+  margin: 5px 6px;
+}
+
+#senha_modal tr td input{
+    width:100%
+}

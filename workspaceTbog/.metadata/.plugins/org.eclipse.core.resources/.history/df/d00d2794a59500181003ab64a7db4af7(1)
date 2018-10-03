@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="the Battle for Gondria">
+        <property name="context-root" value="the_Battle_for_Gondria"/>
+        <property name="java-output-path" value="/the Battle for Gondria/build/classes"/>
+    </wb-module>
+</project-modules>

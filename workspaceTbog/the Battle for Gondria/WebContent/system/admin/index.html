@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<title></title>
+<meta charset="utf-8" />
+<link rel="shortcut icon" href="../../layout/imagens/icon.png">
+<!-- BOOTSTRAP CSS CORE -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- LINKS - CSS -->
+<link rel="stylesheet" type="text/css"
+	href="../../layout/css/master.css" />
+<link rel="stylesheet" type="text/css" href="../../layout/css/admin.css" />
+</head>
+
+<body>
+
+	<!-- INÍCIO - CABEÇALHO -->
+	<header>
+		<div class="img_header">
+			<img src="../../layout/imagens/logo.png" alt="">
+		</div>
+		<nav id="header_links">
+			<div id="div_menu">
+				<a href="?main">
+					<div>Gráficos</div>
+				</a> <a href="?controle">
+					<div>Controle</div>
+				</a> <a href="?cadastro">
+					<div>Cadastro</div>
+				</a> <a href="?perfil">
+					<div>Perfil</div>
+				</a> <a href="javascript:sair();">
+					<div>Logout</div>
+				</a>
+			</div>
+		</nav>
+	</header>
+	<!-- FIM - CABEÇALHO -->
+
+	<!-- INÍCIO - CONTEÚDO -->
+	<div id="content"></div>
+	<!-- FIM - CONTEÚDO -->
+
+	<!-- INÍCIO - RODAPÉ -->
+	<footer>
+		<p>
+			&copy;Todos os direitos reservados | Bulbash Jogos | 1.0 <br>
+			Icons made by <a href="http://www.freepik.com" target="_blank"
+				title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+				target="_blank" title="Flaticon">www.flaticon.com</a> is licensed by
+			<a href="http://creativecommons.org/licenses/by/3.0/"
+				title="CreativeCommons BY 3.0" target="_blank">CC 3.0 BY</a>
+		</p>
+	</footer>
+	<!-- FIM - RODAPÉ -->
+
+	<!-- INICIO MODAL - MSG -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="msgModal">
+
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<h5 class="modal-title">Mensagem</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<span id="msg"></span>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<!-- LINK - JQUERY -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<!-- LINK CHART -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+		<!-- LINK MOMENT -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+		<!-- LINKS JS -->
+		<script src="../../addons/js/admin.js"></script>
+		<!-- LINKS BOOTSTRAP JS -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.js"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function() {
+				$('[data-toggle="popover"]').popover();
+			});
+		</script>
+</body>
+
+</html>

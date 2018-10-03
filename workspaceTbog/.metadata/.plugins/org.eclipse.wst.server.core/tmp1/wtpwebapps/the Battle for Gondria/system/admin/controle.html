@@ -1,0 +1,57 @@
+<h1>Controle de UsuÃ¡rio</h1>
+<hr id="hr_controle">
+
+<div id="div_buscar">
+
+  <h3>Controle de jogador</h3>
+  <form method="post" action="">
+    <table id="table_buscar">
+      <tbody>
+        <tr>
+          <td>
+            <label for="input_consultar">Nick do jogador:</label>
+          </td>
+          <td>
+            <input type="text" name="txt_consultar" id="input_consultar" placeholder="Digite o nickname do jogador">
+          </td>
+          <td>
+            <button type="button" name="btn_buscar" onclick="javascript:carregaDados('controle')" class="btn btn-primary" >Buscar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+  <div id="div_jogador">
+    
+  </div>
+
+</div>
+    
+<!-- INÃ�CIO MODAL - EXCLUÃ�R ADM -->
+<div class="modal fade " id="exclui_usuario" role="dialog">
+	<div class="modal-dialog">
+
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h4 class="modal-title">ExclusÃ£o de ADM</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+
+			<div class="modal-body">
+				<h5>Tem certeza que deseja fazer isso?</h5>
+				<div id="div_banido"></div>
+			</div>
+			
+			<div id="modalExcluir"></div>
+			
+		</div>
+	</div>
+</div>
+<!-- FIM MODAL - EXCLUÃ�R ADM -->
+
+<script type="text/javascript" >
+consultaUsuario("controle","0",null);
+</script>
+<!-- Fim Modal - ExcluÃ­r jogador -->

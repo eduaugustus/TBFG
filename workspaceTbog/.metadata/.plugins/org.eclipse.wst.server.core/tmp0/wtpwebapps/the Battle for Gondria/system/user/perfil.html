@@ -1,0 +1,118 @@
+<h1 class="h1_content">Perfil</h1>
+<hr id="hr_perfil">
+<div id="perfil_div">
+    <form name="frm_vizuPerfil" id="VisuForm">
+        <table>
+
+            <thead>
+                <tr>
+                    <th colspan="2">Dados</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>
+                        <label>Nome</label>
+                        <input type="text" name="txt_nome" id="nomeLogado" value="" readonly>
+                    </td>
+                    <td>
+                        <label>Nickname</label>
+                        <input type="text" name="txt_nickname" id="nicknameLogado" value="" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>E-mail</label>
+                        <input type="text" name="txt_email" id="emailLogado" value="" readonly>
+                    </td>
+                    <td>
+                        <label>Data de Nascimento</label>
+                        <input type="date" name="date_nascimento" id="nascimentoLogado" value="" readonly>
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" name="btn_editar" data-toggle="modal" data-target="#atualizaInfo">Editar Informações</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>
+
+<!-- INÃ�CIO MODAL - EDITAR INFORMAÃ‡Ã•ES -->
+<div class="modal" id="atualizaInfo" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+        	<h4 class="modal-title">Editar InformaÃ§Ãµes</h4>
+        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+	        <form name="frm_editaPerfil" action="" method="post" id="perfilForm">
+	            <table>
+	                <tbody>
+	
+	                    <tr>
+	                        <td>
+	                            <label>Nome:</label><br>
+	                            <input data-toggle="popover" data-content="Insira seu nome" data-trigger="focus" type="text" name="txt_nome" id="nomeUpdate" value="" minlength="6" maxlength="45">
+	                        </td>
+	                        <td>
+	                            <label>Senha atual:</label><br>
+	                            <input data-toggle="popover" data-content="Digite sua senha atual" data-trigger="focus" type="password" name="pwd_senha" id="senha" minlength="6" maxlength="16">
+	                        </td>
+	                    </tr>
+	
+	                    <tr>
+	                         <td >
+	                            <label>Data de nascimento:</label><br>
+	                            <input data-toggle="popover"  data-content="Insira sua data de nascimento" data-trigger="focus" type="date" name="date_nascimento" id="nascimentoUpdate" value="">
+	                        </td>
+	                        <td>
+	                            <label>Nova Senha:</label><br>
+	                            <input  data-toggle="popover"  data-content="Insira sua nova senha" data-trigger="focus" type="password" name="pwd_novaSenha" id="novaSenha" value="" minlength="6" maxlength="16">
+	                        </td>
+	                    </tr>
+	
+	                    <tr>
+	                        <td>
+	                            <label>E-mail:</label><br>
+	                            <input data-toggle="popover" data-content="Insira seu e-mail" data-trigger="focus" type="text" name="txt_email" id="emailUpdate" value="" minlength="6" maxlength="80">
+	                        </td>
+	                        <td>
+	                            <label>Confirmar nova senha:</label><br>
+	                            <input  data-toggle="popover" data-content="Confirme sua Nova Senha" data-trigger="focus" type="password" name="pwd_confirmaSenha" id="confirmaSenha" minlength="6" maxlength="16">
+	                        </td>
+	                        
+	                    </tr>
+	
+	                    <tr>
+	                        <td>
+	                            <input type="hidden" name="txt_nick" id="nicknameUpdate" value="">
+	                        </td>
+	                       
+	                        <td>
+	                            <button type="button" name="btn_atualizar" class="btn btn-primary" onclick="validaPerfil()" style="margin:10px">Atualizar</button>
+	                            <button type="button" name="btn_atualizar" class="btn btn-danger" onclick="carregaDados('perfil')" style="margin:10px">Limpar</button>
+	                        </td>
+	                    </tr>
+	
+	                </tbody>
+	            </table>
+	        </form>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+
+    </div>
+</div>
+<!-- FIM MODAL - EDITAR INFORMAÃ‡Ã•ES -->

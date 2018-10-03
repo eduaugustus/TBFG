@@ -1,0 +1,114 @@
+package br.com.tbog.classes;
+
+import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Usuario implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	private String nome;
+	private String apelido;
+	private String nascimento;
+	private String senha;
+	private String email;
+	private String permissao;
+	private String dataCadastro;
+	private String login;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getNascimento() {
+		return nascimento;
+	}
+	public void setNascimento(String nascimento) {
+		this.nascimento = nascimento;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getApelido() {
+		return apelido;
+	}
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	public String getPermissao() {
+		return permissao;
+	}
+	public void setPermissao(String permissao) {
+		this.permissao = permissao;
+	}
+	
+	
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+	public String getDataCadastro() {
+		return dataCadastro;
+	}
+	public void setDataCadastro(String dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+	
+	public String converteDatasParaBD(String Data) {
+		String[] DataDividida = nascimento.split("/");
+		String DataConvertida = DataDividida[2] + "-" + DataDividida[1] + "-" + DataDividida[0];
+		return DataConvertida;
+	}
+	
+	public String converteNascimentoParaFrontend(String nascimento) {
+		String[] nascimentoDividido = nascimento.split("-");
+		String nascimentoConvertido = nascimentoDividido[2] + "/" + nascimentoDividido[1] + "/" + nascimentoDividido[0];
+		return nascimentoConvertido;
+	}
+	
+	public String converteDataCadastro(Date Data){
+		   SimpleDateFormat FormataTextonew SimpleDateFormat("dd/MM/yyyy");
+		   try {
+		      FormataTexto.parse(Data.toString());
+		      System.out.println(Data);
+		      return (FormataTexto.format(Data));
+		   } catch (ParseException Ex) {
+		      return "Erro na conversão da data";
+		   }
+		}
+	
+	void printType(byte x) {
+        System.out.println(x + " is an byte");
+    }
+    void printType(int x) {
+        System.out.println(x + " is an int");
+    }
+    void printType(float x) {
+        System.out.println(x + " is an float");
+    }
+    void printType(double x) {
+        System.out.println(x + " is an double");
+    }
+    void printType(char x) {
+        System.out.println(x + " is an char");
+    }
+    void printType(Date x) {
+        System.out.println(x + " is an date");
+    }
+	
+}

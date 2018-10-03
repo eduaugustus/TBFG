@@ -1,0 +1,78 @@
+package br.com.tbog.classes;
+
+import java.io.Serializable;
+
+public class Usuario implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	private String nome;
+	private String nascimento;
+	private String email;
+	private String apelido;
+	private String senha;
+	private String permissao;
+	private String cadastro;
+	private String login;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getNascimento() {
+		return nascimento;
+	}
+	public void setNascimento(String nascimento) {
+		this.nascimento = nascimento;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getApelido() {
+		return apelido;
+	}
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	public String getPermissao() {
+		return permissao;
+	}
+	public void setPermissao(String permissao) {
+		this.permissao = permissao;
+	}
+	
+	public String converteNascimentoParaBD() {
+		String[] nascimentoDividido = nascimento.split("/");
+		String nascimentoConvertido = nascimentoDividido[2] + "-" + nascimentoDividido[1] + "-" + nascimentoDividido[0];
+		return nascimentoConvertido;
+	}
+	
+	public String converteNascimentoParaFrontend(String nascimento) {
+		String[] nascimentoDividido = nascimento.split("-");
+		String nascimentoConvertido = nascimentoDividido[2] + "/" + nascimentoDividido[1] + "/" + nascimentoDividido[0];
+		return nascimentoConvertido;
+	}
+	public String getCadastro() {
+		return cadastro;
+	}
+	public void setCadastro(String cadastro) {
+		this.cadastro = cadastro;
+	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+}

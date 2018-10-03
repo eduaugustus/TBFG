@@ -1,0 +1,184 @@
+
+$(document).ready(function(){
+	
+	var PATH = '../../';
+		consultaUsuario = function(pagename,permissao,login){
+		if(login==""||login==undefined){
+			login=null;
+		}else if(login!=null){
+			$.ajax({
+				type: "POST",
+				url: PATH+"ConsultaPorLogin",
+				data: 'permissao='+permissao+'&&login='+login,
+				success: function(usuarios){
+					switch(pagename){
+					case "controle":
+						console.log(usuarios);
+						carregaControle(usuarios);
+						break;
+					}
+				}
+			})
+		}else{
+			carregaControle(undefined);
+		}
+		}
+		carregaDados= function(pagename){
+		switch(pagename){
+		case "controle":
+			var login=$("#input_consultar").val();
+			consultaUsuario(pagename,0,login);
+			break;
+		}
+	}
+	carregaPagina= function(){
+		var pagename = window.location.search.substring(1);  
+		if (pagename==''){
+			pagename='main';
+		}  
+		$('#content').load(pagename+'.html')
+		carregaDados(pagename),
+		function(response, status, info) {
+			if (status == "error") {
+				var msg = "Houve um erro ao encontrar a página: "+ info.status + " - " + info.statusText;
+				$("#content").html(msg);
+            }
+        }
+    }
+	carregaPagina();
+	
+	validaUsuario = function(){
+		$.ajax({
+			type: "POST",
+			url: PATH + "ValidaSessao",
+			data: "p=1",
+			success: function (usuario) {
+				if (usuario.login!=null){
+					usuarioLogado = new Object();
+					usuarioLogado.login = usuario.login;
+					usuarioLogado.email = usuario.email;
+					usuarioLogado.nome = usuario.nome;
+					usuarioLogado.nascimento = usuario.nascimento;
+					carregaPagina();
+				} else {
+					sair();
+				}	
+			},
+			error: function (info) {
+				sair();
+			}
+		});
+	}
+	//Chama a função assim que a página for carregada
+	validaUsuario();
+	sair = function(){
+		$.ajax({
+			type: "POST",
+			url: PATH + "Logout",
+			success: function (data) {
+				window.location.href = (PATH+"index.html");	
+			},
+			error: function (info) {
+				alert("Erro ao tentar encerrar sua sessão: "+ info.status + " - " + info.statusText);	
+			}
+		});
+	}
+	carregaControle= function(usuarios){
+		alert("to aqui");
+		var html="<table>" +
+				"<thead>" +
+				"<tr>" +
+				"<th>Apelido</th>" +
+				"<th>Nome</th>" +
+				"<th>E-mail</th>" +
+				"<th>Data de Nascimento</th>" +
+				"<th>Ação</th>" +
+				"<tr>" +
+				"</thead>" +
+				"<tbody>";
+		if(usuarios!=undefined){
+			for(var i=0;Object.keys(usuarios).length>i;i++){
+				html +="<tr>" +
+					"<td id='td_BanNick'>"+usuarios[i].apelido+"</td>" +
+					"<td>"+usuarios[i].nome+"</td>" +
+					"<td>"+usuarios[i].email+"</td>" +
+					"<td>"+usuarios[i].nascimento+"</td>" +
+					"<td>" +
+						"<button class='btn btn-danger' type='button' id='btn_excluir' onclick='excluiUsuario("+usuarios[i].id+")'>Excluir</button>" +
+					"</td>" +
+					"</tr>";
+			}
+		}else{
+			alert("usuarios");
+			html+="<tr><td colspan='5'>Nenhum usuário encontrado</td></tr>"
+		}
+		html+="</tbody></table>";
+	$("#div_jogador").html(html);
+	}
+	});
+/*Função que faz a validação do cadastro*/
+validaCadastro= function(){
+    if(validaCampo('#nome')&&validaCampo('#nickname')&&validaCampo('#nascimento')&&validaCampo('#senha')&&validaCampo('#email')&&validaCampo('#confirmaSenha')&&validaCampo('#confirmaEmail')){
+
+        if (($('#email').val()==$('#confirmaEmail').val())){
+
+            if ($('#confirmaSenha').val()==$('#senha').val()){
+                return true;
+            }else{
+                alert("Os campos de senha não tem o mesmo valor");
+                $('#confirmaSenha').focus();
+                return false;
+            }
+        }else{
+            alert("Os campos de e-mail não tem o mesmo valor");
+            $('#confirmaEmail').focus();
+            return false;
+        }
+    }else
+        return false;
+}
+
+/*Função que faz a atualização dos dados do jogador */
+validaPerfil = function() {
+    //linha abaixo valida se todos os campos menos os de nova senha e confirmação preeenchidos
+    if(validaCampo('#nicknameUpdate')&&validaCampo('#nomeUpdate')&&validaCampo('#emailUpdate')&&validaCampo('#nascimentoUpdate')){
+            if(validaCampo('#senha')){
+            // linha abaixo valida se os campos de nova senha est~ao preenchidos
+                if(validaCampo('#novaSenha')&&validaCampo('#confirmaSenha')){
+                    if($('#novaSenha').val() == $('#confirmaSenha').val()){
+                        return true;
+                    }else{
+                        alert("Os campos de nova senha não tem os mesmo valor");
+                        $('#novaSenha').focus();
+                        return false;
+                    }
+                }
+            return false;
+        }else{
+            $('#senha').focus();
+            return false;
+        }
+    }else{
+        return false;
+    }
+}
+
+/*Função que faz a validação dos campos vazios*/
+validaCampo = function(nome){
+    if($(nome).val()==""){
+        $(nome).focus();
+        return false;
+    }else{
+        return true;
+    }
+}
+
+/*Função que mostra o nome do jogador a ser banido ao 
+admin que vai bani-lo o jogo */
+var nickBan = "";
+$(document).ready(function(){
+    $("#btn_excluir").click(function(){
+        nickBan = $("#td_BanNick").text();
+        $("#div_banidoPor").html("<h6 id='h6_jogadorBanido'>Deseja excluír o jogador " + nickBan + " por:</h6>");
+    });
+});

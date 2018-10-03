@@ -1,0 +1,159 @@
+<h1 class="h1_content">Cadastro</h1>
+<hr id="hr_cadastro">
+<div>
+
+  <div id="form_content">
+
+    <h4 class="h4_form">Adicionar ADM</h4>
+
+    <form action="post" onsubmit="return validaCadastro()">
+      <table id="table_form">
+        <tbody>
+
+          <tr>
+            <td>
+              <label for="txt_nome">Nome:</label>
+            </td>
+            <td>
+              <input data-toggle="popover" data-content="Insira o nome" data-trigger="focus" type="text" id="txt_nome" minlength="6" maxlength="45" value="">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="txt_nick">Nickname:</label>
+            </td>
+            <td>
+              <input  data-toggle="popover" data-content="Insira o nickname" data-trigger="focus" type="text" id="txt_nick" minlength="6" maxlength="16" value="">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="date_nascimento">Data de nascimento:</label>
+            </td>
+            <td>
+              <input data-toggle="popover"  data-content="Insira a data de nascimento" data-trigger="focus" type="date" value="" id="date_nascimento">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label>E-mail:</label>
+            </td>
+            <td>
+              <input data-toggle="popover" data-content="Insira o e-mail" data-trigger="focus" type="text" id="txt_email" minlength="6" maxlength="80" value="">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label>Confirmar e-mail:</label>
+            </td>
+            <td >
+              <input data-toggle="popover" data-content="Confirme o e-mail" data-trigger="focus" type="text" id="txt_confirma" minlength="6" maxlength="80">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="pwd_pass">Senha:</label>
+            </td>
+            <td>
+              <input  data-toggle="popover"  data-content="Insira a senha" data-trigger="focus" type="password" id="pwd_pass" minlength="6" maxlength="16" value="">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label>Confirmar senha:</label>
+            </td>
+            <td>
+              <input  data-toggle="popover" data-content="Confirme a Senha" data-trigger="focus" type="password" id="pwd_confirma" minlength="6" maxlength="16">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+
+            </td>
+            <td>
+              <button type="reset" class="btn btn-secondary" name="btn_limpar">Limpar</button>
+              <button type="submit" class="btn btn-primary" name="btn_subimt">Enviar</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </form>
+
+  </div>
+
+  <div id="section_adms">
+    <h4 class="h4_form">ADMs cadastrados</h4>
+    <table id="table_adms">
+      <thead>
+        <tr>
+          <th>Nome do ADM</th>
+          <th>Nickname</th>
+          <th>E-mail</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="nome_ADM">nome1</td>
+          <td class="nick_ADM">nick1</td>
+          <td class="email_ADM">Email1</td>
+          <td class="excluir_ADM"><button onclick="" data-toggle="modal" data-target="#exclui_adm" class="btn btn-danger">Excluir</button></td>
+        </tr>
+        <tr>
+          <td class="nome_ADM">nome2</td>
+          <td class="nick_ADM">nick2</td>
+          <td class="email_ADM">Email2</td>
+          <td class="excluir_ADM"><button onclick="" data-toggle="modal" data-target="#exclui_adm" class="btn btn-danger">Excluir</button></td>
+        </tr>
+        <tr>
+          <td class="nome_ADM">nome3</td>
+          <td class="nick_ADM">nick3</td>
+          <td class="email_ADM">Email3</td>
+          <td class="excluir_ADM"><button onclick="" data-toggle="modal" data-target="#exclui_adm" class="btn btn-danger">Excluir</button></td>
+        </tr>
+        <tr>
+          <td class="nome_ADM">nome4</td>
+          <td class="nick_ADM">nick4</td>
+          <td class="email_ADM">Email4</td>
+          <td class="excluir_ADM"><button onclick="" data-toggle="modal" data-target="#exclui_adm" class="btn btn-danger">Excluir</button></td>
+        </tr>
+        <tr>
+          <td class="nome_ADM">nome5</td>
+          <td class="nick_ADM">nick5</td>
+          <td class="email_ADM">Email5</td>
+          <td class="excluir_ADM"><button onclick="" data-toggle="modal" data-target="#exclui_adm" class="btn btn-danger">Excluir</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+<!-- INÍCIO MODAL - EXCLUÍR ADM -->
+<div class="modal fade " id="exclui_adm" role="dialog">
+<div class="modal-dialog">
+
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h4 class="modal-title">Exclusão de ADM</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <h3>Tem certeza que deseja fazer isso?</h3>
+    </div>
+    <div class="modal-footer">
+      <button type="button" name="btn_excluiAdm" class="btn btn-danger">Excluir</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- FIM MODAL - EXCLUÍR ADM -->

@@ -1,0 +1,77 @@
+package br.com.tbog.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.tbog.classes.Criptografia;
+import br.com.tbog.classes.Usuario;
+import br.com.tbog.jdbcinterfaces.UsuarioDAO;
+
+public class JDBCUsuarioDAO implements UsuarioDAO {
+
+	private Connection conexao;
+
+	public JDBCUsuarioDAO(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	/*Método que irá buscar as informações de um usuário com o apelido do mesmo*/
+	public Usuario buscarPorLogin(String apelido) {
+		String comando = "SELECT * FROM usuarios WHERE apelido =?";
+		Usuario usuario = new Usuario();
+		PreparedStatement p;
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setString(1, apelido);
+			ResultSet rs = p.executeQuery(comando);
+			while (rs.next()) {
+				
+				String nome = rs.getString("nome");
+				String nascimento = usuario.converteNascimentoParaFrontend(rs.getString("nascimento"));
+				String email = rs.getString("email");
+				String senha = rs.getString("senha");
+				String permissao = rs.getString("permissao");
+				
+				usuario.setNome(nome);
+		        usuario.setApelido(apelido);
+		        usuario.setSenha(senha);
+		        usuario.setEmail(email);
+		        usuario.setNascimento(nascimento);
+		        usuario.setPermissao(permissao);
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return usuario;
+	}
+	
+	/*Método que irá inserir um usuário dentro do BD*/
+	public boolean inserir(Usuario usuario) {
+			
+			String comando = "INSERT INTO usuarios (nome, apelido, data_nascimento, email, senha, data_cadastro, permissao)"; 
+			comando += "VALUES (?,?,?,?,?,?,?)";
+			PreparedStatement p;
+			try {
+				p = this.conexao.prepareStatement(comando);
+				p.setString(1, usuario.getNome());
+				p.setString(2, usuario.getApelido());
+				p.setString(, usuario.getNascimento());
+				p.setString(, usuario.getNome());
+				p.setString(, usuario.getNascimento());
+				p.setString(, usuario.getEmail());
+				p.execute();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				return false;
+			}
+			return true;
+		}
+
+}

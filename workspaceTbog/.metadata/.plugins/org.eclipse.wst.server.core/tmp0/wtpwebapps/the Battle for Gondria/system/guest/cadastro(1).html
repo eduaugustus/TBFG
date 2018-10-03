@@ -1,0 +1,52 @@
+<h1 class="h1_content">Cadastro</h1>
+<hr id="hr_cadastro">
+<div id="form_content">
+    <form action="" method="post" id="cadastraForm">
+	    <table id="table_form">
+	        <tbody>
+	            <tr>
+	                <td>
+	                    <label>Nome:</label><br>
+	                    <input data-toggle="popover" data-content="Insira seu nome" data-trigger="focus" type="text" name="txt_nome" id="nome" maxlength="45" minlength="6" value="">
+	                </td>
+	                <td>
+	                    <label>Nickname:</label><br>
+	                    <input data-toggle="popover" data-content="Insira seu nickname" data-trigger="focus" type="text" name="txt_nick" id="nickname" maxlength="16" minlength="6" value="" >
+	                </td>
+	
+	            <tr>
+	                <td>
+	                    <label>Data de nascimento:</label><br>
+	                    <input data-toggle="popover"  data-content="Insira sua data de nascimento" data-trigger="focus" type="date" name="date_nascimento" id="nascimento" value="">
+	                </td>
+	                <td>
+	                    <label>Senha:</label><br>
+	                    <input data-toggle="popover"  data-content="Insira sua senha" data-trigger="focus" type="password" name="pwd_senha" id="senha" minlength="6" maxlength="16" value="">
+	                </td>
+	            </tr>
+	
+	            <tr>
+	                <td>
+	                    <label>E-mail:</label><br>
+	                    <input data-toggle="popover" data-content="Insira seu e-mail" data-trigger="focus" type="text" name="txt_email" id="email" minlength="6" maxlength="80" value="">
+	                </td>
+	                <td>
+	                    <label>Confirmar senha:</label><br>
+	                    <input  data-toggle="popover" data-content="Confirme sua Senha" data-trigger="focus" type="password"  name="pwd_confirmaSenha" id="confirmaSenha" minlength="6" maxlength="16" value="">
+	                </td>
+	            </tr>
+	
+	            <tr>
+	                <td>
+	                    <label>Confirmar e-mail:</label><br>
+	                    <input data-toggle="popover" data-content="Confirme seu e-mail" data-trigger="focus" type="text" name="txt_confirma" id="confirmaEmail" minlength="6" maxlength="80" value="">
+	                </td>
+	                <td>
+	                    <button type="reset" name="btn_limpar" class="btn btn-secondary" name="btn_limpar">Limpar</button>
+	                    <button type="button" name="btn_enviar" class="btn btn-primary" name="btn_subimt" onclick="cadastro()" >Enviar</button>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+    </form>
+</div>

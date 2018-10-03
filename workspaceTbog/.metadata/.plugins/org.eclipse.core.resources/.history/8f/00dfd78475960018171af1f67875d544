@@ -1,0 +1,8 @@
+package br.com.tbog.jdbcinterfaces;
+
+
+import br.com.tbog.classes.Usuario;
+
+public interface UsuarioDAO {
+
+}

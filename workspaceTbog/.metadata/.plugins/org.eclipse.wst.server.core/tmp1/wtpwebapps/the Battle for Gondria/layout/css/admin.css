@@ -1,0 +1,234 @@
+/* INÃ�CIO - CADASTRO */
+#form_content {
+	float: left;
+	width: 50%;
+	margin: 2% 0;
+	background-color: rgba(0, 0, 0, 0.151);
+}
+
+#table_form {
+	width: 300px;
+	margin: 0 auto;
+}
+
+#table_form label {
+	text-align: right;
+	margin-right: 10px;
+	width: 150px;
+}
+
+#table_form input {
+	width: 350px;
+}
+
+.h4_form {
+	text-align: center;
+	margin: 4% 0;
+}
+
+#table_form button {
+	margin: 2.72% 2%;
+	width: 80px;
+	height: 50%;
+	float: right;
+}
+
+#section_adms {
+	float: left;
+	width: 50%;
+	margin: 2% 0;
+	background-color: rgba(0, 0, 0, 0.151);
+}
+
+#table_adms {
+	margin: 0% auto;
+	margin-bottom: 28px;
+	height: 262px;
+}
+
+#table_adms thead tr th {
+	background: rgba(0, 0, 0, 0.336);
+}
+
+#table_adms * td, #table_adms * th {
+	border: 1px solid black;
+	width: 150px;
+	text-align: center !important;
+}
+
+/* FIM - CADASTRO */
+
+/* INÃ�CIO - CONTROLE */
+#hr_controle {
+	height: 4px;
+	width: 360px;
+	margin: 0px auto;
+	color: rgba(255, 255, 255, 1);
+	border-top: 2px solid rgba(0, 0, 0, 0.5);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#div_buscar {
+	width: 100%;
+	margin: 1% 0;
+	float: left;
+	background-color: rgba(190, 190, 190, 1);
+}
+
+#div_buscar h3 {
+	margin: 2% auto;
+}
+
+#table_buscar {
+	margin-left: 8%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+#table_buscar td {
+	padding: 10px;
+}
+
+#table_buscar input {
+	width: 280px;
+}
+
+#table_buscar label {
+	font-size: 15pt;
+}
+
+#div_jogador {
+	width: 100%;
+	float: left;
+}
+
+#div_jogador table {
+	width: 90%;
+	border: 1px solid rgb(85, 85, 85);
+	margin: 3% auto;
+}
+
+#div_jogador th {
+	border: 1px solid rgb(85, 85, 85);
+	text-align: center;
+	width: 20%;
+}
+
+#div_jogador td {
+	border: 1px solid rgb(85, 85, 85);
+	padding: 1% 80px;
+}
+
+/* INICIO MODAL - EXCLUÃ�R JOGADOR */
+#exclui_jogador .modal-body {
+	background-color: rgba(170, 170, 170, 0.5);
+}
+
+#div_motivos {
+	width: 220px;
+	margin-left: 20px;
+}
+
+#div_motivos input {
+	float: left;
+	margin: 2px;
+	height: 20px;
+	width: 15px;
+}
+/* FIM MODAL - EXCLUÃ�R JOGADOR */
+
+/* FIM - CONTROLE */
+
+/* INICIO - PERFIL */
+#perfil_div th {
+	font-size: 26pt;
+	text-align: left;
+}
+
+#perfil_div {
+	background-color: rgba(170, 170, 170, 1);
+	width: 100%;
+	margin: 1% 0;
+	padding: 2% 0;
+}
+
+#perfil_div table {
+	margin: 0 auto;
+}
+
+#perfil_div td {
+	font-size: 14pt;
+	padding: 4% 0;
+}
+
+#perfil_div input {
+	float: right;
+	width: 280px;
+	margin-left: 5px;
+	margin-right: 30px;
+}
+
+#btn_editar {
+	float: right;
+	margin-top: 20px;
+	margin-right: 30px;
+	padding: 2px;
+}
+
+/* INICIO MODAL - PERFIL */
+#atualizaInfo .modal-body {
+	background-color: rgba(180, 180, 180, 0.7);
+}
+
+#atualizaInfo table {
+	margin: auto auto;
+}
+
+#atualizaInfo table input {
+	width: 250px;
+	margin: 0 20px;
+}
+
+#atualizaInfo table label {
+	margin: 6px 20px;
+}
+
+#btn_atualizar {
+	float: right;
+	margin-right: 22px;
+}
+
+/* FIM MODAL - PERFIL */
+
+/* FIM - PERFIL */
+
+/* INÃ�CIO - GRÃ�FICOS */
+#hr_graficos {
+	height: 4px;
+	width: 150px;
+	margin: 0px auto;
+	color: rgba(255, 255, 255, 1);
+	border: 0px;
+	border-top: 2px solid rgba(0, 0, 0, 0.5);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#div_graficoGeral {
+	float: left;
+	background-color: rgba(180, 180, 180, 0.7);
+	margin-top: 2%;
+	width: 100%;
+}
+
+#div_graficoGeral h1 {
+	text-align: center;
+	margin: 1% 0px;
+}
+
+.div_grafico {
+	float: left;
+	width: 45%;
+	margin: 2%
+}
+
+/* FIM - GRÃ�FICOS */

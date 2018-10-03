@@ -1,0 +1,8 @@
+package br.com.mygame.jdbcinterfaces;
+
+
+import br.com.mygame.classes.Usuario;
+
+public interface UsuarioDAO {
+
+}
