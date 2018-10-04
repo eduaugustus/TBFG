@@ -125,18 +125,20 @@ $(document).ready(function(){
 		$.ajax({
 			type: "POST",
 			url: PATH + "EditaUsuario",
-			data: modalPerfil.serialize()+"&txt_id="+usuarioLogado.id+"&txt_nickAntigo="+usuarioLogado.apelido,
+			data: $("#perfilForm").serialize()+"&txt_id="+usuarioLogado.id+"&txt_nick="+usuarioLogado.apelido,
 			success: function (msg) {
-				$("#atualizaInfo").modal("hide");
-
+				
 				$("#msg").html(msg.msg);
 				chamaModal();
-
-				if(!msg.erro){
-					validaUsuario();
-				}
+				$('#atualizaInfo').on('hidden.bs.modal', function () {
+					if(!msg.erro){
+						validaUsuario();
+					}
+				})
+				
 			},
 			error: function (info) {
+				alert("saiu");
 				$("#msg").html("Erro ao alterar seus dados: "+ info.status + " - " + info.statusText);
 				chamaModal();
 			}
@@ -176,7 +178,7 @@ $(document).ready(function(){
 
 	/*Função que faz a atualização dos dados do jogador */
 	validaPerfil = function() {
-		if(validaCampo('#nicknameUpdate')&&validaCampo('#nomeUpdate')&&validaCampo('#emailUpdate')&&validaCampo('#nascimentoUpdate')){
+		if(validaCampo('#nomeUpdate')&&validaCampo('#emailUpdate')&&validaCampo('#nascimentoUpdate')){
 			var dataAtual = pegaDataAtual();
 			var nasc = $("#nascimentoUpdate").val();
 			if(moment(nasc).isAfter(dataAtual)){
@@ -206,6 +208,8 @@ $(document).ready(function(){
 				$('#senha').focus();
 				return false;
 			}
+
+
 		}else{
 			return false;
 		}
@@ -285,7 +289,7 @@ $(document).ready(function(){
 
 	/*Função que carrega os jogador(es) que um administrador pretende banir*/
 	carregaControle= function(usuarios){
-		var html="<table>" +
+		var html="<table id='table_controle'>" +
 		"<thead>" +
 		"<tr>" +
 		"<th>Apelido</th>" +
@@ -318,10 +322,6 @@ $(document).ready(function(){
 		/*Função que monta a moda 'msgModal' com informações para o admin banir*/
 		exibirExclusaoDeUsuario = function(id){
 			
-			var nickBan = "";
-			nickBan = $("#td_BanNick").text();
-			$("#div_banido").html("<h6 id='h6_jogadorBanido'>Deseja excluír o usuário " + nickBan + "?</h6>");
-			
 			$("#modalExcluir").html(
 					"<div class='modal-footer' id='excluirUser'>" +
 					"<button class='btn btn-danger' type='button' id='btn_excluir' onclick='excluiUsuario("+id+")'>Excluir</button>"+
@@ -339,10 +339,9 @@ $(document).ready(function(){
 				data: 'id='+id,
 				url: PATH + 'ExcluiUsuario',
 				success: function(msg){
-					$('#msg').html(msg.msg);
-					$('#msgModal').modal();
-					carregaDados('controle');
-					carregaPagina();
+					$('#exclui_usuario').on('hidden.bs.modal', function () {
+						carregaPagina();
+					})
 				},
 				error: function(info){
 					$('#msg').html('Erro -' + info);

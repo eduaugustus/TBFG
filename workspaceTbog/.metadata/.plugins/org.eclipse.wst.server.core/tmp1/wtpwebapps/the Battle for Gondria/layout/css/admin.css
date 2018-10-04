@@ -102,8 +102,8 @@
 	float: left;
 }
 
-#div_jogador table {
-	width: 90%;
+#table_controle {
+	width: 80%;
 	border: 1px solid rgb(85, 85, 85);
 	margin: 3% auto;
 }
@@ -122,18 +122,6 @@
 /* INICIO MODAL - EXCLUÃ�R JOGADOR */
 #exclui_jogador .modal-body {
 	background-color: rgba(170, 170, 170, 0.5);
-}
-
-#div_motivos {
-	width: 220px;
-	margin-left: 20px;
-}
-
-#div_motivos input {
-	float: left;
-	margin: 2px;
-	height: 20px;
-	width: 15px;
 }
 /* FIM MODAL - EXCLUÃ�R JOGADOR */
 
