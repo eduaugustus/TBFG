@@ -1,0 +1,110 @@
+<h1 class="h1_content">Cadastro</h1>
+<hr id="hr_cadastro">
+<div id="div_admCadastro">
+
+	<div id="form_content">
+
+		<h4 class="h4_form">Adicionar ADM</h4>
+
+		<form action="post" id="cadastraForm">
+			<table id="table_form">
+				<tbody>
+
+					<tr>
+						<td><label for="txt_nome">Nome:</label></td>
+						<td  data-toggle="popover" data-content="Insira o nome"
+							data-trigger="focus" ><input type="text" name="txt_nome" id="nome"
+							minlength="6" maxlength="45" value=""></td>
+					</tr>
+
+					<tr>
+						<td><label for="txt_nick">Nickname:</label></td>
+						<td><input data-toggle="popover"
+							data-content="Insira o nickname" data-trigger="focus" type="text"
+							name="txt_nick" id="nickname" minlength="6" maxlength="16"
+							value=""></td>
+					</tr>
+
+					<tr>
+						<td><label for="date_nascimento">Data de nascimento:</label>
+						</td>
+						<td><input data-toggle="popover"
+							data-content="Insira a data de nascimento" data-trigger="focus"
+							type="date" value="" name="date_nascimento" id="nascimento">
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>E-mail:</label></td>
+						<td><input data-toggle="popover"
+							data-content="Insira o e-mail" data-trigger="focus" type="text"
+							id="email" name="txt_email" minlength="6" maxlength="80" value="">
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>Confirmar e-mail:</label></td>
+						<td><input data-toggle="popover"
+							data-content="Confirme o e-mail" data-trigger="focus" type="text"
+							id="confirmaEmail" name="txt_confirma" minlength="6"
+							maxlength="80"></td>
+					</tr>
+
+					<tr>
+						<td><label for="pwd_pass">Senha:</label></td>
+						<td><input data-toggle="popover"
+							data-content="Insira a senha" data-trigger="focus"
+							type="password" name="pwd_pass" id="senha" minlength="6"
+							maxlength="16" value=""></td>
+					</tr>
+
+					<tr>
+						<td><label>Confirmar senha:</label></td>
+						<td><input data-toggle="popover"
+							data-content="Confirme a Senha" data-trigger="focus"
+							type="password" id="confirmaSenha" minlength="6" maxlength="16">
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2">
+							<button type="reset" class="btn btn-secondary" name="btn_limpar">Limpar</button>
+							<button type="button" onclick="validaCadastro()"class="btn btn-primary" name="btn_subimt">Enviar</button>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</form>
+
+	</div>
+
+	<div id="section_adms">
+		<h4 class="h4_form">ADMs cadastrados</h4>
+		<div id="table_cadastro"></div>
+	</div>
+
+</div>
+
+<!-- INÃ�CIO MODAL - EXCLUÃ�R ADM -->
+<div class="modal fade " id="exclui_usuario" role="dialog">
+	<div class="modal-dialog">
+
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h4 class="modal-title">ExclusÃ£o de ADM</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+
+			<div class="modal-body">
+				<h5>Tem certeza que deseja fazer isso?</h5>
+				<div id="div_banido"></div>
+			</div>
+			
+			<div id="modalExcluir"></div>
+			
+		</div>
+	</div>
+</div>
+<!-- FIM MODAL - EXCLUÃ�R ADM -->
