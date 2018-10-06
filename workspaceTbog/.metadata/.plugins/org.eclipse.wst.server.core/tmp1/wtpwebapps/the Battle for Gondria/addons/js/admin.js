@@ -412,19 +412,42 @@ $(document).ready(function(){
 			data: {
 				labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Maio', 'Jun', 'Jul', 'Ago', 'Set',
 					'Out', 'Nov', 'Dez'],
+					fontColor:'rgb(0, 0, 0)',
+					
 					datasets: [{
 						label: 'Acessos Mensais',
-						backgroundColor: 'rgb(0, 0, 0)',
-						borderColor: 'rgb(255, 255, 255)',
+						backgroundColor: 'rgba(0, 0, 0, 0.9)',
+						borderColor: 'rgb(0, 0, 0)',
 						data: cadastros,
+						fontColor : '#fff' ,
+				        pointBackgroundColor : 'rgba(220,220,220,1)',
+				        pointBorderColor : '#fff',
 					}]
 			},
 			options: {
+				
 				title:{
 					display: true,
-					fontsize: '20',
-					text: 'Relatório de acessos mensais'
-				}
+					fontSize: '20',
+					text: 'Relatório de acessos mensais',
+					fontColor: "white",
+				},
+				
+				 scales: {
+				      xAxes: [{
+				        ticks: {
+				          fontColor: "white",
+				          fontsize: '20px'
+				        }
+				      }],
+				      
+				      yAxes: [{
+				        ticks: {
+				          fontColor: "white",
+				          beginAtZero: true,
+				        }
+				      }]
+				 }
 			}
 		});
 
@@ -437,7 +460,7 @@ $(document).ready(function(){
 					'Out', 'Nov', 'Dez'],
 					datasets: [{
 						label: 'Cadastros Mensais',
-						backgroundColor: 'rgb(0, 0, 255)',
+						backgroundColor: 'rgba(255, 255, 255, 0.8)',
 						borderColor: 'rgb(255, 255, 255)',
 						data: ativos,
 					}]
@@ -445,9 +468,27 @@ $(document).ready(function(){
 			options: {
 				title:{
 					display: true,
-					fontsize: '20',
-					text: 'Relatório de cadastros mensais'
-				}
+					fontSize: '20',
+					text: 'Relatório de cadastros mensais',
+					fontColor: "white",
+				},
+			
+			scales: {
+			      xAxes: [{
+			        ticks: {
+			          fontColor: "white",
+			          fontsize: '20px'
+			        }
+			      }],
+			      
+			      yAxes: [{
+			        ticks: {
+			          fontColor: "white",
+			          fontsize: '20pt',
+			          beginAtZero: true,
+			        }
+			      }]
+			 }
 			}
 		});
 
