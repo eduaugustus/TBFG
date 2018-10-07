@@ -126,10 +126,8 @@ public class Usuario implements Serializable{
 	
 	/*Método que converte um objeto de data Date no formato ISO YYYY-MM-DD em String*/
 	public String converteDateParaStringISO(Date Data){
-		System.out.println(Data +" ---- Data aqui LOGIN");
 		   SimpleDateFormat FormataData = new SimpleDateFormat("yyyy-MM-dd");
 		   String date = FormataData.format(Data);
-		   System.out.println(date.toString());
 		   return date.toString(); 
 		}
 	

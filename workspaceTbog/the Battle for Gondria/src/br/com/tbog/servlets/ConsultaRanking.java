@@ -59,7 +59,6 @@ public class ConsultaRanking extends HttpServlet {
         	/*Configura e manda uma resposta ao FrontEnd*/
         	response.setContentType("application/json");
         	response.setCharacterEncoding("UTF-8");
-        	System.out.println(json.toString());
         	response.getWriter().write(json);
     		
 		} catch (Exception e) {

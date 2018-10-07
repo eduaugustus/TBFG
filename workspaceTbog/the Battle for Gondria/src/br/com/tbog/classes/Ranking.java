@@ -5,7 +5,6 @@ import java.util.List;
 public class Ranking {
 
 	public Pontuacao formataRanking(List<Pontuacao> listUsu) {
-		// TODO Auto-generated method stub
 		Pontuacao pon = new Pontuacao();
 		int pontuacaototal = 0;
 		int[] total = {0 , 0, 0 };
@@ -23,7 +22,6 @@ public class Ranking {
 	}
 
 	private String formataTime(int[] total) {
-		// TODO Auto-generated method stub
 		String[] tempoS = {"","",""};
 		for(int i =0;i<total.length;i++) {
 			if(((i==0)||(i==1))&&total[i]<10) {
@@ -38,7 +36,6 @@ public class Ranking {
 	}
 
 	private int[] somaTempo(int[] time, int[] total) {
-		// TODO Auto-generated method stub
 		int[] tempo = {0,0,0};
 		for(int u = 2; u>=0;u--) {
 			if(u!=0) {
@@ -55,7 +52,6 @@ public class Ranking {
 	}
 
 	private int[] formataTempo(String tempo) {
-		// TODO Auto-generated method stub
 		String[] tempos = tempo.split(":");
 		int[] time = {0,0,0};
 		for(int i =0 ; i<tempos.length;i++) {

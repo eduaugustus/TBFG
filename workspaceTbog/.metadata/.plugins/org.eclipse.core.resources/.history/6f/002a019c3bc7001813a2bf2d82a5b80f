@@ -1,7 +1,0 @@
-<div id="jogo">
-    <h1 class="h1_content">The battle for Gondria</h1>
-    <hr id="hr_jogo">
-    <div id="canvas_Jogo"></div>
-</div>
-<button onclick="javascript:Randomiza()"></button>
-<script  type="module"  src="../../game/The_Battle_Of_Gondria/game/main.js"></script>

@@ -60,7 +60,6 @@ public class Pontuacao implements Comparable<Pontuacao>{
 	}
 	
 	public int compareTo(Pontuacao pon) {
-		// TODO Auto-generated method stub
 		  int comparepon = Integer.parseInt(((Pontuacao)pon).getPontuacao());
 	        /* For Ascending order*/
 	        return Integer.parseInt(this.pontuacao)-comparepon;

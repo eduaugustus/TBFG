@@ -25,9 +25,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 	}
 	
 	public void adicionaVisita(Usuario usuariobd){
-		System.out.println("================");
-		System.out.println("ENTREI NA VISTIVA");
-		System.out.println("================");
 		Date dataLogin = new Date(); 
 		String ultimoLogin = usuariobd.converteDateParaStringISO(dataLogin);
 		String comando = "UPDATE usuarios SET ultimo_login = '" + ultimoLogin + "'";
@@ -35,7 +32,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		
 		try {
 			Statement stmt = conexao.createStatement(); 
-			System.out.println(comando);
 			stmt.executeUpdate(comando);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -52,7 +48,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 			p.setString(1, usuarioFront.getApelido());
 			p.setString(2,usuarioFront.getEmail());
 			ResultSet rs = p.executeQuery();
-			System.out.println(p.toString());
 			while (rs.next()) {
 				String id = rs.getString("id")	;			
 				String apelido = rs.getString("apelido");
@@ -105,15 +100,12 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		List<Usuario> listaDeUsuarios= new ArrayList<Usuario>();
 		String comando = "SELECT * FROM usuarios WHERE apelido LIKE ? AND permissao = ?";
 		String logindb= "%"+login+"%";
-		System.out.println(comando);
 		try {
 			PreparedStatement p = conexao.prepareStatement(comando);
 			p.setString(1, logindb);
 			p.setString(2, permissao);
 			ResultSet rs  = p.executeQuery();
-			System.out.println(p);
 			while(rs.next()) {
-				System.out.println("to vivo");
 				Usuario usuario =new Usuario();
 				usuario.setApelido(rs.getString("apelido"));
 				usuario.setId(rs.getString("id"));
@@ -148,7 +140,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 				pon.setTempo(rs.getString("tempo"));
 				pon.setUsuario(rs.getString("apelido"));
 				listaPon.add(pon);
-				System.out.println(pon.getUsuario());
 			}
 			return listaPon;
 		}catch(Exception e) {
@@ -159,23 +150,17 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 			try {
 				PreparedStatement p = this.conexao.prepareStatement(sql1);
 				ResultSet rs = p.executeQuery();
-				System.out.println(p);								
 				while(rs.next()) {
 					Pontuacao pon = new Pontuacao();
 					pon.setPontuacao(rs.getString("pontuacao"));
-					System.out.println(rs.getString("pontuacao"));								
 					pon.setTempo(rs.getString("tempo"));
-					System.out.println(rs.getString("tempo"));
 					String apel = rs.getString("apelido");
 					if(apel==null) {
 						apel="";
 					}
 					pon.setUsuario(apel);
-					System.out.println(rs.getString("apelido"));								
 					pon.setId(Integer.toString(rs.getInt("usuarios_id")));
-					System.out.println(rs.getInt("usuarios_id"));								
 					listaPon.add(pon);
-					System.out.println(pon.getUsuario());								
 				}
 			String sql = "select * from usuarios where id = (select max(id) from usuarios);";
 			Statement stmt = conexao.createStatement();
@@ -186,7 +171,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 			for(int i = 0 ; i<numeroUsuarios;i++) {
 				List<Pontuacao> listUsu  = new ArrayList<Pontuacao>();
 				int id = i+1;
-				System.out.println("id="+id);
 				for(int u = 0 ; u<listaPon.size();u++) {
 					if(listaPon.get(u).getId().equals(Integer.toString(id))) {
 						Pontuacao po = listaPon.get(u);			
@@ -214,15 +198,11 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 			p.setString(1, fase);
 			p.setString(2, usuario.getId());
 			ResultSet rs =p.executeQuery();
-			System.out.println(p);
 			if(rs.next()) {				
-				System.out.println("OI entrei");			
 				if(Integer.parseInt(rs.getString("pontuacao"))<Integer.parseInt(pontuacao)) {
-					System.out.println("OI PASSEI");
 					String sqlu = "UPDATE pontuacoes  SET pontuacao = "+pontuacao+ " ,tempo = '"+tempo+"' WHERE usuarios_id = "+usuario.getId()+" AND fase="+fase; 
 					Statement stmt = this.conexao.createStatement();
 					stmt.executeUpdate(sqlu);
-					System.out.println(sqlu);
 					return true;
 				}else {
 					return false;
@@ -234,9 +214,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 				ps.setString(2, pontuacao);
 				ps.setInt(3, Integer.parseInt(usuario.getId()));
 				ps.setString(4, tempo);
-				System.out.println(comando);
 				int count = ps.executeUpdate();
-				System.out.println(count);				
 				if (count > 0){
 					return true; 
 				}else {
@@ -261,17 +239,11 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		PreparedStatement p;
 		try {
 			p = this.conexao.prepareStatement(comando);
-			System.out.println("Criei");
 			p.setString(1, Criptografia.criptografaSenha(usuarioFrontEnd.getSenha()));
-			System.out.println("1");
 			p.setString(2, usuarioFrontEnd.getNome());
-			System.out.println("2");
 			p.setString(3, usuarioFrontEnd.getNascimento());
-			System.out.println("3");
 			p.setString(4, usuarioFrontEnd.getEmail());
-			System.out.println("4");
 			p.setString(5, usuarioFrontEnd.getId());
-			System.out.println("5");
 			p.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -282,7 +254,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 
 
 	public void novaSenha(Usuario usuariobd) {
-		// TODO Auto-generated method stub
 		String sql = "UPDATE usuarios SET senha='"+usuariobd.getSenha()+"' WHERE id="+usuariobd.getId();
 		try {
 			Statement stmt= conexao.createStatement();
@@ -293,7 +264,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 	}
 	
 	public boolean deletaUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
 		String ranking = "DELETE FROM pontuacoes WHERE usuarios_id = ?";
 		try{
 			PreparedStatement p = conexao.prepareStatement(ranking);
@@ -347,7 +317,83 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		return faseParada;
 	}
 
+	public Pontuacao buscaPontuacaoPorFase(String fase, String usuarioId) {
+		
+		Pontuacao pontuacaobd = new Pontuacao();
+		String queryBuscaPontFase = "SELECT * FROM `pontuacoes` WHERE usuarios_id =? AND fase =?";
+		
+		try {
+			PreparedStatement p = conexao.prepareStatement(queryBuscaPontFase);
+			p.setString(1, usuarioId);
+			p.setString(2, fase);
+			ResultSet rs = p.executeQuery();
+			
+			while(rs.next()) {
+				
+				pontuacaobd.setId(rs.getString("id"));
+				pontuacaobd.setFase(rs.getString("fase"));
+				pontuacaobd.setPontuacao(rs.getString("pontuacao"));
+				pontuacaobd.setTempo(rs.getString("tempo"));
+				pontuacaobd.setUsuario(rs.getString("usuarios_id"));
+				
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return pontuacaobd;
+	}
 
+	public void cadastraNovaPontucao(Pontuacao pontuacao) {
+			
+		String insertPontuacao = "INSERT INTO pontuacoes(tempo, pontuacao, fase, usuarios_id)"
+				+ " VALUES (?,?,?,?)";
+		
+		try {
+			PreparedStatement p = conexao.prepareStatement(insertPontuacao);
+			p.setString(1, pontuacao.getTempo());
+			p.setString(2, pontuacao.getPontuacao());
+			p.setString(3, pontuacao.getFase());
+			System.out.println(pontuacao.getUsuario());
+			p.setString(4, pontuacao.getUsuario());
+			p.execute();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public int formataTempoParaSegundos(String tempo) {
+		
+		String[] tempoSeparado = tempo.split(":");
+		
+		int horas = Integer.parseInt(tempoSeparado[0]);
+		int minutos = Integer.parseInt(tempoSeparado[1]);
+		int segundos = Integer.parseInt(tempoSeparado[2]);
+		
+		int segundosSoma = (horas * 3600) + (minutos * 60) + segundos;
+		
+		return segundosSoma;
+	}
+
+	public void atualizaPontuacao(Pontuacao pontuacao) {
+		String updatePontuacao = "UPDATE pontuacoes SET tempo=?, pontuacao=? WHERE usuarios_id =? AND fase =?";
+		try {
+			PreparedStatement p = conexao.prepareStatement(updatePontuacao);
+			p.setString(1, pontuacao.getTempo());
+			p.setString(2, pontuacao.getPontuacao());
+			p.setString(3, pontuacao.getUsuario());
+			p.setString(4, pontuacao.getFase());
+			p.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	
 
 }

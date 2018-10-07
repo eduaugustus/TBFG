@@ -12,9 +12,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
+import br.com.tbog.classes.Pontuacao;
 import br.com.tbog.classes.RandomInt;
 import br.com.tbog.classes.Usuario;
 import br.com.tbog.conexao.Conexao;
@@ -42,43 +44,54 @@ public class CadastraPontuacao extends HttpServlet {
     private void process(HttpServletRequest request, HttpServletResponse response) 
     		throws ServletException, IOException {
     	
-    	Conexao conec = new Conexao();
-    	Connection conexao = conec.abrirConexao();
-    	
-    	JDBCUsuarioDAO jdbc = new JDBCUsuarioDAO(conexao);
-    	
-    	Usuario usuarioFront = new Usuario();
-    	usuarioFront.setApelido(request.getParameter("apelido"));
-    	
-    	Usuario usuario = jdbc.buscarPorUsuario(usuarioFront);
-    	
-    	System.out.println(usuario.getId());
-    	if(request.getParameter("teste").equals("0")) {
-    		jdbc.inserePontuacao(request.getParameter("fase"),request.getParameter("pontuacao"),usuario,request.getParameter("tempo") );
-    	}else {
-    		System.out.println("Randomizando");
-    		RandomInt ri = new RandomInt();
-    		String tempo= "00:"+ ri.anyRandomInt(10, 13)+":"+ri.anyRandomInt(10, 59);
-    		String fase= ri.anyRandomInt(1, 4);
-    		String pontuacao = ri.anyRandomInt(1, 9999);    		    	
-    		boolean result=	jdbc.inserePontuacao(fase, pontuacao, usuario, tempo);
+    	try {
     		
-    		conec.fecharConexao();
+    		Conexao conec = new Conexao();
+        	Connection conexao = conec.abrirConexao();
+        	
+    		HttpSession sessao = request.getSession();
+
+    		Usuario usuario = new Usuario();
+
+    		usuario.setApelido(sessao.getAttribute("apelido").toString());
     		
-    		Map<String,String> msg = new HashMap<String,String>();
-    		if(result) {
-    			msg.put("msg", "Pontua��o cadastrada");
-    		}else {
-    			msg.put("msg", "Erro ao cadastrar Pontua��o");
+        	JDBCUsuarioDAO jdbc = new JDBCUsuarioDAO(conexao);
+        	
+        	Usuario usuariobd = jdbc.buscarPorUsuario(usuario);
+        	
+        	Pontuacao pontuacao = new Pontuacao();
+        	
+        	pontuacao.setPontuacao(request.getParameter("pontuacao"));
+        	pontuacao.setFase(request.getParameter("fase"));
+        	pontuacao.setTempo(request.getParameter("tempo"));
+        	pontuacao.setUsuario(usuariobd.getId());
+        	
+        	Pontuacao pontuacaobd = jdbc.buscaPontuacaoPorFase(pontuacao.getFase(), usuariobd.getId());
+        	
+        	if(pontuacaobd.getFase() == null) {
+        		jdbc.cadastraNovaPontucao(pontuacao);
+        	}else{
+        		
+        		int segundosFront = jdbc.formataTempoParaSegundos(pontuacao.getTempo());
+        		int segundosbd = jdbc.formataTempoParaSegundos(pontuacaobd.getTempo());
+        		int pontFront = Integer.parseInt(pontuacao.getPontuacao());
+        		int pontbd = Integer.parseInt(pontuacaobd.getPontuacao())
+;        		
+        		if( ((segundosFront < segundosbd) && ( pontFront > pontbd)) ||
+        			((segundosFront < segundosbd) && ( pontFront == pontbd))||
+        			((segundosFront < segundosbd) && ( pontFront > pontbd)) ||
+        			((segundosFront == segundosbd) && ( pontFront > pontbd)) ){
+        			jdbc.atualizaPontuacao(pontuacao);
+        		}    			
+        		
     		}
-    		
-    		
-    		String json = new Gson().toJson(msg);
-    		response.setContentType("application/json");
-    		response.setCharacterEncoding("UTF-8");
-    		response.getWriter().write(json);
+        	
+    	}catch(Exception e) {
+    		e.printStackTrace();
     	}
+    	
     }
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

@@ -16,4 +16,5 @@
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="br.com.tbog.classes.Criptografia"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="br.com.tbog.classes.Pontuacao"/>
 </qualifiedTypeNameHistroy>

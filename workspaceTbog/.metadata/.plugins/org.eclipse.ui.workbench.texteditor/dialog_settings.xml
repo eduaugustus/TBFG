@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ConsultaRanking" key="selection"/>
+		<item value=".." key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="../../game/The_Battle_Of_Gondria/game/src"/>
+			<item value="System.out"/>
+			<item value="System"/>
+			<item value="../../game/The_Battle_Of_Gondria/game/"/>
 			<item value="consultaRanking"/>
 			<item value="formataDataFrontEnd"/>
 			<item value="cadastro"/>
@@ -18,13 +22,16 @@
 			<item value="submit"/>
 		</list>
 		<list key="replacehistory">
+			<item value=".."/>
+			<item value=""/>
+			<item value="../../game/"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="993" key="DIALOG_X_ORIGIN"/>
-		<item value="117" key="DIALOG_Y_ORIGIN"/>
+		<item value="572" key="DIALOG_X_ORIGIN"/>
+		<item value="198" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

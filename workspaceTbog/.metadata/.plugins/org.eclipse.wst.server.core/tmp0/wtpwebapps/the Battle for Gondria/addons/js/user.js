@@ -176,16 +176,7 @@ $(document).ready(function(){
 	}
 
 	/*============================================================*/
-	Randomiza = function(){
-		$.ajax({
-			type:"POST",
-			url: PATH+"CadastraPontuacao",
-			data:"teste=1&&apelido="+usuarioLogado.apelido,
-			success: function(msg){
-				alert(msg.msg);
-			}
-		})
-	}
+	
 
 	/*==============================================
 	 * ==== FIM - FUNÇÕES ESPECIFICAS DO USER =====
@@ -193,9 +184,6 @@ $(document).ready(function(){
 	 */
 
 	
-//	var menuFases = new MenuFase();
-
-
 	/*Função que carrega os dados das páginas quando ativas*/
 	carregaDados = function(pagename){
 		switch(pagename){
