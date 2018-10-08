@@ -159,18 +159,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":92,
-                 "name":"spawn_soldado",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":2148,
-                 "y":351
-                }, 
-                {
-                 "height":0,
                  "id":93,
                  "name":"spawn_soldado",
                  "point":true,
@@ -180,18 +168,6 @@
                  "width":0,
                  "x":2353,
                  "y":378
-                }, 
-                {
-                 "height":0,
-                 "id":94,
-                 "name":"spawn_soldado",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":2842,
-                 "y":314
                 }, 
                 {
                  "height":0,

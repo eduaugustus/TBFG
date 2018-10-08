@@ -118,7 +118,7 @@ class MenuFases extends Phaser.Scene {
                    let data = {
                         scene : 'Level_3'
                     }
-                    this.scene.scene.start('Level_load',data);
+                    this.scene.scene.start('Level_load', data);
                 }, 150);
             });
 
@@ -141,7 +141,10 @@ class MenuFases extends Phaser.Scene {
                 btn.setTexture("btnFase4Press");
                 setTimeout(() => {
                     btn.setTexture("btnFase4");
-                    this.scene.scene.start('Level_4');
+                    let data = {
+                            scene : 'Level_4'
+                        }
+                    this.scene.scene.start('Level_load',data);
                 }, 150);
             });
 

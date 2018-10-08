@@ -17,7 +17,7 @@ class Level_4 extends Phaser.Scene {
   preload() {
 
     this.secs = 0;
-    this.load.tilemapTiledJSON("map_fase_4", "../../game/assets/tilemap/map_fase_4.json");
+    this.load.tilemapTiledJSON("map_fase_4", "assets/tilemap/map_fase_4.json");
 
     // this.load.audio('slime_jump', 'assets/sounds/slime_jump.mp3');
   }

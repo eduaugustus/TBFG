@@ -24,6 +24,8 @@
 }
 
 .h4_form {
+	font-family: 'Open Sans', sans-serif;
+	color: rgb(255, 255, 255);
 	text-align: center;
 	margin: 4% 0;
 }
@@ -219,7 +221,7 @@
 /* INÃ�CIO - GRÃ�FICOS */
 #hr_graficos {
 	height: 4px;
-	width: 150px;
+	width: 300px;
 	margin: 0px auto;
 	color: rgba(255, 255, 255, 1);
 	border: 0px;

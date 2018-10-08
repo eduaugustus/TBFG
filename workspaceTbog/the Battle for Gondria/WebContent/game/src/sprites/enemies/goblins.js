@@ -65,6 +65,7 @@ class Goblins {
     }
 
     update(player) {
+    	
         this.player = player;
         for (let i = 0; i < this.array.children.entries.length; i++) {
             let goblin = this.array.children.entries[i];
@@ -177,7 +178,6 @@ class Goblins {
                             goblin.setVelocityX(-100);
                         } else if (!goblin.isHit.right && !goblin.isHit.left) {
                             goblin.setVelocityX(0);
-                            console.log(goblin.anims);
                         }
                     } else if (!goblin.isHit.right && !goblin.isHit.left) {
                         goblin.setVelocityX(0);

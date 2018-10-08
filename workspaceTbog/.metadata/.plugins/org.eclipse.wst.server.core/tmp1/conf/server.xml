@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="C:\xampp\htdocs\PROJETOS\CHALLENGE_BACKEND\TheBattleOfGondriaBackEnd\workspaceTbog\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\xampp\htdocs\PROJETOS\CHALLENGE_BACKEND\TheBattleOfGondriaBackEnd\workspaceTbog\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\the Battle for Gondria" path="/the_Battle_for_Gondria" reloadable="true" source="org.eclipse.jst.jee.server:the Battle for Gondria"/></Host>
+      <Context docBase="C:\Users\eduardo_cardozo\Desktop\projetos\TheBattleOfGondriaBackEnd\workspaceTbog\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\eduardo_cardozo\Desktop\projetos\TheBattleOfGondriaBackEnd\workspaceTbog\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\the Battle for Gondria" path="/the_Battle_for_Gondria" reloadable="true" source="org.eclipse.jst.jee.server:the Battle for Gondria"/></Host>
     </Engine>
   </Service>
 </Server>

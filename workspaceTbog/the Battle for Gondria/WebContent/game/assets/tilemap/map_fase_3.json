@@ -469,14 +469,14 @@
                 {
                  "height":0,
                  "id":162,
-                 "name":"spawn_bandeira",
+                 "name":"Spawn_Flag",
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":13458,
-                 "y":156
+                 "x":13459,
+                 "y":137
                 }],
          "opacity":1,
          "type":"objectgroup",

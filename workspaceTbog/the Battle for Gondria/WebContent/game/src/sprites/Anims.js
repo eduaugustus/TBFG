@@ -210,7 +210,6 @@ class Anims {
         frameRate: 18,
         repeat:-1
       });
-      console.log(anims)
 
       
 

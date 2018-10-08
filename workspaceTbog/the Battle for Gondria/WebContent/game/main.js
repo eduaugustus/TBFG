@@ -9,13 +9,14 @@ import Level_casa from './src/scenes/level_casa.js';
 import Level_1 from './src/scenes/Level_1.js';
 import Level_1_boss from './src/scenes/Level_1_boss.js';
 import Level_2_boss from './src/scenes/Level_2_boss.js';
+import Level_3_boss from './src/scenes/Level_3_boss.js';
 import Level_2 from './src/scenes/Level_2.js';
 import Level_3 from './src/scenes/Level_3.js';
 import CalculaPontuacao from './src/scenes/CalculaPontuacao.js';
 import Level_4 from './src/scenes/Leval_4.js';
 
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
     parent: 'canvas_Jogo',
     width: 864,
     height: 480,
@@ -38,6 +39,7 @@ const config = {
         Level_2,
         Level_2_boss,
         Level_3,
+        Level_3_boss,
         Level_4,
         Level_casa,
         CalculaPontuacao

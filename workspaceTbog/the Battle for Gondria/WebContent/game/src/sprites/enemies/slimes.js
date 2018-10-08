@@ -9,7 +9,7 @@ class Slimes {
 
                 this.boss = this.array.create(spawns[i].x, spawns[i].y, 'slime_verde');
                 this.boss.setScale(5.0);
-                this.boss.lifes = 1;
+                this.boss.lifes = 4;
                 this.boss.canHit = false;
                 this.boss.cor = "verde";
                 this.boss.isHit = {
@@ -93,17 +93,14 @@ class Slimes {
 
     update(player) {
         this.player = player;
-        
         for (let i = 0; i < this.array.children.entries.length; i++) {
             let slime = this.array.children.entries[i];
             if (slime === this.boss) {
                 if (slime.lifes == 0) {
-                	this.scene.player.score += 1000;
                     this.c_player.active = false;
                     
                     let data = {
-                        player: this.scene.player,
-                        fase: 1
+                        player: this.scene.player
                     };
                     slime.anims.play('morte');
                     slime.lifes = -1;
@@ -116,7 +113,6 @@ class Slimes {
                     setTimeout(() => {
                         this.scene.scene.start('CalculaPontuacao', data);
                     }, 5000);
-                    
                 } else if (slime.canMove) {
                     slime.setTexture('slime_' + slime.cor, 0);
                     if (slime.jumps == 10 || slime.jumps == 20 || slime.jumps == 30) {

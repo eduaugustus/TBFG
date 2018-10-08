@@ -125,7 +125,7 @@ section{
 
 #hr_ranking{
   height: 4px;
-  width: 155px;
+  width: 280px;
   margin: 0px auto;
   color: rgba(255, 255, 255, 1);
   border-top: 2px solid rgba(0, 0, 0, 0.5);
@@ -134,7 +134,7 @@ section{
 
 #hr_perfil{
   height: 4px;
-  width: 100px;
+  width: 200px;
   margin: 0px auto;
   color: rgba(255, 255, 255, 1);
   border-top: 2px solid rgba(0, 0, 0, 0.5);
