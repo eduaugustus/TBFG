@@ -1,34 +1,31 @@
-var PATH =  "../../";
-window.faseDisponivel;
-
+window.fase;
 /*Função que busca em qual fase o jogador parou*/
 var carregaFase = function(){
 	$.ajax({
 		type: "POST",
-		url: PATH + "CarregaFase",
+		url: "../../CarregaFase",
 		success: function (fase) {
 //			alert('Fase disponível: '+fase);
-			window.faseDisponivel = fase;
+			window.fase = parseInt(fase);
+			window.fase++;
 		},
 		error: function () {
 			alert('erro, fase não carregada');
 		}
 	});
 }
-
 /*Chama a função assim que a página(DOM) for carregada*/
 carregaFase();
-	
-/*Chama a função assim que a página(DOM) for carregada*/
 class MenuFases extends Phaser.Scene {
 
     constructor(faseDisponivel) {
         super({ key: "MenuFases" });
-        this.faseDisponivel = parseInt(window.faseDisponivel);
     }
 
     
     create() {
+    	this.faseDisponivel = window.fase;
+    	console.log(this.faseDisponivel);
 
     	// music.play();
 

@@ -9,10 +9,10 @@ class CalculaPontuacao extends Phaser.Scene {
 				url: "../../CadastraPontuacao",
 				data:"fase="+fase+"&pontuacao="+pontuacao+"&tempo="+tempo,
 				success: function (msg) {
-					alert(msg.msg);
+//					alert(msg.msg);
 				},
 				error: function () {
-					alert(msg.msg);
+//					alert(msg.msg);
 				}
 			});
 		}

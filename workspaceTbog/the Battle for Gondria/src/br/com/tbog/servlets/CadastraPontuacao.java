@@ -65,6 +65,11 @@ public class CadastraPontuacao extends HttpServlet {
         	pontuacao.setFase(request.getParameter("fase"));
         	pontuacao.setTempo(request.getParameter("tempo"));
         	pontuacao.setUsuario(usuariobd.getId());
+        	System.out.println("=========================");
+        	System.out.println(pontuacao.getPontuacao());
+        	System.out.println(pontuacao.getFase());
+        	System.out.println(pontuacao.getTempo());
+        	System.out.println(pontuacao.getUsuario());
         	
         	Pontuacao pontuacaobd = jdbc.buscaPontuacaoPorFase(pontuacao.getFase(), usuariobd.getId());
         	

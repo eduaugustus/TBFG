@@ -128,7 +128,8 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		// TODO Auto-generated method stub
 		List<Pontuacao> listaPon = new ArrayList<Pontuacao>();
 		int fasebd= Integer.parseInt(fase);
-		String comando="SELECT  usuarios.apelido , pontuacoes.pontuacao,pontuacoes.tempo FROM usuarios, pontuacoes WHERE usuarios.id= pontuacoes.usuarios_id AND fase= ?";
+		String comando="SELECT  usuarios.apelido , pontuacoes.pontuacao,pontuacoes.tempo FROM usuarios, "
+				+ "pontuacoes WHERE usuarios.id = pontuacoes.usuarios_id AND fase= ? ORDER BY usuarios.apelido ASC" ;
 		if(fasebd>0) {
 		try {
 			PreparedStatement p = this.conexao.prepareStatement(comando);
@@ -146,7 +147,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 				e.printStackTrace();
 			}
 		}else {
-			String sql1= "SELECT  usuarios.apelido , pontuacoes.pontuacao,pontuacoes.tempo,pontuacoes.usuarios_id FROM usuarios, pontuacoes WHERE usuarios.id=pontuacoes.usuarios_id";
+			String sql1= "SELECT  usuarios.apelido , pontuacoes.pontuacao, pontuacoes.tempo, pontuacoes.usuarios_id FROM usuarios, pontuacoes WHERE usuarios.id = pontuacoes.usuarios_id";
 			try {
 				PreparedStatement p = this.conexao.prepareStatement(sql1);
 				ResultSet rs = p.executeQuery();
@@ -311,7 +312,7 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		}
 		
 		if(faseParada == null){
-			faseParada = "1";
+			faseParada = "0";
 		}
 		
 		return faseParada;
