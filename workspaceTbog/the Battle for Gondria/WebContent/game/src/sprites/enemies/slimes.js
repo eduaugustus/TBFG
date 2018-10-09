@@ -99,6 +99,9 @@ class Slimes {
                 if (slime.lifes == 0) {
                     this.c_player.active = false;
                     
+                    let data = {
+                        player: this.scene.player
+                    };
                     slime.anims.play('morte');
                     slime.lifes = -1;
                     setTimeout(
@@ -107,10 +110,6 @@ class Slimes {
                             this.scene.music.stop();
                         }, 2000);
                     this.scene.player.deletaIntervalo();
-                    let data = {
-                    		player: this.scene.player,
-                    		fase: "1"
-                    };
                     setTimeout(() => {
                         this.scene.scene.start('CalculaPontuacao', data);
                     }, 5000);

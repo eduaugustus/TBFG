@@ -9,7 +9,6 @@ export default class Player {
     this.alavanca_2_Active = false;
 
     this.intoHouse = false;
-    this.intoHousePonte = false;
     this.oldScene = undefined;
     this.scene = scene;
     this.hasIntoHouse = false;
@@ -170,7 +169,9 @@ export default class Player {
           colisao = false;
         }
 
+        //ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
         if (colisao == true) {
+          // console.log(sprite.body.blocked.down);
           setTimeout(() => {
             if (sprite.body.blocked.down) {
               scene.colisao = false;
@@ -265,11 +266,12 @@ export default class Player {
         if(enemy.jumps==undefined){
           if ((ydistance < 72 && ydistance > -72)) {
             if (xdistance < 75 && xdistance > 0 && !this.lastLeftLast) {
-              enemy.lifes--;
               enemy.setVelocityX(160);
               enemy.setVelocityY(-130);
               enemy.isHit.left = true;
+              enemy.lifes--;
             } else if (xdistance < 0 && xdistance > -75 && this.lastLeftLast) {
+              enemy.canMove = false;
               enemy.setVelocityX(-160);
               enemy.setVelocityY(-130);
               enemy.isHit.right = true;

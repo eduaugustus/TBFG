@@ -92,7 +92,6 @@ class Level_casa extends Phaser.Scene {
     
     //Cria o hud do jogador
     this.player.createHUD();
-    this.player.intoHousePonte = true;
 
     this.colisao = false;
 

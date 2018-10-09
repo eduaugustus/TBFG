@@ -1,33 +1,19 @@
-window.fase;
-/*Função que busca em qual fase o jogador parou*/
-var carregaFase = function(){
-	$.ajax({
-		type: "POST",
-		url: "../../CarregaFase",
-		success: function (fase) {
-//			alert('Fase disponível: '+fase);
-			window.fase = parseInt(fase);
-			window.fase++;
-		},
-		error: function () {
-			alert('erro, fase não carregada');
-		}
-	});
-}
-/*Chama a função assim que a página(DOM) for carregada*/
-carregaFase();
 class MenuFases extends Phaser.Scene {
 
-    constructor(faseDisponivel) {
+    constructor() {
         super({ key: "MenuFases" });
     }
 
-    
-    create() {
-    	this.faseDisponivel = window.fase;
-    	console.log(this.faseDisponivel);
+    preload() {
 
-    	// music.play();
+        let faseDisponivel = 0;
+
+       
+    }
+    create() {
+
+
+        // music.play();
 
         this.add.image(432, 240, 'bgGeral');
 
@@ -43,7 +29,7 @@ class MenuFases extends Phaser.Scene {
             }, 150);
         });
 
-       
+        this.faseDisponivel = 4;
 
         //Fase 1
         if ((this.faseDisponivel == 1) || (this.faseDisponivel >= 1)) {
@@ -115,7 +101,7 @@ class MenuFases extends Phaser.Scene {
                    let data = {
                         scene : 'Level_3'
                     }
-                    this.scene.scene.start('Level_load', data);
+                    this.scene.scene.start('Level_load',data);
                 }, 150);
             });
 
@@ -134,13 +120,14 @@ class MenuFases extends Phaser.Scene {
             this.fase4.setInteractive();
 
             this.fase4.on('pointerdown', function () {
+                this.scene.sound.sounds[0].stop();
                 let btn = this;
                 btn.setTexture("btnFase4Press");
                 setTimeout(() => {
                     btn.setTexture("btnFase4");
                     let data = {
-                            scene : 'Level_4'
-                        }
+                        scene : 'Level_4'
+                    };
                     this.scene.scene.start('Level_load',data);
                 }, 150);
             });

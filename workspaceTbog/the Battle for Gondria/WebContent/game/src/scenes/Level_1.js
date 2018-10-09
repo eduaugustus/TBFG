@@ -7,7 +7,6 @@ import Pocao from "../sprites/objects/pocao.js";
 import Aldeao from "../sprites/Aldeao.js";
 import Ponte from "../sprites/objects/ponte.js";
 import Casa from "../sprites/objects/casa.js";
-
 class Level_1 extends Phaser.Scene {
 
     constructor() {
@@ -52,7 +51,7 @@ class Level_1 extends Phaser.Scene {
         //Cria layers não colidivel
         map.createDynamicLayer('background', background, 0, 0);
         map.createDynamicLayer('midground', midground, 0, 0);
-        this.map = map;
+
         //Cria a layer da casa do aldeão
         this.houseLayer = map.createDynamicLayer('casa', casa);
 
@@ -88,7 +87,7 @@ class Level_1 extends Phaser.Scene {
 
         //Cria um player dentro da cena da fase, com coordenadas x e y
         this.player = new Player(this);
-        this.player.spawnPlayer(6020, 20);
+        this.player.spawnPlayer(20, 352 );
 
         //Seta o bounce do player
         this.player.sprite.setBounce(0.1);
@@ -234,12 +233,6 @@ class Level_1 extends Phaser.Scene {
         this.slimes.update(this.player.sprite, this.slimes);
         this.secs = this.player.mins * 60 + this.player.timersecs;
         this.aldeao.update(this, this.player, this.msg);
-        if(this.player.intoHousePonte == true){
-
-            this.ponte = new Ponte(this.ponteConfig);
-            this.player.intoHousePonte = false;
-            
-        }
         this.ponte.update(this.player, this.alavancas);
         this.casa.update(this.player, this);
     }

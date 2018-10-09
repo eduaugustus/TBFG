@@ -1,22 +1,4 @@
-
-
-
 class CalculaPontuacao extends Phaser.Scene {
-	
-	CalculaPontuacao(fase, pontuacao, tempo){
-			$.ajax({
-				type: "POST",
-				url: "../../CadastraPontuacao",
-				data:"fase="+fase+"&pontuacao="+pontuacao+"&tempo="+tempo,
-				success: function (msg) {
-//					alert(msg.msg);
-				},
-				error: function () {
-//					alert(msg.msg);
-				}
-			});
-		}
-	
     constructor() {
         super({
             key: 'CalculaPontuacao'
@@ -27,7 +9,6 @@ class CalculaPontuacao extends Phaser.Scene {
         this.pontuacao = data.player.score;
         this.segundos = data.player.secs;
         this.minutos = data.player.mins;
-        this.fase = data.fase;
         this.tempo;
         this.ajustaTempo(this.segundos, this.minutos);
     }
@@ -55,15 +36,12 @@ class CalculaPontuacao extends Phaser.Scene {
         
         this.timeResultado = this.add.bitmapText(275, 275, 'myfont', this.tempo, 45);
         
-        this.CalculaPontuacao(this.fase, this.pontuacao, this.tempo);
 
     }
 
     ajustaTempo(segundos, minutos) {
         let result = (minutos < 10 ? "0" + minutos : minutos);
         result += ":" + (segundos < 10 ? "0" + segundos : segundos);
-        result = "00:" + result;
-        console.log(result);
         return this.tempo = result;
     }
     

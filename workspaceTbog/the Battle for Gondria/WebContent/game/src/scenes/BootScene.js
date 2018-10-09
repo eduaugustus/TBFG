@@ -24,7 +24,8 @@ class BootScene extends Phaser.Scene {
         /*Faz load dos arquivos usados na cena mainMenu e outras cenas  */
         this.load.image('btnJogar', '../../game/assets/images/botoes/btnJogar.png');
         this.load.image('btnJogarPress', '../../game/assets/images/botoes/btnJogarPress.png');
-
+        this.load.image('nuvem1','../../game/assets/images/itensCenario/nuvem_1.png');
+        this.load.image('nuvem2','../../game/assets/images/itensCenario/nuvem_2.png');
         this.load.image('btnAjuda', '../../game/assets/images/botoes/btnAjuda.png');
         this.load.image('btnAjudaPress', '../../game/assets/images/botoes/btnAjudaPress.png');
 
@@ -157,8 +158,6 @@ class BootScene extends Phaser.Scene {
         this.load.image('fase_3_background', '../../game/assets/background/fase_3_background.png');
         this.load.image('fase_3_tileset', '../../game/assets/tilesets/fase_3_tileset.png');
 
-        //Carrega imagens da fase 3 
-        this.load.image('fase_4_tileset', '../../game/assets/tilesets/fase_4_tileset.png');
         this.load.spritesheet('inimigo_die','../../game/assets/images/itensCenario/inimigo_die.png',{
             frameWidth:32,
             frameHeight:32

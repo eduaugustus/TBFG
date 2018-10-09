@@ -7,7 +7,7 @@ class Fantasmas {
             if (spawns[i].name === "spawn_fantasma") {
                 let fantasma = this.array.create(spawns[i].x, spawns[i].y, 'fantasma');
                 fantasma.body.allowGravity = false;
-//                console.log(fantasma);
+                console.log(fantasma);
                 fantasma.canHit = true;
                 fantasma.anims.play('ghost',true);
                 // goblin.setScale(2);

@@ -101,9 +101,9 @@ class Level_2_boss extends Phaser.Scene {
 
     let spawnLayer = mapBoss.getObjectLayer("spawns");
     this.spawns = spawnLayer.objects;
-    this.boss = new Goblins(this, this.spawns);
-    console.log(this.boss)
-    this.physics.add.collider(this.boss.boss, layer1);
+    this.goblins = new Goblins(this, this.spawns);
+    console.log(this.goblins);
+    this.physics.add.collider(this.goblins.boss, layer1);
     // this.slime_sound = this.sound.add('slime_boss');
     // this.slime_sound.setVolume(0.3);//////////////
 
@@ -113,7 +113,7 @@ class Level_2_boss extends Phaser.Scene {
   update() {
     this.player.update(this.boss, this, this.alavanca, this.ponte, this.aldeao, this.casa, this.moedas);
     this.secs = this.player.mins * 60 + this.player.timersecs;
-    this.boss.update(this.player.sprite);
+    this.goblins.update(this.player.sprite);
 
   }
 

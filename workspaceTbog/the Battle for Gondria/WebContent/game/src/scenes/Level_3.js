@@ -104,7 +104,10 @@ class Level_3 extends Phaser.Scene {
     this.player.sprite.setScale(0.5);
     this.player.criaKeys(this);
     this.colisao = false;
-   
+    let spawnLayer = map.getObjectLayer("spawns");
+    this.spawns = spawnLayer.objects;
+    this.goblins =  new Goblin_caverna(this, layer1); 
+    this.fantasmas = new Fantasmas(this);
     /*INICIO - Debug para colisão */
     // const debugGraphics = this.add.graphics().setAlpha(0.75/);
 
@@ -133,15 +136,15 @@ class Level_3 extends Phaser.Scene {
     //Seta os limites do mapa que a camera acompanhará
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
-    let spawnLayer = map.getObjectLayer("spawns");
-    this.spawns = spawnLayer.objects;
-     this.parado = true;
+    // let spawnLayer = map.getObjectLayer("spawns");
+    // this.spawns = spawnLayer.objects;
+    // this.goblins = new Goblins(this, layer1);
+    // this.parado = true;
     for (let i = 0; i < this.spawns.length; i++) {
       if (this.spawns[i].name === "Spawn_Flag") {
           this.bandeira = new Bandeira(this, this.spawns[i].x, this.spawns[i].y, this.player);
       }
     }
-    console.log(this.bandeira);
       // if (this.spawns[i].name === "spawn_aldeao") {
         // this.aldeao = new Aldeao(this, this.spawns[i].x, this.spawns[i].y);
         // this.aldeao.sprite.play('aldeaoMove');
@@ -149,8 +152,6 @@ class Level_3 extends Phaser.Scene {
     // }
 
     this.physics.add.collider(this.bandeira.sprite, layer1);
-    this.goblins =  new Goblin_caverna(this, layer1); 
-    this.fantasmas = new Fantasmas(this);
     // this.physics.add.collider(this.aldeao.sprite, layer1);
 
     /*Cria as moedas */

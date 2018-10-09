@@ -21,7 +21,8 @@ class Goblin_caverna {
 
             } else if (spawns[i].name === 'Spawn_Boss') {
                 let goblin = this.array.create(spawns[i].x, spawns[i].y, 'goblin_caverna');
-                goblin.lifes = 4;
+                goblin.lifes = 5;
+                // goblin.setScale(2);
                 goblin.jump = 0;
                 goblin.isHit = {
                     right: false,

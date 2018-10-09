@@ -215,7 +215,7 @@ class Level_load extends Phaser.Scene {
                 this.load.audio('music_2', '../../game/assets/musics/music_level_2.mp3');
                 this.load.audio('music_boss', '../../game/assets/musics/music_level_2_2.mp3');
                 this.load.audio('goblin_jump', '../../game/assets/sounds/goblin_jump.wav');
-                this.load.on('complete',()=>{
+                this.load.on('complete', () => {
                     let anims = this.anims;
                     anims.create({
                         key: 'goblin_hitted_right',
@@ -270,7 +270,7 @@ class Level_load extends Phaser.Scene {
                         }),
                         frameRate: 4,
                         repeat: -1,
-                        yoyo:true
+                        yoyo: true
                     });
                     anims.create({
                         key: 'goblin_hitting_left',
@@ -298,33 +298,21 @@ class Level_load extends Phaser.Scene {
                     frameWidth: 42,
                     frameHeight: 42
                 });
-                console.log( this.load.spritesheet('goblin_caverna', '../../game/assets/images/mobs/goblin_caverna_spritesheet.png', {
-                    frameWidth: 42,
-                    frameHeight: 42
-                }));
                 this.load.spritesheet('goblin_caverna_hit', '../../game/assets/images/mobs/goblin_caverna_hit.png', {
                     frameWidth: 42,
                     frameHeight: 42
                 });
-                console.log(this.load.spritesheet('goblin_caverna_hit', '../../game/assets/images/mobs/goblin_caverna_hit.png', {
-                    frameWidth: 42,
-                    frameHeight: 42
-                }));
-                this.load.spritesheet('fantasma','../../game/assets/images/mobs/fantasma.png',{
+                this.load.spritesheet('fantasma', '../../game/assets/images/mobs/fantasma_spritesheet.png', {
                     frameWidth: 58,
                     frameHeight: 50
-                });
-                console.log( this.load.spritesheet('fantasma','../../game/assets/images/mobs/fantasma.png',{
-                    frameWidth: 58,
-                    frameHeight: 50
-                }));
-                
+                })
+
                 this.load.tilemapTiledJSON("map_fase_3_boss", "../../game/assets/tilemap/map_fase_3_boss.json");
                 this.load.tilemapTiledJSON("map_fase_3", "../../game/assets/tilemap/map_fase_3.json");
                 this.load.audio('goblin_jump', '../../game/assets/sounds/goblin_jump.wav');
-                this.load.audio('music_3','../../game/assets/musics/music_level_3.mp3');
-                
-                this.load.on('complete',()=>{
+                this.load.audio('music_3', '../../game/assets/musics/music_level_3.mp3');
+                this.load.audio('music_3_2', '../../game/assets/musics/music_level_3_2.mp3');
+                this.load.on('complete', () => {
                     let anims = this.anims;
                     anims.create({
                         key: 'goblin_caverna_hitted_right',
@@ -379,7 +367,7 @@ class Level_load extends Phaser.Scene {
                         }),
                         frameRate: 4,
                         repeat: -1,
-                        yoyo:true
+                        yoyo: true
                     });
                     anims.create({
                         key: 'goblin_caverna_hitting_left',
@@ -399,7 +387,6 @@ class Level_load extends Phaser.Scene {
                         frameRate: 3,
                         repeat: -1
                     });
-                    
                     anims.create({
                         key: 'ghost',
                         frames: anims.generateFrameNumbers('fantasma', {
@@ -409,7 +396,6 @@ class Level_load extends Phaser.Scene {
                         frameRate: 8,
                         repeat: -1
                     });
-                    
                     anims.create({
                         key: 'ghost_back',
                         frames: anims.generateFrameNumbers('fantasma', {
@@ -419,8 +405,68 @@ class Level_load extends Phaser.Scene {
                         frameRate: 8,
                         repeat: -1
                     });
-                    
+
                 });
+                break;
+            case "Level_4":
+
+                //Carrega imagens da fase 3 
+                this.load.image('fase_4_tileset', '../../game/assets/tilesets/fase_4_tileset.png');
+                this.load.audio('music_4', '../../game/assets/musics/music_level_4.mp3');
+                this.load.audio('music_4_2', '../../game/assets/musics/music_level_4_2.mp3');
+                this.load.spritesheet('soldado','../../game/assets/images/mobs/soldado.png',{
+                    frameHeight:84,
+                    frameWidth:60
+                });
+                this.load.on('complete',()=>{
+                	let anims  = this.anims;
+                	anims.create({
+                		key: 'soldado_attack_right',
+                        frames: anims.generateFrameNumbers('soldado', {
+                            start: 10,
+                            end: 13
+                        }),
+                        frameRate: 4,
+                        repeat: -1
+                	});
+                	anims.create({
+                		key: 'soldado_attack_left',
+                        frames: anims.generateFrameNumbers('soldado', {
+                            start: 14,
+                            end: 17
+                        }),
+                        frameRate: 4,
+                        repeat: -1
+                	});
+                	anims.create({
+                		key: 'soldado_stand',
+                        frames: anims.generateFrameNumbers('soldado', {
+                            start: 4,
+                            end: 5
+                        }),
+                        frameRate: 4,
+                        repeat: -1
+                	});
+                	anims.create({
+                		key: 'soldado_walk_right',
+                        frames: anims.generateFrameNumbers('soldado', {
+                            start: 0,
+                            end: 3
+                        }),
+                        frameRate: 4,
+                        repeat: -1
+                	});
+                	anims.create({
+                		key: 'soldado_walk_left',
+                        frames: anims.generateFrameNumbers('soldado', {
+                            start: 6,
+                            end: 9
+                        }),
+                        frameRate: 4,
+                        repeat: -1
+                	});
+                });
+
             default:
                 break;
         }

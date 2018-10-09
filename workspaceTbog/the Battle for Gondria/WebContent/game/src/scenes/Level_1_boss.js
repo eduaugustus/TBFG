@@ -1,7 +1,6 @@
 import Player from "../sprites/player.js";
 import Slimes from "../sprites/enemies/slimes.js";
 import Bandeira from "../sprites/objects/bandeira.js";
-
 class Level_1_boss extends Phaser.Scene {
 
   constructor() {
@@ -19,8 +18,8 @@ class Level_1_boss extends Phaser.Scene {
     // console.log(this.player);
   }
   preload() {
-    this.load.audio('slime_boss', '../../game/assets/sounds/slime_boss_jump.wav');
-    this.load.tilemapTiledJSON("map_1_boss", "../../game/assets/tilemap/map_fase_1_boss.json");
+    this.load.audio('slime_boss', 'assets/sounds/slime_boss_jump.wav');
+    this.load.tilemapTiledJSON("map_1_boss", "assets/tilemap/map_fase_1_boss.json");
   }
 
 

@@ -1,11 +1,12 @@
 import Player from "../sprites/player.js";
-import Soldados from "../sprites/enemies/soldados.js";
+import Goblins from "../sprites/enemies/goblins.js";
 import Moeda from "../sprites/objects/Moeda.js";
 import Chave from "../sprites/objects/Chave.js";
 import Pocao from "../sprites/objects/pocao.js";
 import Aldeao from "../sprites/Aldeao.js";
 import Ponte from "../sprites/objects/ponte.js";
 import Casa from "../sprites/objects/casa.js";
+import Soldados from "../sprites/enemies/soldados.js";
 class Level_4 extends Phaser.Scene {
 
   constructor() {
@@ -17,12 +18,22 @@ class Level_4 extends Phaser.Scene {
   preload() {
 
     this.secs = 0;
+    this.load.tilemapTiledJSON("map_fase_4", "../../game/assets/tilemap/map_fase_4.json");
 
     // this.load.audio('slime_jump', 'assets/sounds/slime_jump.mp3');
   }
 
 
   create() {
+    if (this.music == undefined) {
+      this.music = this.sound.add('music_4');
+      this.music.setLoop(true);
+      this.music.setVolume(0.5);
+      this.music.play();
+    } else {
+      this.music.stop();
+      this.music.play();
+    }
     // if (this.music == undefined) {
     //   this.music = this.sound.add('music_2');
     //   this.music.setLoop(true);
@@ -103,7 +114,7 @@ class Level_4 extends Phaser.Scene {
 
     //Cria um player dentro da cena da fase, com coordenadas x e y
     this.player = new Player(this);
-    this.player.spawnPlayer(20, 0);
+    this.player.spawnPlayer(9332, 0);
 
     //Seta o bounce do player, escala da sprite, teclas de movimento e 
     //seta a colisão com os mobs como 'false'
@@ -111,9 +122,6 @@ class Level_4 extends Phaser.Scene {
     this.player.sprite.setScale(0.5);
     this.player.criaKeys(this);
     this.colisao = false;
-    let spawnLayer = map.getObjectLayer("spawns");
-    this.spawns = spawnLayer.objects;
-    this.soldados =  new Soldados(this, layer1); 
 
     /*INICIO - Debug para colisão */
     const debugGraphics = this.add.graphics().setAlpha(0.75);
@@ -143,8 +151,7 @@ class Level_4 extends Phaser.Scene {
     //Seta os limites do mapa que a camera acompanhará
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
-    // let spawnLayer = map.getObjectLayer("spawns");
-    // this.spawns = spawnLayer.objects;
+    
     // this.goblins =  new Goblins(this, layer1);
     // this.parado = true;
     // for (let i = 0; i < this.spawns.length; i++) {
@@ -165,7 +172,7 @@ class Level_4 extends Phaser.Scene {
         key: 'sprite_alavanca'
       }),
       alavanca_2: null
-    }
+    };
 
     /*this.ponte recebe a layer que ficará a ponte e também as
     coordenas de onde a ponte começa e termina*/
@@ -221,19 +228,22 @@ class Level_4 extends Phaser.Scene {
         this.chave = new Chave(this, this.layerObjetos.objects[i].x, this.layerObjetos.objects[i].y, this.player);
       }
     }
+    let spawnLayer = map.getObjectLayer("spawns");
+    this.spawns = spawnLayer.objects;
+    this.soldados = new Soldados(this,layer1);
 
     /*Criação da interação da casa*/
-     this.moved = false;
+    // this.moved = false;
     /*Coordenadas da porta da casa que o jogador
     terá que interagir */
-     this.casaConfig = {
-       x: 3950,
-       y: 130,
-       portaX: 864,
-       portaY: 244
-     };
+    // this.casaConfig = {
+    //   x: 4160,
+    //   y: 96,
+    //   portaX: 864,
+    //   portaY: 244
+    // };
 
-     this.casa = new Casa(this.casaConfig, this, this.player);
+    // this.casa = new Casa(this.casaConfig, this, this.player);
 
     /*Manda a msg para aldeão */
     // this.msg = 'Aldeao:\n'
@@ -253,12 +263,12 @@ class Level_4 extends Phaser.Scene {
   }
 
   update() {
-    this.player.update(this.goblins, this, this.layer1);
-    // this.goblins.update(this.player.sprite);
+    this.player.update(this.soldados, this, this.layer1);
+    this.soldados.update(this.player.sprite);
     this.secs = this.player.mins * 60 + this.player.timersecs;
     // this.aldeao.update(this, this.player, this.msg);
     this.ponte.update(this.player, this.alavancas);
-    this.casa.update(this.player, this);
+    // this.casa.update(this.player, this);
     this.layer1.forEachTile(tile => {
       if (tile.index == 817) {
         tile.collideDown = true;

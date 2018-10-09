@@ -1,5 +1,5 @@
 import Anims from '../sprites/Anims.js';
-
+import Nuvens from '../sprites/objects/nuvens.js';
 class MainMenu extends Phaser.Scene {
 
     constructor() {
@@ -27,15 +27,19 @@ class MainMenu extends Phaser.Scene {
         let middleground_2 = map.addTilesetImage('itensDeCenario', 'itensCenario');
         let middleground = map.addTilesetImage('montanhas', 'fase_1_montanhas');
         let background = map.addTilesetImage('sky', 'fase_1_sky');
-
+        
         map.createStaticLayer('background', background, 0, 0);
         map.createStaticLayer('middleground', middleground, 0, 0);
         map.createStaticLayer('middleground_2', middleground_2, 0, 0);
         map.createStaticLayer('foreground', foreground, 0, 0);
-
+        
         let hero = this.add.sprite(85, 375, 'sprite_hero');
         hero.anims.play('move');
-
+        
+        let spawnLayer = map.getObjectLayer("spawns");
+        console.log()
+        this.spawns = spawnLayer.objects;
+        this.nuvens = new Nuvens(this);        
         let logo = this.add.image(432, 200, 'logo');
         logo.setScale(0.13);
 
@@ -72,7 +76,6 @@ class MainMenu extends Phaser.Scene {
                 this.scene.scene.start('AjudaScene');
             },150)
         });
-        
     }
 
 }

@@ -1,6 +1,6 @@
 import Player from "../sprites/player.js";
-import Bandeira from "../sprites/objects/bandeira.js";
 import Goblins from "../sprites/enemies/goblins.js";
+import Bandeira from "../sprites/objects/bandeira.js";
 import Moeda from "../sprites/objects/Moeda.js";
 import Chave from "../sprites/objects/Chave.js";
 import Pocao from "../sprites/objects/pocao.js";
@@ -293,14 +293,7 @@ class Level_2 extends Phaser.Scene {
         this.layer1.setCollisionByProperty({
             collides: true
         });
-        if(this.player.intoHousePonte == true){
-
-            this.ponte = new Ponte(this.ponteConfig);
-            this.player.intoHousePonte = false;
-            
-        }
     }
-    
 
 }
 export default Level_2;
