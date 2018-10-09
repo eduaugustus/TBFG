@@ -61,6 +61,8 @@ class BootScene extends Phaser.Scene {
         this.load.image('btnFase4Press', '../../game/assets/images/botoes/btnFase4Press.png');
         this.load.image('btnVoltar', '../../game/assets/images/botoes/btnVoltar.png');
         this.load.image('btnVoltarPress', '../../game/assets/images/botoes/btnVoltarPress.png');
+        this.load.image('btnRestart', '../../game/assets/images/botoes/btnRestart.png');
+        this.load.image('btnRestartPress', '../../game/assets/images/botoes/btnRestartPress.png');
 
         this.load.image('fase_1_cor', '../../game/assets/images/menus/screenTBOG.png');
         this.load.image('fase_2_cor', '../../game/assets/images/menus/screenFase2.png');

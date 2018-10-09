@@ -5,6 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\xampp\htdocs\PROJETOS\CHALLENGE_BACKEND\TheBattleOfGondriaBackEnd\workspaceTbog"/>
 			<item value="C:\xampp\htdocs\PROJETOS\CHALLENGE_BACKEND\TheBattleOfGondriaBackEnd\workspaceTbog\the Battle for Gondria"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.131+C:\Users\arina\Desktop\TheBattleOfGondriaBackEnd\workspaceTbog\.metadata\.plugins\org.eclipse.jdt.core
 398058497.index
 1988513050.index
@@ -23,3 +24,30 @@ INDEX VERSION 1.131+C:\Users\arina\Desktop\TheBattleOfGondriaBackEnd\workspaceTb
 3523662158.index
 14682029.index
 3854475047.index
+=======
+INDEX VERSION 1.131+C:\xampp\htdocs\PROJETOS\CHALLENGE_BACKEND\TheBattleOfGondriaBackEnd\workspaceTbog\.metadata\.plugins\org.eclipse.jdt.core
+1084624933.index
+984225034.index
+728296283.index
+326805980.index
+1595051374.index
+1518219961.index
+3523662158.index
+1870878615.index
+3886402465.index
+2281365096.index
+14682029.index
+398058497.index
+3854475047.index
+4289135590.index
+2301944148.index
+1488943920.index
+2773834657.index
+2511617568.index
+1209697618.index
+2937197426.index
+1455593261.index
+1988513050.index
+3819157608.index
+1622776731.index
+>>>>>>> 878a2b6fcf208b757b793b289b1f8ae10e7763e7
