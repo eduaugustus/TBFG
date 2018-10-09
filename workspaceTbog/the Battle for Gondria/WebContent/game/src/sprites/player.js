@@ -1,10 +1,10 @@
 export default class Player {
 
   constructor(scene) {
+	
     this.isAttacking = false;
     this.sceneMainMenu = false;
     this.isInteracting = false;
-
     this.alavanca_1_Active = false;
     this.alavanca_2_Active = false;
 
@@ -12,6 +12,7 @@ export default class Player {
     this.intoHousePonte = false;
     this.oldScene = undefined;
     this.scene = scene;
+    this.level_name;
     this.hasIntoHouse = false;
     this.timermins = 0;
     this.timerhours = 0;
@@ -52,7 +53,8 @@ export default class Player {
       UP,
       Z,
       C,
-      P
+      P,
+      R
     } = Phaser.Input.Keyboard.KeyCodes;
     this.keys = scene.input.keyboard.addKeys({
       left: LEFT,
@@ -60,7 +62,8 @@ export default class Player {
       up: UP,
       atack: Z,
       action: C,
-      pause: P
+      pause: P,
+      restart: R
     });
   }
   
@@ -94,6 +97,10 @@ export default class Player {
     this.timer = this.timer + 1;
   }
   
+  restartScene(){
+	  this.scene.scene.restart();
+  }
+  
   update(enemies, scene, layer) {
     this.updateHUD();
     let colisao = scene.colisao;
@@ -105,7 +112,7 @@ export default class Player {
     if (this.sceneMainMenu) {
       this.scene.scene.start('MainMenu');
     }
-
+    
     if (keys.pause.isDown && this.menuIsSet == false&&this.canStop) {
       keys.left.isDown = false;
       keys.right.isDown = false;
@@ -114,19 +121,6 @@ export default class Player {
       this.scene.scene.run('MenuPause', [this, this.scene]);
       this.menuIsSet = true;
     }
-
-    // else{
-    //   console.log(this.keys.pause.isDown);
-    //   setInterval(()=>{
-    //     if(this.menuIsSet&&this.keys.pause.isDown){
-    //       this.menuIsSet = false;
-    //       this.scene.scene.stop('')
-    //       this.scene.scene.resume('Level_1');
-    //     }
-    //   },
-    //   1000
-    //     );
-    //   } 
 
     if (this.menuIsSet == false) {
       if (this.secs > 59) {

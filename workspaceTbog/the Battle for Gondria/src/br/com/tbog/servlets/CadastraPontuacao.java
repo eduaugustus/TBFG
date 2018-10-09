@@ -73,6 +73,9 @@ public class CadastraPontuacao extends HttpServlet {
         	
         	Pontuacao pontuacaobd = jdbc.buscaPontuacaoPorFase(pontuacao.getFase(), usuariobd.getId());
         	
+        	String pontuacaoMaisBonus = jdbc.somaPontuacaoBonus(pontuacao);
+        	pontuacaobd.setPontuacao(pontuacaoMaisBonus);
+        	
         	if(pontuacaobd.getFase() == null) {
         		jdbc.cadastraNovaPontucao(pontuacao);
         	}else{
