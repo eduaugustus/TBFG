@@ -19,7 +19,6 @@ class Ponte {
 
     
     if (this.ponte_2_ativada == false) {
-      this.ponte_2_ativada = true;
 
       /*Pega a diferença da distancia entre o player e a alavanca */
       let alavanca_1_X;
@@ -35,6 +34,7 @@ class Ponte {
       a alavanca é atavida e é feita a construção da ponte */
       if ((alavanca_1_Y < 72)) {
         if ((alavanca_1_X < 50 && alavanca_1_X > 0) && this.player.alavanca_1_Active == false) {
+        	this.ponte_2_ativada = true;
           this.player.alavanca_1_Active = true;
           let indexTronco = this.config.IndexBlocoDeColisao;
           let indexGrade = this.config.IndexBlocoDeNaoColisao;

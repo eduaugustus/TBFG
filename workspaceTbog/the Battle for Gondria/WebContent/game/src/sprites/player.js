@@ -7,7 +7,6 @@ export default class Player {
     this.isInteracting = false;
     this.alavanca_1_Active = false;
     this.alavanca_2_Active = false;
-
     this.intoHouse = false;
     this.oldScene = undefined;
     this.scene = scene;

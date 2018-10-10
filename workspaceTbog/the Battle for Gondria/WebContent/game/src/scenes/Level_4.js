@@ -114,7 +114,7 @@ class Level_4 extends Phaser.Scene {
 
     //Cria um player dentro da cena da fase, com coordenadas x e y
     this.player = new Player(this);
-    this.player.spawnPlayer(9332, 0);
+    this.player.spawnPlayer(20, 0);
 
     //Seta o bounce do player, escala da sprite, teclas de movimento e 
     //seta a colisão com os mobs como 'false'
@@ -126,17 +126,17 @@ class Level_4 extends Phaser.Scene {
     /*INICIO - Debug para colisão */
     const debugGraphics = this.add.graphics().setAlpha(0.75);
 
-    layer1.renderDebug(debugGraphics, {
-      tileColor: null, // Color of non-colliding tiles
-      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-      faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-    });
-
-    layer2.renderDebug(debugGraphics, {
-      tileColor: null, // Color of non-colliding tiles
-      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-      faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-    });
+//    layer1.renderDebug(debugGraphics, {
+//      tileColor: null, // Color of non-colliding tiles
+//      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
+//      faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
+//    });
+//
+//    layer2.renderDebug(debugGraphics, {
+//      tileColor: null, // Color of non-colliding tiles
+//      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
+//      faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
+//    });
     /*FIM - Debug para colisão */
 
     //Seta a colisão do player com a layer 1
@@ -265,7 +265,8 @@ class Level_4 extends Phaser.Scene {
   update() {
     this.player.update(this.soldados, this, this.layer1);
     this.soldados.update(this.player.sprite);
-    this.secs = this.player.mins * 60 + this.player.timersecs;
+    this.secs = this.player.mins * 60 + this.player.secs;
+    console.log(this.secs);
     // this.aldeao.update(this, this.player, this.msg);
     this.ponte.update(this.player, this.alavancas);
     // this.casa.update(this.player, this);

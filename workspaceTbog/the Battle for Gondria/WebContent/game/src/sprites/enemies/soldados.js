@@ -60,7 +60,7 @@ class Soldados {
             if(soldado.lifes>0&& !soldado.isHit.left&&!soldado.isHit.right){
             	let xDistance = player.x-soldado.x;
             	let yDistance = player.y-soldado.y;
-            	if(yDistance<60){
+            	if(yDistance<60&&yDistance>-60){
             		if(xDistance<100&&xDistance>=0){
             			if(!soldado.isAttacking){            	
             			soldado.anims.play('soldado_walk_right',true);
@@ -78,16 +78,15 @@ class Soldados {
             			soldado.setVelocityX(0)
             		}
             		if(xDistance<40&&xDistance>=0){
-            			soldado.isAttacking = true;
             			if(!soldado.isAttacking){            	
+            				soldado.isAttacking = true;
             				soldado.anims.play('soldado_attack_right',true);
             			}
-            			setTimeout(()=>{this.collides = true},500)
-            			
+            			setTimeout(()=>{this.collides = true},500);
             			setTimeout(()=>{soldado.isAttacking = false},1000)
             		}else if(xDistance>-40&&xDistance<0){
-            			soldado.isAttacking = true;
             			if(!soldado.isAttacking){            	
+            				soldado.isAttacking = true;
             				soldado.anims.play('soldado_attack_left',true);
             			}
             			setTimeout(()=>{this.collides = true},500);
@@ -107,12 +106,14 @@ class Soldados {
                     soldado.destroy();
                 }, 466);
 
-            }else{
-            	setTimeout(()=>{            		
-            	if(soldado.body.onFloor()){
-            		soldado.isHit.right= false;
-            		soldado.isHit.left= false;
-            	}
+            }else if(soldado.isDead ==false){
+            	setTimeout(()=>{       
+            		if(soldado.body!= undefined){
+            			if(soldado.body.onFloor()){
+            				soldado.isHit.right= false;
+            				soldado.isHit.left= false;            			
+            			}
+            		}
             	},500)
             }
            }
