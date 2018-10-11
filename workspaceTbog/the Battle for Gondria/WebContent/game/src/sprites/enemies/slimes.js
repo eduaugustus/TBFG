@@ -98,9 +98,13 @@ class Slimes {
             if (slime === this.boss) {
                 if (slime.lifes == 0) {
                     this.c_player.active = false;
-                    
+                    player.score += 1000;
+                    console.log(player);
                     let data = {
-                        player: this.scene.player
+                        player: this.scene.player,
+                        fase: "1",
+                        bossPontuacao : 1000
+                        
                     };
                     slime.anims.play('morte');
                     slime.lifes = -1;

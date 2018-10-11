@@ -65,34 +65,39 @@ public class CadastraPontuacao extends HttpServlet {
         	pontuacao.setFase(request.getParameter("fase"));
         	pontuacao.setTempo(request.getParameter("tempo"));
         	pontuacao.setUsuario(usuariobd.getId());
-        	System.out.println("=========================");
-        	System.out.println(pontuacao.getPontuacao());
-        	System.out.println(pontuacao.getFase());
-        	System.out.println(pontuacao.getTempo());
-        	System.out.println(pontuacao.getUsuario());
+        	
+        	int pontuacaoFase = Integer.parseInt(pontuacao.getPontuacao());
+        	int bonusDeTempo = jdbc.somaPontuacaoBonus(pontuacao);
+        	
+        	String pontuacaoTotal = Integer.toString(pontuacaoFase + bonusDeTempo);
+        	pontuacao.setPontuacao(pontuacaoTotal);
         	
         	Pontuacao pontuacaobd = jdbc.buscaPontuacaoPorFase(pontuacao.getFase(), usuariobd.getId());
-        	
-        	String pontuacaoMaisBonus = jdbc.somaPontuacaoBonus(pontuacao);
-        	pontuacaobd.setPontuacao(pontuacaoMaisBonus);
         	
         	if(pontuacaobd.getFase() == null) {
         		jdbc.cadastraNovaPontucao(pontuacao);
         	}else{
         		
-        		int segundosFront = jdbc.formataTempoParaSegundos(pontuacao.getTempo());
-        		int segundosbd = jdbc.formataTempoParaSegundos(pontuacaobd.getTempo());
         		int pontFront = Integer.parseInt(pontuacao.getPontuacao());
         		int pontbd = Integer.parseInt(pontuacaobd.getPontuacao())
 ;        		
-        		if( ((segundosFront < segundosbd) && ( pontFront > pontbd)) ||
-        			((segundosFront < segundosbd) && ( pontFront == pontbd))||
-        			((segundosFront < segundosbd) && ( pontFront > pontbd)) ||
-        			((segundosFront == segundosbd) && ( pontFront > pontbd)) ){
+        		if(pontFront > pontbd){ 
         			jdbc.atualizaPontuacao(pontuacao);
         		}    			
         		
     		}
+        	
+        	int[] pontuacoes = new int[2];
+        	pontuacoes[0] = Integer.parseInt(pontuacao.getPontuacao()) ;
+        	pontuacoes[1] = bonusDeTempo;
+        	
+        	conec.fecharConexao();
+        	
+			String json = new Gson().toJson(pontuacoes);
+
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(json);
         	
     	}catch(Exception e) {
     		e.printStackTrace();

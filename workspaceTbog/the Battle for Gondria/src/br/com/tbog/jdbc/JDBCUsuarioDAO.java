@@ -395,55 +395,57 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		}
 	}
 	
-	public String somaPontuacaoBonus(Pontuacao pontuacao) {
-		int pontuacaoMaisBonusInt = Integer.parseInt(pontuacao.getPontuacao());
+	public int somaPontuacaoBonus(Pontuacao pontuacao) {
+		
+		int tempoBonus = 0;
 		int segundosFase = formataTempoParaSegundos(pontuacao.getTempo());
+		System.out.println(segundosFase);
 		
 		if(pontuacao.getFase().equals("1")) {
 			if(segundosFase <= 160) {//Meta 1 de tempo
-				pontuacaoMaisBonusInt += 1000;
+				tempoBonus = 1000;
 			}else if(segundosFase <= 180) {//Meta 2 de tempo
-				pontuacaoMaisBonusInt += 750;
+				tempoBonus = 750;
 			}else if(segundosFase <= 255) {//Meta 3 de tempo
-				pontuacaoMaisBonusInt += 500;
+				tempoBonus = 500;
 			}else if(segundosFase >= 256) {//Meta 4 de tempo
-				pontuacaoMaisBonusInt += 250;
+				tempoBonus = 250;
 			}
 		}else if(pontuacao.getFase().equals("2")) {
 			if(segundosFase <= 160) {//Meta 1 de tempo
-				pontuacaoMaisBonusInt += 1000;
+				tempoBonus = 1000;
 			}else if(segundosFase <= 180) {//Meta 2 de tempo
-				pontuacaoMaisBonusInt += 750;
+				tempoBonus = 750;
 			}else if(segundosFase <= 255) {//Meta 3 de tempo
-				pontuacaoMaisBonusInt += 500;
+				tempoBonus = 500;
 			}else if(segundosFase >= 256) {//Meta 4 de tempo
-				pontuacaoMaisBonusInt += 250;
+				tempoBonus = 250;
 			}
 		}else if(pontuacao.getFase().equals("3")) {
 			if(segundosFase <= 160) {//Meta 1 de tempo
-				pontuacaoMaisBonusInt += 1000;
+				tempoBonus = 1000;
 			}else if(segundosFase <= 180) {//Meta 2 de tempo
-				pontuacaoMaisBonusInt += 750;
+				tempoBonus = 750;
 			}else if(segundosFase <= 255) {//Meta 3 de tempo
-				pontuacaoMaisBonusInt += 500;
+				tempoBonus = 500;
 			}else if(segundosFase >= 256) {//Meta 4 de tempo
-				pontuacaoMaisBonusInt += 250;
+				tempoBonus = 250;
 			}
 		}else if(pontuacao.getFase().equals("4")) {
 			if(segundosFase <= 160) {//Meta 1 de tempo
-				pontuacaoMaisBonusInt += 1000;
+				tempoBonus = 1000;
 			}else if(segundosFase <= 180) {//Meta 2 de tempo
-				pontuacaoMaisBonusInt += 750;
+				tempoBonus = 750;
 			}else if(segundosFase <= 255) {//Meta 3 de tempo
-				pontuacaoMaisBonusInt += 500;
+				tempoBonus = 500;
 			}else if(segundosFase >= 256) {//Meta 4 de tempo
-				pontuacaoMaisBonusInt += 250;
+				tempoBonus = 250;
 			}
 		}
 		
 		
-		String pontuacaoMaisBonus = Integer.toString(pontuacaoMaisBonusInt);
-		return pontuacaoMaisBonus;
+		System.out.println(tempoBonus);
+		return tempoBonus;
 	}
 	
 	

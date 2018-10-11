@@ -16,7 +16,7 @@ import CalculaPontuacao from './src/scenes/CalculaPontuacao.js';
 import Level_4 from './src/scenes/Level_4.js';
 const config = {
     type: Phaser.WEBGL,
-    parent: 'content',
+    parent: 'canvas_Jogo',
     width: 864,
     height: 480,
     physics: {

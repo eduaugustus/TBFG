@@ -1,19 +1,45 @@
+var pontuacaoTotal, pontuacaoBonusTempo;
+
 class CalculaPontuacao extends Phaser.Scene {
     constructor() {
         super({
             key: 'CalculaPontuacao'
         });
+        this.pontuacaoTotal;
+		this.pontuacaoBonusTempo;
+    }
+    
+    init(data){
+    	this.pontuacao = data.player.score;
+    	this.fase = data.fase;
+    	this.pontBoss = data.bossPontuacao;
+    	this.segundos = data.player.secs;
+    	this.minutos = data.player.mins;
+    	this.tempo;
+    	this.ajustaTempo(this.segundos, this.minutos);
+    }
+    
+    cadastraPontuacao(tempo, pontuacao, bossPontuacao, fase){
+    	$.ajax({
+    		type: "POST",
+			url: "../../CadastraPontuacao",
+			data:"tempo="+tempo+"&pontuacao="+(pontuacao + bossPontuacao)+"&fase="+fase,
+			success: function (pontuacoes) {
+				pontuacaoTotal = pontuacoes[0];
+				pontuacaoBonusTempo = pontuacoes[1];
+				console.log(pontuacoes);
+				console.log(pontuacaoTotal);
+				console.log(pontuacaoBonusTempo);
+			},
+			error: function (msg) {
+				alert(msg.msg);
+			}
+    	});
     }
 
-    init(data){
-        this.pontuacao = data.player.score;
-        this.segundos = data.player.secs;
-        this.minutos = data.player.mins;
-        this.tempo;
-        this.ajustaTempo(this.segundos, this.minutos);
-    }
 
     create() {
+    	this.cadastraPontuacao(this.tempo, this.pontuacao, this.pontBoss, this.fase);
 
         this.add.image(432, 240, 'bgGeral');
 
@@ -29,23 +55,25 @@ class CalculaPontuacao extends Phaser.Scene {
             }, 150)
         });
 
-        this.pont = this.add.bitmapText(100, 150, 'myfont', 'Pontuacao:', 50);
-        this.time = this.add.bitmapText(100, 275, 'myfont', 'Tempo:', 50);
-
-        this.pontResult = this.add.bitmapText(400, 150, 'myfont', this.pontuacao, 45);
+        this.pontFase = this.add.bitmapText(40, 150, 'myfont', 'Pontuacao Fase: ' + this.pontuacao, 40);
+        this.time = this.add.bitmapText(500, 150, 'myfont', 'Tempo: ' + this.tempo, 40);
         
-        this.timeResultado = this.add.bitmapText(275, 275, 'myfont', this.tempo, 45);
-        
+        setTimeout(() => {
+        	this.pontTempoBonus = this.add.bitmapText(40, 220, 'myfont', 'Bonus de tempo: +' + pontuacaoBonusTempo, 40);
+            this.pontBoss = this.add.bitmapText(40, 290, 'myfont', 'Boss morto: +' + this.pontBoss, 40);
+            this.pontTotal = this.add.bitmapText(40, 360, 'myfont', 'Pontuacao Total: ' + pontuacaoTotal, 50);
+        }, 750);
 
+        
     }
 
     ajustaTempo(segundos, minutos) {
         let result = (minutos < 10 ? "0" + minutos : minutos);
         result += ":" + (segundos < 10 ? "0" + segundos : segundos);
+        result = "00:" + result;
         return this.tempo = result;
     }
     
-
 }
 
 export default CalculaPontuacao;
