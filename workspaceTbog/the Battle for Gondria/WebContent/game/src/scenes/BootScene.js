@@ -64,13 +64,13 @@ class BootScene extends Phaser.Scene {
         this.load.image('btnRestart', '../../game/assets/images/botoes/btnRestart.png');
         this.load.image('btnRestartPress', '../../game/assets/images/botoes/btnRestartPress.png');
 
-        this.load.image('fase_1_cor', '../../game/assets/images/menus/screenTBOG.png');
-        this.load.image('fase_2_cor', '../../game/assets/images/menus/screenFase2.png');
-        this.load.image('fase_2_pb', '../../game/assets/images/menus/screenTBOGpreta.png');
-        this.load.image('fase_3_cor', '../../game/assets/images/menus/screenTBOG.png');
-        this.load.image('fase_3_pb', '../../game/assets/images/menus/screenTBOGpreta.png');
-        this.load.image('fase_4_cor', '../../game/assets/images/menus/screenTBOG.png');
-        this.load.image('fase_4_pb', '../../game/assets/images/menus/screenTBOGpreta.png');
+        this.load.image('fase_1_cor', '../../game/assets/images/menus/fase_1.png');
+        this.load.image('fase_2_cor', '../../game/assets/images/menus/fase_2.png');
+        this.load.image('fase_2_pb', '../../game/assets/images/menus/fase_2_pb.png');
+        this.load.image('fase_3_cor', '../../game/assets/images/menus/fase_3.png');
+        this.load.image('fase_3_pb', '../../game/assets/images/menus/fase_3_pb.png');
+        this.load.image('fase_4_cor', '../../game/assets/images/menus/fase_4.png');
+        this.load.image('fase_4_pb', '../../game/assets/images/menus/fase_4_pb.png');
 
         this.load.audio('menusMusic', '../../game/assets/musics/scenesMusics/menuMusic.mp3');
 

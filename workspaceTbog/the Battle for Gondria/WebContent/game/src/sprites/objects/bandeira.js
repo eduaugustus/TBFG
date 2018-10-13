@@ -17,7 +17,6 @@ class Bandeira {
         this.player.canStop = false;
         this.player.initBossSecs = this.player.secs;
         this.player.initBossMins = this.player.mins;
-        console.log(this.ended);
         if(!this.ended){
             setTimeout(()=>{
                 this.scene.stop();

@@ -83,7 +83,6 @@ class Slimes {
 
             player.setVelocityY(-150);
             this.player.lifes -= 1;
-            console.log(this.player.lifes + ' - player slime hit');
             this.player.hit.play();
         } else {
             slime.setVelocityX(0);
@@ -99,7 +98,6 @@ class Slimes {
                 if (slime.lifes == 0) {
                     this.c_player.active = false;
                     player.score += 1000;
-                    console.log(player);
                     let data = {
                         player: this.scene.player,
                         fase: "1",

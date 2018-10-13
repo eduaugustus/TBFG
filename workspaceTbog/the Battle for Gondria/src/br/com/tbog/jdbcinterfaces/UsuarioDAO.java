@@ -8,6 +8,8 @@ import br.com.tbog.classes.Usuario;
 
 public interface UsuarioDAO {
 	
+	public void adicionaVisita(Usuario usuariobd); 
+	
 	/*Interface buscarPorUsuario que define acesso e manipulação do BD*/
 	public Usuario buscarPorUsuario(Usuario usuariobd);
 	
@@ -20,9 +22,6 @@ public interface UsuarioDAO {
 	/*Interface consultaRanking que define acesso e manipulação do BD*/
 	public List<Pontuacao> consultaRanking(String fase);
 	
-	/*Interface inserePontuacao que define acesso e manipulação do BD*/
-	public boolean inserePontuacao(String fase, String pontuacao, Usuario usuario, String tempo);
-	
 	/*Interface atualizarUsuario que define acesso e manipulação do BD*/
 	public boolean atualizarUsuario(Usuario usuarioFrontEnd);
 	
@@ -31,5 +30,15 @@ public interface UsuarioDAO {
 	
 	/*Interface deletaUsuario que define acesso e manipulação do BD*/
 	public boolean deletaUsuario(Usuario usuario);
+	
+	public int buscaUltimaFase(Usuario usuario);
+	
+	public Pontuacao buscaPontuacaoPorFase(String fase, String usuarioId);
+	
+	public void cadastraNovaPontucao(Pontuacao pontuacao);
+	
+	public void atualizaPontuacao(Pontuacao pontuacao);
+	
+	
 	
 }

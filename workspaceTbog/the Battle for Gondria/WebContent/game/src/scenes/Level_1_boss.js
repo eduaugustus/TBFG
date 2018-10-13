@@ -14,9 +14,8 @@ class Level_1_boss extends Phaser.Scene {
     data.player.canStop = true;
     data.player.scene.music.stop();
     this.player.setScene(this);
-
-    // console.log(this.player);
   }
+  
   preload() {
     this.load.audio('slime_boss', '../../game/assets/sounds/slime_boss_jump.wav');
     this.load.tilemapTiledJSON("map_1_boss", "../../game/assets/tilemap/map_fase_1_boss.json");
@@ -59,7 +58,6 @@ class Level_1_boss extends Phaser.Scene {
     layer1.forEachTile(tile => {
       // alert('oieeeee');
       if (tile.index != -1) {
-        // console.log(tile);
         tile.collideDown = true;
         tile.collideUp = true;
         tile.collideLeft = true;

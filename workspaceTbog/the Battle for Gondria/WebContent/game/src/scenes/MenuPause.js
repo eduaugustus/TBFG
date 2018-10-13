@@ -8,8 +8,6 @@ class MenuPause extends Phaser.Scene {
         this.player = data[0];
         this.name = data[1];
         this.player.keys.pause.isDown = false;
-        console.log(this.player);
-        console.log(this.player.keys.pause.isDown)
     	this.player.deletaIntervalo();
 
     }
@@ -19,7 +17,6 @@ class MenuPause extends Phaser.Scene {
         let restartBtn = this.add.image(432, 400, "btnRestart").setInteractive();
         restartBtn.setScale(0.65);
         restartBtn.setScrollFactor(0);
-        console.log(this.name);
         restartBtn.on('pointerdown', () => {
             this.player.menuIsSet = false;
             this.scene.moveBelow('MenuPause', this.name);
@@ -30,7 +27,6 @@ class MenuPause extends Phaser.Scene {
         let jogarBtn = this.add.image(432, 310, "btnJogar").setInteractive();
         jogarBtn.setScale(0.65);
         jogarBtn.setScrollFactor(0);
-        console.log(this.name);
         jogarBtn.on('pointerdown', () => {
             this.player.menuIsSet = false;
             this.scene.moveBelow('MenuPause', this.name);
@@ -43,7 +39,6 @@ class MenuPause extends Phaser.Scene {
         let voltarBtn = this.add.image(432, 200, "btnVoltar").setInteractive();
         voltarBtn.setScale(0.65);
         voltarBtn.setScrollFactor(0);
-        // console.log(this.player.scene);
         voltarBtn.on('pointerdown', () => {
             this.name.music.stop();
             // this.name.music.stop();
@@ -51,7 +46,6 @@ class MenuPause extends Phaser.Scene {
             this.scene.sendToBack();
             this.scene.stop('MenuPause');
             this.player.keys.pause.isDown = false;
-            // console.log(this.scene);
             this.scene.stop(this.name.name);
             this.scene.resume(this.name);
         });

@@ -38,7 +38,7 @@ export default class Player {
     this.sprite = undefined;
     this.lifes = 4;
     this.score = 0;
-    this.chave = 1;
+    this.chave = 0;
     this.lastLeftLast = false;
     this.oldSprite = undefined;
     this.canStop = true;
@@ -69,7 +69,6 @@ export default class Player {
   criaIntervalo() {
     this.intervalo = setInterval(() => {
       this.secs++;
-      // console.log(this.secs);
     }, 1000);
   }
   
@@ -165,7 +164,6 @@ export default class Player {
 
         //ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
         if (colisao == true) {
-          // console.log(sprite.body.blocked.down);
           setTimeout(() => {
             if (sprite.body.blocked.down) {
               scene.colisao = false;
@@ -288,7 +286,6 @@ export default class Player {
               enemy.lifes--;
               enemy.canHit = false;
               
-              console.log(enemy.lifes)
             }
           }
 
@@ -302,7 +299,6 @@ export default class Player {
 
     /*Atualiza a pontuação do jogador */
     this.scene.score.text = this.score;
-    // console.log(this.secs);
     if (this.mins < 10 && this.secs < 10) {
       this.timeText.text = '0' + this.mins + ':0' + this.secs;
     } else if (this.mins < 10) {

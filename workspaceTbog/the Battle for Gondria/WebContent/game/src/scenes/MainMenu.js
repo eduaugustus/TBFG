@@ -37,7 +37,6 @@ class MainMenu extends Phaser.Scene {
         hero.anims.play('move');
         
         let spawnLayer = map.getObjectLayer("spawns");
-        console.log()
         this.spawns = spawnLayer.objects;
         this.nuvens = new Nuvens(this);        
         let logo = this.add.image(432, 200, 'logo');
@@ -54,7 +53,6 @@ class MainMenu extends Phaser.Scene {
             music.setLoop(true);
             music.setVolume(0.3);
         }
-        // console.log(this.sound);
         if(this.sound.sounds[0].isPlaying==false){
             this.sound.sounds[0].play();
         }

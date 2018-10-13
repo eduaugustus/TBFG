@@ -55,7 +55,7 @@ public class CarregaFase extends HttpServlet {
 			Usuario usuariobd = jdbcUsuario.buscarPorUsuario(usuario);
 
 			/*Busca um usuário com o apelido ou o email iguais no BD*/
-			String faseParada = jdbcUsuario.buscaUltimaFase(usuariobd);
+			int faseParada = jdbcUsuario.buscaUltimaFase(usuariobd);
 			
 			
 			/*Fecha a conexão com o BD*/

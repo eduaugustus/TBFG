@@ -76,7 +76,6 @@ class Level_1 extends Phaser.Scene {
         layer2.forEachTile(tile => {
             // alert('oieeeee');
             if (tile.index != -1) {
-                // console.log(tile);
                 tile.collideDown = false;
                 tile.collideUp = true;
                 tile.collideLeft = false;
@@ -169,7 +168,6 @@ class Level_1 extends Phaser.Scene {
             yIndexNaoColisao_2: null,
 
         };
-        // console.log(this.ponteConfig);
 
         this.ponte = new Ponte(this.ponteConfig);
 

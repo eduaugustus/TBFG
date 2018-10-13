@@ -3,8 +3,6 @@ class Chave {
   constructor(scene, x, y,player) {
     this.scene = scene;
     this.player = player;
-    // console.log(this.scene);
-    // console.log(this.scene.player.chave);
     this.sprite = this.scene.physics.add.sprite(x, y, "sprite_chave", 0);
 
     this.sprite.body.allowGravity = false;

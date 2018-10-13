@@ -191,48 +191,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 	}
 
 
-	public boolean inserePontuacao(String fase, String pontuacao, Usuario usuario, String tempo) {
-		// TODO Auto-generated method stub
-		String sql = "SELECT * FROM pontuacoes as p , usuarios as u WHERE p.fase = ? AND p.usuarios_id=?";
-		try {
-			PreparedStatement p = this.conexao.prepareStatement(sql);
-			p.setString(1, fase);
-			p.setString(2, usuario.getId());
-			ResultSet rs =p.executeQuery();
-			if(rs.next()) {				
-				if(Integer.parseInt(rs.getString("pontuacao"))<Integer.parseInt(pontuacao)) {
-					String sqlu = "UPDATE pontuacoes  SET pontuacao = "+pontuacao+ " ,tempo = '"+tempo+"' WHERE usuarios_id = "+usuario.getId()+" AND fase="+fase; 
-					Statement stmt = this.conexao.createStatement();
-					stmt.executeUpdate(sqlu);
-					return true;
-				}else {
-					return false;
-				}
-			}else {
-				String comando = "INSERT INTO pontuacoes (fase,pontuacao,usuarios_id,tempo) VALUES(?,?,?,?)";
-				PreparedStatement ps= this.conexao.prepareStatement(comando);
-				ps.setString(1, fase);
-				ps.setString(2, pontuacao);
-				ps.setInt(3, Integer.parseInt(usuario.getId()));
-				ps.setString(4, tempo);
-				int count = ps.executeUpdate();
-				if (count > 0){
-					return true; 
-				}else {
-					return false;
-				}
-			}
-		}catch(Exception e ) {
-			e.printStackTrace();
-		}
-		
-		try {
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-	
 	public boolean atualizarUsuario(Usuario usuarioFrontEnd) {
 		
 		String comando = "UPDATE usuarios SET senha=?, nome=?, data_nascimento=?, email=?";
@@ -288,32 +246,41 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 	}
 	
 	/*Fase que busca a última fase do jogador*/
-	public String buscaUltimaFase(Usuario usuario){
+	public int buscaUltimaFase(Usuario usuario){
 		
-		String queryFase = "SELECT MAX(fase) AS `faseParada` FROM pontuacoes WHERE usuarios_id = '"+usuario.getId()+"' ";
-		
-		String faseParada = "0"; 
+		String queryFase = "SELECT MAX(fase) AS `faseParada` FROM pontuacoes WHERE usuarios_id =? ";
+		String faseParadaString = "";
+		int faseParada = 0; 
 		
 		try{
-			Statement stmt = conexao.createStatement();
-			ResultSet rs = stmt.executeQuery(queryFase);
+			PreparedStatement p = conexao.prepareStatement(queryFase);
+			p.setString(1, usuario.getId());
+			ResultSet rs = p.executeQuery();
 			
 			/*Instrução que verifica se há alguma linha no Data Table, caso exista
 			 * pega as informações existentes*/
 			while(rs.next()) {
 
 				/*Variável que são colocadas as informações da consulta*/
-				faseParada = rs.getString("faseParada");
+					faseParadaString = rs.getString("faseParada");
 
+					if(faseParadaString == null){
+						faseParada = 1;
+					}else {
+						/*Adiciona mais um na variável 'faseParada' quando há algum registro de pontuação
+						 * no bd, possibilitando a liberação da próxima fase ao jogador*/
+						faseParada = Integer.parseInt(rs.getString("faseParada"));
+						if(faseParada < 4) {
+							faseParada++;
+						}
+					}
 			}
+			
 			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		
-		if(faseParada == null){
-			faseParada = "0";
-		}
 		
 		return faseParada;
 	}
@@ -357,7 +324,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 			p.setString(1, pontuacao.getTempo());
 			p.setString(2, pontuacao.getPontuacao());
 			p.setString(3, pontuacao.getFase());
-			System.out.println(pontuacao.getUsuario());
 			p.setString(4, pontuacao.getUsuario());
 			p.execute();
 			
@@ -399,7 +365,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 		
 		int tempoBonus = 0;
 		int segundosFase = formataTempoParaSegundos(pontuacao.getTempo());
-		System.out.println(segundosFase);
 		
 		if(pontuacao.getFase().equals("1")) {
 			if(segundosFase <= 160) {//Meta 1 de tempo
@@ -443,8 +408,6 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 			}
 		}
 		
-		
-		System.out.println(tempoBonus);
 		return tempoBonus;
 	}
 	

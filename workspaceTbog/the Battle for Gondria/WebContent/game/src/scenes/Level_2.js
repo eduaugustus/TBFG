@@ -212,7 +212,6 @@ class Level_2 extends Phaser.Scene {
             IndexBlocoDeNaoColisao: 816,
             
         };
-        console.log(this.ponteConfig);
 
         this.ponte = new Ponte(this.ponteConfig);
 

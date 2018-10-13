@@ -46,7 +46,6 @@ class Soldados {
             soldado.canMove = false;
             player.setVelocityY(-100);
             this.player.lifes -= 1;
-            console.log(this.player.lifes + ' - player goblin hit');
             this.player.hit.play();
             player.setVelocityY(-150);
             this.player.hit.play();

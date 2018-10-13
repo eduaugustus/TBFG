@@ -124,7 +124,7 @@ class Level_4 extends Phaser.Scene {
     this.colisao = false;
 
     /*INICIO - Debug para colisão */
-    const debugGraphics = this.add.graphics().setAlpha(0.75);
+    /*const debugGraphics = this.add.graphics().setAlpha(0.75);
 
     layer1.renderDebug(debugGraphics, {
       tileColor: null, // Color of non-colliding tiles
@@ -136,7 +136,7 @@ class Level_4 extends Phaser.Scene {
       tileColor: null, // Color of non-colliding tiles
       collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
       faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-    });
+    });*/
     /*FIM - Debug para colisão */
 
     //Seta a colisão do player com a layer 1

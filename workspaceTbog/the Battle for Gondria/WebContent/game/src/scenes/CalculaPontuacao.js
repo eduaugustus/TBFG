@@ -27,9 +27,6 @@ class CalculaPontuacao extends Phaser.Scene {
 			success: function (pontuacoes) {
 				pontuacaoTotal = pontuacoes[0];
 				pontuacaoBonusTempo = pontuacoes[1];
-				console.log(pontuacoes);
-				console.log(pontuacaoTotal);
-				console.log(pontuacaoBonusTempo);
 			},
 			error: function (msg) {
 				alert(msg.msg);

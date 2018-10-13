@@ -290,7 +290,6 @@ class Level_load extends Phaser.Scene {
                         frameRate: 3,
                         repeat: -1
                     });
-                    console.log(anims);
                 });
                 break;
             case 'Level_3':

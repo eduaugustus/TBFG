@@ -20,7 +20,6 @@ class Level_3 extends Phaser.Scene {
     data.player.scene.music.stop();
     this.player.setScene(this);
 
-    // console.log(this.player);
   }
 
   preload() {
