@@ -223,6 +223,15 @@
 	margin: 1% 0;
 }
 
+#div_twitter{
+	margin: 3% auto;
+}
+
+#ttBotao{
+	background-image: url('../imagens/Twitter-Icon_icon-icons.com_52899.png');
+	size: 30px 30px;
+}
+
 .div_botao {
 	background-image: url('../imagens/botaoMenu.png');
 	display: inline-block;

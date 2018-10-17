@@ -151,7 +151,7 @@
 
 .img_dev {
 	width: 18vw;
-	height: 40vh;
+	height: 55vh;
 	margin: 20px auto;
 	display: block;
 	box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
@@ -221,6 +221,15 @@
 	width: 100%;
 	float: left;
 	margin: 1% 0;
+}
+
+#div_twitter{
+	margin: 3% auto;
+}
+
+#ttBotao{
+	background-image: url('../imagens/Twitter-Icon_icon-icons.com_52899.png');
+	size: 30px 30px;
 }
 
 .div_botao {

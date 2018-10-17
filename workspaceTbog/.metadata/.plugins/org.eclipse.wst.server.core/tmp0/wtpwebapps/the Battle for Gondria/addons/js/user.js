@@ -77,7 +77,8 @@ $(document).ready(function(){
 
 	/*Função que cria o ranking de pontuações e tempo dos jogadores e também 
 	 * mostra a pontuação e tempo das fases do jogador logado separadamente*/
-	carregaRanking= function(dados){
+	carregaRanking= function(dados,fase){
+		console.log(dados);
 		
 		var u = 0;
 		
@@ -101,6 +102,15 @@ $(document).ready(function(){
 					"<td class='pontuacao jogadorT'>"+dados[i].pontuacao+"</td>" +
 					"<td class='tempo jogadorT'>"+dados[i].tempo+"</td>" +
 					"</tr>";
+					
+					var anchor
+					if(fase == "0"){
+						anchor = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Fiz '+dados[i].pontuacao+' pontos em todas as fases do game The Battle For Gondria! Jogue em:" data-url="http://35.232.177.172/tbfg/" data-hashtags="TheBattleForGondira,passei,souMtGuerreiro" data-related="TGondria" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+					}else{
+						anchor = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Fiz '+dados[i].pontuacao+' pontos na fase '+fase+' do game The Battle For Gondria! Jogue em:" data-url="http://35.232.177.172/tbfg/" data-hashtags="TheBattleForGondira,passei,souMtGuerreiro" data-related="TGondria" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+					}
+					$('#div_twitter').html(anchor);
+					
 				}else{
 					u++;
 				}
@@ -111,6 +121,9 @@ $(document).ready(function(){
 			html+="<tr>" +
 			"<td colspan='4'>Você não possue pontuação nessa fase ainda</td>" +
 			"</tr>"
+			
+			var anchor = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Fiz XX pontos na fase XX do game The Battle For Gondria! Jogue em:" data-url="http://35.232.177.172/tbfg/" data-hashtags="TheBattleForGondira,passei,souMtGuerreiro" data-related="TGondria" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+			$('#div_twitter').html(anchor);
 		}
 		
 		html += "</tbody>" +
@@ -169,8 +182,8 @@ $(document).ready(function(){
 			type:"POST",
 			data:"fase="+i,
 			url: PATH+"ConsultaRanking",
-			success:function(msg){
-				carregaRanking(msg);
+			success:function(dados){
+				carregaRanking(dados, i);
 			}
 		});
 	}
