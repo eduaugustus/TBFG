@@ -411,12 +411,18 @@ class Level_load extends Phaser.Scene {
 
                 //Carrega imagens da fase 3 
                 this.load.image('fase_4_tileset', '../../game/assets/tilesets/fase_4_tileset.png');
+                this.load.tilemapTiledJSON("map_fase_4", "../../game/assets/tilemap/map_fase_4.json");
+                this.load.tilemapTiledJSON("map_fase_4_boss", "../../game/assets/tilemap/map_fase_4_boss.json");
                 this.load.audio('music_4', '../../game/assets/musics/music_level_4.mp3');
                 this.load.audio('music_4_2', '../../game/assets/musics/music_level_4_2.mp3');
                 this.load.spritesheet('soldado','../../game/assets/images/mobs/soldado.png',{
                     frameHeight:84,
                     frameWidth:60
                 });
+                this.load.spritesheet('rei','../../game/assets/images/mobs/rei.png',{
+                	frameHeight:43,
+                    frameWidth:28
+                })
                 this.load.on('complete',()=>{
                 	let anims  = this.anims;
                 	anims.create({

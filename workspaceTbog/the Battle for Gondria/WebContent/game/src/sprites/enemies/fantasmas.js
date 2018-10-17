@@ -35,7 +35,7 @@ class Fantasmas {
         for(let i =0;i<this.array.children.entries.length;i++){
             let ghost = this.array.children.entries[i];
             if(player.x-ghost.x>-432&player.x-ghost.x<0){
-                if(ghost.body.velocity.x!=-150){
+                if(ghost.body.velocity.x!=-150&&player.y-ghost.y<100&&player.y-ghost.y>-100){
                     ghost.setVelocityX(-150);
                     ghost.anims.play('ghost',true);
                 }
@@ -48,7 +48,7 @@ class Fantasmas {
                         ghost.anims.play('ghost_back',true);
                         ghost.setVelocityX(150);
                     }
-                }else{
+                }else if(ghost.body.velocity.x!=150){
                     ghost.destroy();
                 }
             }

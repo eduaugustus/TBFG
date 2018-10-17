@@ -16,6 +16,7 @@ class Goblin_caverna {
                 };
                 goblin.isDead = false;
                 goblin.canHit = true;
+                goblin.canDmg=true;
                 goblin.canMove = true;
                 goblin.anims.play('goblin_caverna_standing_left', true);
 
@@ -23,7 +24,7 @@ class Goblin_caverna {
                 let goblin = this.array.create(spawns[i].x, spawns[i].y, 'goblin_caverna');
                 goblin.lifes = 5;
                 // goblin.setScale(2);
-                goblin.jump = 0;
+                goblin.jumps = 0;
                 goblin.isHit = {
                     right: false,
                     left: false
@@ -41,6 +42,7 @@ class Goblin_caverna {
     }
     
     goblinHit(goblin, player) {
+    	console.log(this.goblins.collides)
         if ((goblin.stop == undefined || goblin.stop == false)&&this.goblins.collides&&!goblin.lifes>0) {
             
             this.colisao = true;
@@ -95,26 +97,26 @@ class Goblin_caverna {
                         this.scene.scene.start('CalculaPontuacao', data);
                     }, 5000);
                 } else if (goblin.canMove) {
-                    if (goblin.jump == 10 || goblin.jump == 20 || goblin.jump == 30) {
+                    if (goblin.jumps == 10 || goblin.jumps == 20 || goblin.jumps == 30) {
                         goblin.canMove = false;
                         goblin.canHit = true;
                         goblin.stop = true;
                         goblin.setVelocityX(0);
                         goblin.setVelocityY(0);
-                        goblin.jump++;
+                        goblin.jumps++;
                         setTimeout(() => {
                             goblin.canHit = false;
                             goblin.canMove = true;
                             goblin.stop = false;
                         }, 5000);
 
-                    } else if (goblin.jump > 30) {
-                        goblin.jump = 0;
+                    } else if (goblin.jumps > 30) {
+                        goblin.jumps = 0;
                     } else if (player.x > 32) {
                         if (player.x < goblin.x) {
                             if (goblin.body.onFloor()) {
                                 this.scene.goblin_jump.play();
-                                goblin.jump++;
+                                goblin.jumps++;
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
                                 }
@@ -123,7 +125,7 @@ class Goblin_caverna {
                             }
                         } else if (player.x > goblin.x) {
                             if (goblin.body.onFloor()) {
-                                goblin.jump++;
+                                goblin.jumps++;
                                 this.scene.goblin_jump.play();
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
@@ -143,80 +145,84 @@ class Goblin_caverna {
                             }
                         }
                     }
+                   }
                 } else {
-                    
-                }
-            } else if (goblin.canMove) {
 
-                
-                if (goblin.lifes == 0) {
-                    goblin.isDead = true;
-                    goblin.anims.play('morte');
-                    goblin.lifes = -1;
-                    setTimeout(() => goblin.destroy(), 466);
-                }
-                if (!goblin.isDead) {
                     
-                    if (goblin.y > 490) {
+                    if (goblin.lifes == 0) {
                         goblin.isDead = true;
-                        goblin.destroy();
-                    } else if (player.y - goblin.y < 72 && player.y - goblin.y > -72 && this.scene.colisao == false) {
-                        if(player.x - goblin.x<64&&player.x-goblin.x>=0){
-                            goblin.anims.play('goblin_caverna_hitting_left', true);
-                            setTimeout(()=>{
-                                if(!goblin.isDead){
-                                    goblin.setVelocityX(100);
-                                    this.collides=true;
-                                }
-                            },700);
-                        }else if(player.x - goblin.x>-64&&player.x-goblin.x<0){
-                            goblin.anims.play('goblin_caverna_hitting_right', true);
-                            setTimeout(()=>{                                
+                        goblin.anims.play('morte');
+                        goblin.lifes = -1;
+                        setTimeout(() => goblin.destroy(), 466);
+                    }else if (!goblin.isDead&&!goblin.isHit.left&&!goblin.isHit.right) {
+                        if (goblin.y > 490) {
+                            goblin.isDead = true;
+                            goblin.destroy();
+                        } else if (player.y - goblin.y < 72 && player.y - goblin.y > -72 && this.scene.colisao == false) {
+                            if(player.x - goblin.x<64&&player.x-goblin.x>=0){
+                                goblin.anims.play('goblin_caverna_hitting_left', true);
+                                setTimeout(()=>{
+                                    if(!goblin.isDead&&goblin.canDmg){
+                                    	console.log("entrei")
+                                    	this.collides=true;
+                                        goblin.setVelocityX(100);
+                                        goblin.canDmg=false;
+                                    }
+                                },700);
+                                setTimeout(()=>goblin.canDmg=true,1500)
+                            }else if(player.x - goblin.x>-64&&player.x-goblin.x<0){
+                                goblin.anims.play('goblin_caverna_hitting_right', true);
+                                setTimeout(()=>{         
+                                	 if(!goblin.isDead&&goblin.canDmg){
+                                		 console.log("entrei")
+                                		 this.collides=true;
+                                         goblin.setVelocityX(-100);
+                                         goblin.canDmg=false;
+                                     }
+                                },700);
+                                setTimeout(()=>goblin.canDmg=true,1500)
+                            }else if (player.x - goblin.x < 200 && player.x - goblin.x > 0 && !goblin.isHit.left&& goblin.body.onFloor()) {
+                                goblin.anims.play('goblin_caverna_runing_right', true);
+                                goblin.setVelocityX(100);
+                                // if (player.y - goblin.y < -20 ) {
+                                //     goblin.setVelocityY(-150);
+                                //     this.scene.goblin_jumps.play();
+                                // }
+                            } else if (player.x - goblin.x > -200 && player.x - goblin.x < 0 && !goblin.isHit.right&& goblin.body.onFloor()) {
+                                
+                                goblin.anims.play('goblin_caverna_runing_left', true);
+                                
                                 goblin.setVelocityX(-100);
-                                this.collides=true;
-                            },700);
-                        }else if (player.x - goblin.x < 200 && player.x - goblin.x > 0 && !goblin.isHit.left&& goblin.body.onFloor()) {
-                            goblin.anims.play('goblin_caverna_runing_right', true);
-                            goblin.setVelocityX(100);
-                            // if (player.y - goblin.y < -20 ) {
-                            //     goblin.setVelocityY(-150);
-                            //     this.scene.goblin_jump.play();
-                            // }
-                        } else if (player.x - goblin.x > -200 && player.x - goblin.x < 0 && !goblin.isHit.right&& goblin.body.onFloor()) {
-                            
-                            goblin.anims.play('goblin_caverna_runing_left', true);
-                            goblin.setVelocityX(-100);
-                            // if (player.y - goblin.y < -20 && goblin.jump < 15) {
-                            //     this.scene.goblin_jump.play();
-                            //     goblin.setVelocityY(-150);
-                            // }
+                                // if (player.y - goblin.y < -20 && goblin.jumps < 15) {
+                                //     this.scene.goblin_jumps.play();
+                                //     goblin.setVelocityY(-150);
+                                // }
+                            } else if (!goblin.isHit.right && !goblin.isHit.left) {
+                                goblin.setVelocityX(0);
+                            }
                         } else if (!goblin.isHit.right && !goblin.isHit.left) {
                             goblin.setVelocityX(0);
+                            goblin.anims.play('goblin_caverna_standing_left', true);
                         }
-                    } else if (!goblin.isHit.right && !goblin.isHit.left) {
-                        goblin.setVelocityX(0);
-                        goblin.anims.play('goblin_caverna_standing_left', true);
-                    }
-                    if (goblin.isHit.right) {
-                        goblin.anims.play('goblin_caverna_hitted_right', true);
-                        setTimeout(() => goblin.isHit.right = false, 1200);
-                    }
-                    if (goblin.isHit.left) {
-                        goblin.anims.play('goblin_caverna_hitted_left', true);
-                        setTimeout(() => goblin.isHit.left = false, 1200);
-                    }
-                }
-            } else if(!goblin.isDead){
-                if(!goblin.canMove){
-                    setTimeout(()=>{
-                        if(!goblin.isDead){
-                            goblin.canMove =true;
+                        if (goblin.isHit.right) {
+                            goblin.anims.play('goblin_caverna_hitted_right', true);
                         }
-                    },1200);
+                        if (goblin.isHit.left) {
+                            goblin.anims.play('goblin_caverna_hitted_left', true);
+                        }
+    	            	}else{
+    	            	setTimeout(()=>{
+    	            		if(goblin.body.onFloor()){
+    	            			goblin.isHit.left=false;
+    	            			goblin.isHit.right = false;
+    	            		}
+    	            	},2000)
+    	            }
                 }
+   
+            
+            }
             }
         }
-    }
-}
-}
+ }
 export default Goblin_caverna;

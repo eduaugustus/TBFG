@@ -22,7 +22,7 @@ class Goblins {
             } else if (spawns[i].name === 'Spawn_Boss') {
                 let goblin = this.array.create(spawns[i].x, spawns[i].y, 'goblin');
                 goblin.lifes = 4;
-                goblin.jump = 0;
+                goblin.jumps = 0;
                 goblin.isHit = {
                     right: false,
                     left: false
@@ -102,26 +102,26 @@ class Goblins {
                         this.scene.scene.start('CalculaPontuacao', data);
                     }, 5000);
                 } else if (goblin.canMove) {
-                    if (goblin.jump == 10 || goblin.jump == 20 || goblin.jump == 30) {
+                    if (goblin.jumps == 10 || goblin.jumps == 20 || goblin.jumps == 30) {
                         goblin.canMove = false;
                         goblin.canHit = true;
                         goblin.stop = true;
                         goblin.setVelocityX(0);
                         goblin.setVelocityY(0);
-                        goblin.jump++;
+                        goblin.jumps++;
                         setTimeout(() => {
                             goblin.canHit = false;
                             goblin.canMove = true;
                             goblin.stop = false;
                         }, 5000);
 
-                    } else if (goblin.jump > 30) {
-                        goblin.jump = 0;
+                    } else if (goblin.jumps > 30) {
+                        goblin.jumps = 0;
                     } else if (player.x > 32) {
                         if (player.x < goblin.x) {
                             if (goblin.body.onFloor()) {
                                 this.scene.goblin_jump.play();
-                                goblin.jump++;
+                                goblin.jumps++;
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
                                 }
@@ -130,7 +130,7 @@ class Goblins {
                             }
                         } else if (player.x > goblin.x) {
                             if (goblin.body.onFloor()) {
-                                goblin.jump++;
+                                goblin.jumps++;
                                 this.scene.goblin_jump.play();
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
@@ -140,7 +140,7 @@ class Goblins {
                             }
                         } else {
                             if (goblin.body.onFloor()) {
-                                goblin.jumps++;
+                                goblin.jumpss++;
                                 this.scene.goblin_sound.play();
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
@@ -186,14 +186,14 @@ class Goblins {
                             goblin.setVelocityX(100);
                             // if (player.y - goblin.y < -20 ) {
                             //     goblin.setVelocityY(-150);
-                            //     this.scene.goblin_jump.play();
+                            //     this.scene.goblin_jumps.play();
                             // }
                         } else if (player.x - goblin.x > -200 && player.x - goblin.x < 0 && !goblin.isHit.right&& goblin.body.onFloor()) {
                             
                             goblin.anims.play('goblin_runing_left', true);
                             goblin.setVelocityX(-100);
-                            // if (player.y - goblin.y < -20 && goblin.jump < 15) {
-                            //     this.scene.goblin_jump.play();
+                            // if (player.y - goblin.y < -20 && goblin.jumps < 15) {
+                            //     this.scene.goblin_jumps.play();
                             //     goblin.setVelocityY(-150);
                             // }
                         } else if (!goblin.isHit.right && !goblin.isHit.left) {

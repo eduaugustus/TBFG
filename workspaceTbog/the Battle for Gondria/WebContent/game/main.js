@@ -14,6 +14,7 @@ import Level_2 from './src/scenes/Level_2.js';
 import Level_3 from './src/scenes/Level_3.js';
 import CalculaPontuacao from './src/scenes/CalculaPontuacao.js';
 import Level_4 from './src/scenes/Level_4.js';
+import Level_4_boss from './src/scenes/Level_4_boss.js';
 const config = {
     type: Phaser.WEBGL,
     parent: 'canvas_Jogo',
@@ -40,6 +41,7 @@ const config = {
         Level_3,
         Level_3_boss,
         Level_4,
+        Level_4_boss,
         Level_casa,
         CalculaPontuacao
     ]

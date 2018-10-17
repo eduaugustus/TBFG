@@ -7,6 +7,7 @@ import Aldeao from "../sprites/Aldeao.js";
 import Ponte from "../sprites/objects/ponte.js";
 import Casa from "../sprites/objects/casa.js";
 import Soldados from "../sprites/enemies/soldados.js";
+import Bandeira from "../sprites/objects/bandeira.js"
 class Level_4 extends Phaser.Scene {
 
   constructor() {
@@ -16,9 +17,9 @@ class Level_4 extends Phaser.Scene {
   }
 
   preload() {
-
+	this.SceneBoss= 'Level_4_boss';
     this.secs = 0;
-    this.load.tilemapTiledJSON("map_fase_4", "../../game/assets/tilemap/map_fase_4.json");
+    
 
     // this.load.audio('slime_jump', 'assets/sounds/slime_jump.mp3');
   }
@@ -114,7 +115,7 @@ class Level_4 extends Phaser.Scene {
 
     //Cria um player dentro da cena da fase, com coordenadas x e y
     this.player = new Player(this);
-    this.player.spawnPlayer(9332, 0);
+    this.player.spawnPlayer(15220, 0);
 
     //Seta o bounce do player, escala da sprite, teclas de movimento e 
     //seta a colisão com os mobs como 'false'
@@ -154,16 +155,11 @@ class Level_4 extends Phaser.Scene {
     
     // this.goblins =  new Goblins(this, layer1);
     // this.parado = true;
-    // for (let i = 0; i < this.spawns.length; i++) {
-    // if (this.spawns[i].name === "Spawn_Flag") {
-    //     this.bandeira = new Bandeira(this, this.spawns[i].x, this.spawns[i].y, this.player);
-    // }
     // if (this.spawns[i].name === "spawn_aldeao") {
     // this.aldeao = new Aldeao(this, this.spawns[i].x, this.spawns[i].y);
     // this.aldeao.sprite.play('aldeaoMove');
     // }
     // }
-    // this.physics.add.collider(this.bandeira.sprite, layer1);
     // this.physics.add.collider(this.aldeao.sprite, layer1);
 
     // Criação da alavanca
@@ -231,7 +227,13 @@ class Level_4 extends Phaser.Scene {
     let spawnLayer = map.getObjectLayer("spawns");
     this.spawns = spawnLayer.objects;
     this.soldados = new Soldados(this,layer1);
-
+    for (let i = 0; i < this.spawns.length; i++) {
+    	console.log(i);
+    	if (this.spawns[i].name === "spawn_bandeira") {
+    		this.bandeira = new Bandeira(this, this.spawns[i].x, this.spawns[i].y, this.player);
+    	}
+    }
+    this.physics.add.collider(this.bandeira.sprite, layer1);
     /*Criação da interação da casa*/
     // this.moved = false;
     /*Coordenadas da porta da casa que o jogador

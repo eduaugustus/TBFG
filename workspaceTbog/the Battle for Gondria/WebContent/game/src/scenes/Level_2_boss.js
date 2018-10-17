@@ -82,7 +82,7 @@ class Level_2_boss extends Phaser.Scene {
         collides: true
     });
     
-    this.player.spawnPlayer(20, 90);
+    this.player.spawnPlayer(40, 90);
 
     //Seta o bounce do player
     this.player.sprite.setBounce(0.1);
@@ -109,7 +109,7 @@ class Level_2_boss extends Phaser.Scene {
   }
 
   update() {
-    this.player.update(this.boss, this, this.alavanca, this.ponte, this.aldeao, this.casa, this.moedas);
+    this.player.update(this.goblins, this, this.alavanca, this.ponte, this.aldeao, this.casa, this.moedas);
     this.secs = this.player.mins * 60 + this.player.timersecs;
     this.goblins.update(this.player.sprite);
 

@@ -23,8 +23,9 @@ class MenuFases extends Phaser.Scene {
 
     
     create() {
-    	this.faseDisponivel = window.fase;
-
+//    	this.faseDisponivel = window.fase;
+    	this.faseDisponivel = 4;
+//    	alert(this.faseDisponivel)
     	// music.play();
 
         this.add.image(432, 240, 'bgGeral');
@@ -76,7 +77,7 @@ class MenuFases extends Phaser.Scene {
         	this.fase2 = this.add.image(335, 300, 'btnFase2Press').setScale(0.7);
             this.add.image(335, 230, 'fase_2_pb').setScale(0.170);
 
-            /*this.fase2 = this.add.image(335, 300, 'btnFase2').setScale(0.7);
+            this.fase2 = this.add.image(335, 300, 'btnFase2').setScale(0.7);
             this.fase2.setInteractive();
 
             this.fase2.on('pointerdown', function () {
@@ -92,7 +93,7 @@ class MenuFases extends Phaser.Scene {
                 }, 150);
             });
 
-            this.add.image(335, 230, 'fase_2_cor').setScale(0.170);*/
+            this.add.image(335, 230, 'fase_2_cor').setScale(0.170);
         }
 
         //Fase 3
@@ -106,7 +107,7 @@ class MenuFases extends Phaser.Scene {
         	 this.fase3 = this.add.image(515, 300, 'btnFase3Press').setScale(0.7);
              this.add.image(515, 230, 'fase_3_pb').setScale(0.170);
 
-            /*this.fase3 = this.add.image(515, 300, 'btnFase3').setScale(0.7);
+            this.fase3 = this.add.image(515, 300, 'btnFase3').setScale(0.7);
             this.fase3.setInteractive();
 
             this.fase3.on('pointerdown', function () {
@@ -123,7 +124,7 @@ class MenuFases extends Phaser.Scene {
                 }, 150);
             });
 
-            this.add.image(515, 230, 'fase_3_cor').setScale(0.170);*/
+            this.add.image(515, 230, 'fase_3_cor').setScale(0.170);
         }
 
         //Fase 4
@@ -137,7 +138,7 @@ class MenuFases extends Phaser.Scene {
         	this.fase4 = this.add.image(705, 300, 'btnFase4Press').setScale(0.7);
             this.add.image(705, 230, 'fase_4_pb').setScale(0.170);
 
-            /*this.fase4 = this.add.image(705, 300, 'btnFase4').setScale(0.7);
+            this.fase4 = this.add.image(705, 300, 'btnFase4').setScale(0.7);
             this.fase4.setInteractive();
 
             this.fase4.on('pointerdown', function () {
@@ -152,7 +153,7 @@ class MenuFases extends Phaser.Scene {
                 }, 150);
             });
 
-            this.add.image(705, 230, 'fase_4_cor').setScale(0.170);*/
+            this.add.image(705, 230, 'fase_4_cor').setScale(0.170);
         }
 
         
