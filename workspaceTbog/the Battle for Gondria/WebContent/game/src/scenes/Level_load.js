@@ -426,6 +426,33 @@ class Level_load extends Phaser.Scene {
                 this.load.on('complete',()=>{
                 	let anims  = this.anims;
                 	anims.create({
+                		key: 'rei_left',
+                        frames: anims.generateFrameNumbers('rei', {
+                            start: 0,
+                            end: 7
+                        }),
+                        frameRate: 4,
+                        repeat: -1
+                	});
+                	anims.create({
+                		key: 'rei_right',
+                        frames: anims.generateFrameNumbers('rei', {
+                            start: 10,
+                            end: 17
+                        }),
+                        frameRate: 4,
+                        repeat: -1
+                	});
+                	anims.create({
+                		key: 'rei_stand',
+                        frames: anims.generateFrameNumbers('rei', {
+                            start: 8,
+                            end: 9
+                        }),
+                        frameRate: 4,
+                        repeat: -1
+                	});
+                	anims.create({
                 		key: 'soldado_attack_right',
                         frames: anims.generateFrameNumbers('soldado', {
                             start: 10,

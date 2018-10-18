@@ -1,7 +1,7 @@
 import Player from "../sprites/player.js";
 import Goblins from "../sprites/enemies/goblins.js";
 import Moeda from "../sprites/objects/Moeda.js";
-import Chave from "../sprites/objects/Chave.js";
+import Porta from "../sprites/objects/porta.js";
 import Pocao from "../sprites/objects/pocao.js";
 import Fantasmas from "../sprites/enemies/fantasmas.js";
 import Boss from "../sprites/enemies/Boss.js";
@@ -145,6 +145,9 @@ class Level_4_boss extends Phaser.Scene {
      let spawnLayer = map.getObjectLayer("spawns");
      this.spawns = spawnLayer.objects;
      this.boss = new Boss(this,layer1);
+     let objects = map.getObjectLeyer('objects');
+     this.objetos = objects.objects;
+     this.Porta = new Porta();
     // this.goblins = new Goblins(this, layer1);
     // this.parado = true;
     // for (let i = 0; i < this.spawns.length; i++) {
@@ -185,7 +188,7 @@ class Level_4_boss extends Phaser.Scene {
 
   update() {
     this.player.update(this.goblins, this, this.layer1);
-//    this.goblins.update(this.player.sprite);
+    this.boss.update(this.player.sprite);
     // this.fantasmas.update(this.player.sprite);
     
     // this.goblins.update(this.player.sprite);
