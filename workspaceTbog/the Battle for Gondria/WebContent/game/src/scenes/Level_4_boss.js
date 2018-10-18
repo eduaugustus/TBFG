@@ -68,7 +68,7 @@ class Level_4_boss extends Phaser.Scene {
 
     //Cria e seta os blocos do tileset da layer 2
     let layer2 = map.createDynamicLayer("foreground_2", blocos);
-
+    this.layer2 = layer2;
     //Seta os blocos que serão colidiveis na layer 1
     layer1.forEachTile(tile => {
       if (tile.index != -1) {
@@ -99,10 +99,13 @@ class Level_4_boss extends Phaser.Scene {
     layer2.setCollisionByProperty({
       collides: true
     });
+    let objects = map.getObjectLayer('objects');
+    this.objetos = objects.objects;
+    this.porta = new Porta(this);
 
     //Cria um player dentro da cena da fase, com coordenadas x e y
     this.player = new Player(this);
-    this.player.spawnPlayer(20, 0);
+    this.player.spawnPlayer(40, 0);
 
     //Seta o bounce do player, escala da sprite, teclas de movimento e 
     //seta a colisão com os mobs como 'false'
@@ -145,9 +148,6 @@ class Level_4_boss extends Phaser.Scene {
      let spawnLayer = map.getObjectLayer("spawns");
      this.spawns = spawnLayer.objects;
      this.boss = new Boss(this,layer1);
-     let objects = map.getObjectLeyer('objects');
-     this.objetos = objects.objects;
-     this.Porta = new Porta();
     // this.goblins = new Goblins(this, layer1);
     // this.parado = true;
     // for (let i = 0; i < this.spawns.length; i++) {
@@ -187,8 +187,17 @@ class Level_4_boss extends Phaser.Scene {
   }
 
   update() {
-    this.player.update(this.goblins, this, this.layer1);
-    this.boss.update(this.player.sprite);
+	if(this.soldados==undefined){
+		this.player.update(this.boss, this, this.layer1);		
+		this.boss.update(this.player.sprite);
+	}else{
+		this.player.update(this.soldados, this, this.layer1);		
+		this.soldados.update(this.player.sprite);
+		if(this.soldados.array.children.entries[0]==undefined){
+			this.soldados = undefined;
+			this.porta.close();
+		}
+	}
     // this.fantasmas.update(this.player.sprite);
     
     // this.goblins.update(this.player.sprite);

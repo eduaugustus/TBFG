@@ -29,9 +29,9 @@
 		 update(player){
 			 let rei = this.boss;
 			 if(rei.jumps==2){
+				 rei.jumps=0;
 				 console.log(rei)
 				 rei.canMove=false;
-				 rei.jumps=0;
 				 rei.canHit=true;
 				 rei.anims.play('morte',true);
 				 this.c_player.active=false;
@@ -42,9 +42,10 @@
 						 rei.setVelocityX(0);
 						 rei.setVelocityY(0);
 						 rei.body.allowGravity = false;
+						 this.scene.porta.open();
 						 
 					 },500);
-			 }else if(rei.canMove){
+			 }else if(rei.canMove&&this.scene.soldados == undefined){
 				 
 				 if(rei.x>0&&rei.x<864){
 						 if(rei.x>player.x&&rei.body.onFloor()){
@@ -58,9 +59,19 @@
 					 		rei.setVelocityY(-500);
 					 		rei.anims.play('rei_right');
 				 		}
-				}else {
-					rei.setVelocityX(rei.body.velocity.x*-1);
-				}
+				 }else{
+					 rei.setVelocityX(rei.body.velocity.x*-1);					 
+				 }
+			 }else if(!rei.canMove&&this.scene.soldados == undefined&&this.scene.porta.aberta == false){
+				 if(!rei.body.allowGravity){
+					 this.scene.cameras.main.shake(150);
+					 rei.x=448;
+					 rei.y= 100;
+					 rei.body.allowGravity = true;					 
+				 }
+				 if(rei.canHit==false){
+					 setTimeout(()=>rei.canMove=true,1000)
+				 }
 			 }
 		 }
 	

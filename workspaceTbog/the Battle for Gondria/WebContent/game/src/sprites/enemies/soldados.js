@@ -1,5 +1,5 @@
 class Soldados {
-    constructor(scene, camada1) {
+    constructor(scene, camada1,camada2) {
         this.scene = scene;
         let spawns = this.scene.spawns;
         this.array = this.scene.physics.add.group();
@@ -21,7 +21,9 @@ class Soldados {
             } 
         }
         this.scene.physics.add.collider(this.array, camada1);
-        
+        if(camada2!=null){
+        	this.scene.physics.add.collider(this.array, camada2);
+        }
         this.c_player = this.scene.physics.add.collider(this.array, this.scene.player.sprite, this.soldadoHit, null, this.scene);
         this.collides = false;
     }
@@ -56,6 +58,9 @@ class Soldados {
 		this.collides = false;
 		for (let i = 0; i < this.array.children.entries.length; i++) {
             let soldado = this.array.children.entries[i];
+            if(soldado.y>480){
+            	soldado.lifes= 0 ;
+            }
             if(soldado.lifes>0&& !soldado.isHit.left&&!soldado.isHit.right){
             	let xDistance = player.x-soldado.x;
             	let yDistance = player.y-soldado.y;
