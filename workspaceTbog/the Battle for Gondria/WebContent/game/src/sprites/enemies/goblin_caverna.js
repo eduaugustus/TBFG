@@ -22,7 +22,7 @@ class Goblin_caverna {
 
             } else if (spawns[i].name === 'Spawn_Boss') {
                 let goblin = this.array.create(spawns[i].x, spawns[i].y, 'goblin_caverna');
-                goblin.lifes = 5;
+                goblin.lifes = 4;
                 // goblin.setScale(2);
                 goblin.jumps = 0;
                 goblin.isHit = {
@@ -81,7 +81,9 @@ class Goblin_caverna {
                         this.c_player.active = false;
                         
                     let data = {
-                        player: this.scene.player
+                        player: this.scene.player,
+                        fase: "3",
+                        bossPontuacao : 1100
                     };
                     
                     goblin.anims.play('morte');
@@ -98,6 +100,7 @@ class Goblin_caverna {
                     }, 5000);
                 } else if (goblin.canMove) {
                     if (goblin.jumps == 10 || goblin.jumps == 20 || goblin.jumps == 30) {
+                    	goblin.anims.play('goblin_caverna_hitted_right', true);
                         goblin.canMove = false;
                         goblin.canHit = true;
                         goblin.stop = true;
@@ -120,8 +123,11 @@ class Goblin_caverna {
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
                                 }
-                                goblin.setVelocityX(-200);
-                                goblin.setVelocityY(-500);
+                                goblin.anims.play('goblin_caverna_runing_left', true);
+                                let oi = Math.random(); 
+                                let hey = Math.random(); 
+                                goblin.setVelocityX(-250*oi);
+                                goblin.setVelocityY(-600*hey);
                             }
                         } else if (player.x > goblin.x) {
                             if (goblin.body.onFloor()) {
@@ -130,6 +136,7 @@ class Goblin_caverna {
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
                                 }
+                                goblin.anims.play('goblin_caverna_runing_right', true);
                                 goblin.setVelocityX(200);
                                 goblin.setVelocityY(-500);
                             }
@@ -150,6 +157,7 @@ class Goblin_caverna {
 
                     
                     if (goblin.lifes == 0) {
+                    	this.scene.player.score += 100;
                         goblin.isDead = true;
                         goblin.anims.play('morte');
                         goblin.lifes = -1;

@@ -103,6 +103,7 @@ class Soldados {
             	}
             	
             }else if(soldado.lifes==0){
+            	this.scene.player.score += 100;
             	soldado.isDead = true;
             	soldado.lifes--;
             	soldado.anims.play('morte');

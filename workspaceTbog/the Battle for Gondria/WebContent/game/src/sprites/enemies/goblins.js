@@ -86,7 +86,9 @@ class Goblins {
                         this.c_player.active = false;
                         
                     let data = {
-                        player: this.scene.player
+                        player: this.scene.player,
+                        fase: "2",
+                        bossPontuacao : 1050
                     };
                     
                     goblin.anims.play('morte');
@@ -103,7 +105,8 @@ class Goblins {
                     }, 5000);
                 } else if (goblin.canMove) {
                     if (goblin.jumps == 10 || goblin.jumps == 20 || goblin.jumps == 30) {
-                        goblin.canMove = false;
+                    	goblin.anims.play('goblin_hitted_left', true);
+                    	goblin.canMove = false;
                         goblin.canHit = true;
                         goblin.stop = true;
                         goblin.setVelocityX(0);
@@ -125,8 +128,11 @@ class Goblins {
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
                                 }
-                                goblin.setVelocityX(-200);
-                                goblin.setVelocityY(-500);
+                                goblin.anims.play('goblin_runing_left', true);
+                                let oi = Math.random(); 
+                                let hey = Math.random(); 
+                                goblin.setVelocityX(-200*oi);
+                                goblin.setVelocityY(-500*hey);
                             }
                         } else if (player.x > goblin.x) {
                             if (goblin.body.onFloor()) {
@@ -135,8 +141,11 @@ class Goblins {
                                 if (goblin.canHit == false) {
                                     this.scene.cameras.main.shake(50);
                                 }
-                                goblin.setVelocityX(200);
-                                goblin.setVelocityY(-500);
+                                goblin.anims.play('goblin_runing_right', true);
+                                let oi = Math.random(); 
+                                let hey = Math.random(); 
+                                goblin.setVelocityX(200*oi);
+                                goblin.setVelocityY(-500*hey);
                             }
                         } else {
                             if (goblin.body.onFloor()) {
@@ -157,6 +166,7 @@ class Goblins {
 
                 
                 if (goblin.lifes == 0) {
+                	this.scene.player.score += 80;
                     goblin.isDead = true;
                     goblin.anims.play('morte');
                     goblin.lifes = -1;

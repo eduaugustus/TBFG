@@ -25,10 +25,56 @@
 		        
 		        this.c_player = this.scene.physics.add.collider(this.array, this.scene.player.sprite, this.reiHit, null, this.scene);
 		    }
-	
+		 reiHit(boss,player){
+			 if (this.boss.boss.canMove&&this.boss.boss.lifes>0) {
+		            this.colisao = true;
+		            player.setVelocityX(0);
+		            if (player.x - boss.x <= 0) {
+		                boss.setVelocityX(150);
+		            } else {
+		                boss.setVelocityX(-150);
+		            }
+		            boss.setVelocityY(-200);
+		            if (boss.body.velocity.x <= 0) {
+		                player.setVelocityX(150);
+		            } else {
+		                player.setVelocityX(-150);
+		            }
+		            player.setVelocityY(-100);
+		            this.player.lifes -= 1;
+		            this.player.hit.play();
+		            player.setVelocityY(-150);
+		            this.player.hit.play();
+		        }
+		 }
+		 
 		 update(player){
 			 let rei = this.boss;
-			 if(rei.jumps==2){
+			 if(rei.lifes==0){
+                     this.c_player.active = false;
+                     
+                 let data = {
+                     player: this.scene.player,
+                     fase: "4",
+                     bossPontuacao : 1150
+                 };
+                 
+                 rei.anims.play('morte');
+                 rei.lifes = -1;
+                 setTimeout(
+                     () => {
+                         rei.destroy();
+                         this.scene.player.victory.play();
+                         this.scene.music.stop();
+                     }, 2000);
+                 this.scene.player.deletaIntervalo();
+                 setTimeout(() => {
+                     this.scene.scene.start('CalculaPontuacao', data);
+                 }, 5000);
+                 }
+			 if(rei.lifes>0){
+				 
+			 if(rei.jumps==10){
 				 rei.jumps=0;
 				 console.log(rei)
 				 rei.canMove=false;
@@ -50,8 +96,11 @@
 				 if(rei.x>0&&rei.x<864){
 						 if(rei.x>player.x&&rei.body.onFloor()){
 							rei.jumps++
-					 		rei.setVelocityX(-150);
-					 		rei.setVelocityY(-500);
+							let oi = Math.random();
+					 		rei.setVelocityX(-300*oi);
+					 		let hey = Math.random();
+					 		rei.setVelocityY(-700*hey);
+					 		
 					 		rei.anims.play('rei_left');
 				 		}else if(rei.x<player.x&&rei.body.onFloor()){
 				 			rei.jumps++
@@ -73,6 +122,7 @@
 					 setTimeout(()=>rei.canMove=true,1000)
 				 }
 			 }
+		 }
 		 }
 	
 	}

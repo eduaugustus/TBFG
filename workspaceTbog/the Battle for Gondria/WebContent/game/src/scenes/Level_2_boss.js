@@ -82,7 +82,7 @@ class Level_2_boss extends Phaser.Scene {
         collides: true
     });
     
-    this.player.spawnPlayer(40, 90);
+    this.player.spawnPlayer(80, 90);
 
     //Seta o bounce do player
     this.player.sprite.setBounce(0.1);

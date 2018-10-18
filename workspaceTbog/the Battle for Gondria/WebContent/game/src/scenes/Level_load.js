@@ -437,7 +437,7 @@ class Level_load extends Phaser.Scene {
                             end: 3
                         }),
                         frameRate: 2,
-                        repeat: -1
+                        repeat: 0
                 	});
                 	anims.create({
                 		key: 'porta_fecha',
@@ -446,7 +446,7 @@ class Level_load extends Phaser.Scene {
                             end: 6
                         }),
                         frameRate: 2,
-                        repeat: -1
+                        repeat: 0
                 	});
                 	anims.create({
                 		key: 'rei_left',
