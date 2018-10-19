@@ -81,13 +81,13 @@ class BootScene extends Phaser.Scene {
         });
 
         this.load.spritesheet('bandeira_branca', '../../game/assets/images/itensCenario/bandeira_branca.png', {
-            frameWidth: 36,
-            frameHeight: 60
+            frameWidth: 64,
+            frameHeight: 64
         });
 
         this.load.spritesheet('bandeira_verde', '../../game/assets/images/itensCenario/bandeira_verde.png', {
-            frameWidth: 36,
-            frameHeight: 60
+            frameWidth: 64,
+            frameHeight: 64
         });
 
         this.load.spritesheet('sprite_alavanca', '../../game/assets/images/itensCenario/alavanca.png', {

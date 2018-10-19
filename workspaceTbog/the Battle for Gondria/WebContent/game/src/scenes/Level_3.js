@@ -2,7 +2,9 @@ import Player from "../sprites/player.js";
 import Goblins from "../sprites/enemies/goblins.js";
 import Moeda from "../sprites/objects/Moeda.js";
 import Bandeira from "../sprites/objects/bandeira.js";
+import Estatuas from "../sprites/objects/estatuas.js";
 import Pocao from "../sprites/objects/pocao.js";
+import Morcego from "../sprites/objects/morcego.js";
 import Fantasmas from "../sprites/enemies/fantasmas.js";
 import Goblin_caverna from "../sprites/enemies/goblin_caverna.js";
 
@@ -98,8 +100,10 @@ class Level_3 extends Phaser.Scene {
     this.colisao = false;
     let spawnLayer = map.getObjectLayer("spawns");
     this.spawns = spawnLayer.objects;
+    let estatuas =  new Estatuas(this);
     this.goblins =  new Goblin_caverna(this, layer1); 
     this.fantasmas = new Fantasmas(this);
+    this.morcegos =  new Morcego(this);
 
     //Seta a colisão do player com a layer 1
     this.physics.add.collider(this.player.sprite, layer1);
@@ -149,6 +153,7 @@ class Level_3 extends Phaser.Scene {
     this.player.update(this.goblins, this, this.layer1);
     this.goblins.update(this.player.sprite);
     this.fantasmas.update(this.player.sprite);
+    this.morcegos.update(this.player.sprite);
     this.secs = this.player.mins * 60 + this.player.timersecs;
   }
 

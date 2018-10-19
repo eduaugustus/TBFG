@@ -50,6 +50,8 @@ export default class Player {
       LEFT,
       RIGHT,
       UP,
+      DOWN,
+      SPACE,
       Z,
       C,
       P,
@@ -59,6 +61,8 @@ export default class Player {
       left: LEFT,
       right: RIGHT,
       up: UP,
+      down :DOWN,
+      space:SPACE,
       atack: Z,
       action: C,
       pause: P,
@@ -130,6 +134,7 @@ export default class Player {
       if (this.lifes == 0) {
         this.isDead = true;
       } else if (this.sprite.y > 540) {
+    	this.lifes=0;
         this.isDead = true;
       }
 
@@ -140,13 +145,18 @@ export default class Player {
         this.sprite.setVelocityX(0);
         sprite.setTexture("sprite_hero", 5);
         sprite.setTint(0xff0000);
-        let jogarBtn = this.scene.add.image(this.scene.cameras.main.midPoint.x, 310, "btnJogar").setScale(0.65).setInteractive();
-        jogarBtn.on("pointerdown", () => {
-          this.lifes=4;
-          this.isDead = false;
-          let data ={p :this} 
-          this.scene.scene.restart(this.scene,data);
-        });
+        if(this.lifes==0){
+        	this.canStop=false;
+        	let jogarBtn = this.scene.add.image(this.scene.cameras.main.midPoint.x, 310, "btnRestart").setScale(0.65).setInteractive();
+        	jogarBtn.on("pointerdown", () => {
+        		this.lifes=4;
+        		this.isDead = false;
+        		let data ={p :this} 
+        		this.canStop=true;
+        		this.scene.scene.restart(this.scene,data);
+        	});
+        	this.lifes=-1;
+        }
 
       } else {
 

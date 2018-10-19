@@ -207,6 +207,10 @@ class Level_load extends Phaser.Scene {
                     frameWidth: 42,
                     frameHeight: 42
                 });
+                this.load.spritesheet('coruja', '../../game/assets/images/mobs/coruja.png', {
+                    frameWidth: 18,
+                    frameHeight: 29
+                });
                 /*Faz load dos arquivos usados na cena Level_2 e outras cenas  */
                 this.load.tilemapTiledJSON('map_fase_2', '../../game/assets/tilemap/map_fase_2.json');
                 this.load.image('fase_2_tileset', '../../game/assets/tilesets/fase_2_tileset.png');
@@ -215,8 +219,18 @@ class Level_load extends Phaser.Scene {
                 this.load.audio('music_2', '../../game/assets/musics/music_level_2.mp3');
                 this.load.audio('music_boss', '../../game/assets/musics/music_level_2_2.mp3');
                 this.load.audio('goblin_jump', '../../game/assets/sounds/goblin_jump.wav');
+                
                 this.load.on('complete', () => {
                     let anims = this.anims;
+                    anims.create({
+                        key: 'coruja',
+                        frames: anims.generateFrameNumbers('coruja', {
+                            start: 0,
+                            end: 8
+                        }),
+                        frameRate: 4.5,
+                        repeat: -1
+                    });
                     anims.create({
                         key: 'goblin_hitted_right',
                         frames: anims.generateFrameNumbers('goblin_hit', {
@@ -311,8 +325,36 @@ class Level_load extends Phaser.Scene {
                 this.load.audio('goblin_jump', '../../game/assets/sounds/goblin_jump.wav');
                 this.load.audio('music_3', '../../game/assets/musics/music_level_3.mp3');
                 this.load.audio('music_3_2', '../../game/assets/musics/music_level_3_2.mp3');
+                this.load.spritesheet('estatua','../../game/assets/images/itensCenario/estatua.png',{
+                	frameWidth: 64,
+                    frameHeight: 64
+                })
+                this.load.spritesheet('morcego','../../game/assets/images/mobs/morcego.png',{
+                	frameWidth: 47,
+                    frameHeight: 33
+                })
                 this.load.on('complete', () => {
                     let anims = this.anims;
+                    anims.create({
+                        key: 'morcego',
+                        frames: anims.generateFrameNumbers('morcego', {
+                            start: 0,
+                            end: 2
+                        }),
+                        frameRate: 6,
+                        repeat: -1,
+                        yoyo:true
+                    });
+                    anims.create({
+                        key: 'estatua',
+                        frames: anims.generateFrameNumbers('estatua', {
+                            start: 0,
+                            end: 3
+                        }),
+                        frameRate: 6,
+                        repeat: -1,
+                        yoyo:true
+                    });
                     anims.create({
                         key: 'goblin_caverna_hitted_right',
                         frames: anims.generateFrameNumbers('goblin_caverna_hit', {

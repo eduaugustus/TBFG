@@ -14,7 +14,7 @@ class MenuPause extends Phaser.Scene {
     create() {
     	
         this.scene.bringToTop();
-        let restartBtn = this.add.image(432, 400, "btnRestart").setInteractive();
+        let restartBtn = this.add.image(432, 310, "btnRestart").setInteractive();
         restartBtn.setScale(0.65);
         restartBtn.setScrollFactor(0);
         restartBtn.on('pointerdown', () => {
@@ -24,7 +24,7 @@ class MenuPause extends Phaser.Scene {
             this.player.restartScene();
         });
         
-        let jogarBtn = this.add.image(432, 310, "btnJogar").setInteractive();
+        let jogarBtn = this.add.image(432, 200, "btnJogar").setInteractive();
         jogarBtn.setScale(0.65);
         jogarBtn.setScrollFactor(0);
         jogarBtn.on('pointerdown', () => {
@@ -36,7 +36,7 @@ class MenuPause extends Phaser.Scene {
             this.scene.resume(this.name);
         });
         
-        let voltarBtn = this.add.image(432, 200, "btnVoltar").setInteractive();
+        let voltarBtn = this.add.image(432, 400, "btnInicio").setInteractive();
         voltarBtn.setScale(0.65);
         voltarBtn.setScrollFactor(0);
         voltarBtn.on('pointerdown', () => {

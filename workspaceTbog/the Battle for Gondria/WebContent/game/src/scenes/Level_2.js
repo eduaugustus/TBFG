@@ -4,6 +4,7 @@ import Bandeira from "../sprites/objects/bandeira.js";
 import Chave from "../sprites/objects/Chave.js";
 import Moeda from "../sprites/objects/Moeda.js";
 import Pocao from "../sprites/objects/pocao.js";
+import Coruja from "../sprites/objects/coruja.js";
 import Aldeao from "../sprites/Aldeao.js";
 import Ponte from "../sprites/objects/ponte.js";
 import Casa from "../sprites/objects/casa.js";
@@ -115,6 +116,8 @@ class Level_2 extends Phaser.Scene {
         let spawnLayer = map.getObjectLayer("spawns");
         this.spawns = spawnLayer.objects;
         this.goblins =  new Goblins(this, layer1); 
+        this.coruja =  new Coruja(this);
+        console.log(this.coruja);
         this.parado = true;
         for (let i = 0; i < this.spawns.length; i++) {
             if (this.spawns[i].name === "Spawn_Flag") {
