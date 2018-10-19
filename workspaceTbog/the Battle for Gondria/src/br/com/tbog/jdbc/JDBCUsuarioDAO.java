@@ -377,33 +377,33 @@ public class JDBCUsuarioDAO implements UsuarioDAO {
 				tempoBonus = 250;
 			}
 		}else if(pontuacao.getFase().equals("2")) {
-			if(segundosFase <= 160) {//Meta 1 de tempo
+			if(segundosFase <= 270) {//Meta 1 de tempo
 				tempoBonus = 1000;
-			}else if(segundosFase <= 180) {//Meta 2 de tempo
+			}else if(segundosFase <= 350) {//Meta 2 de tempo
 				tempoBonus = 750;
-			}else if(segundosFase <= 255) {//Meta 3 de tempo
+			}else if(segundosFase <= 410) {//Meta 3 de tempo
 				tempoBonus = 500;
-			}else if(segundosFase >= 256) {//Meta 4 de tempo
+			}else if(segundosFase >= 490) {//Meta 4 de tempo
 				tempoBonus = 250;
 			}
 		}else if(pontuacao.getFase().equals("3")) {
-			if(segundosFase <= 160) {//Meta 1 de tempo
+			if(segundosFase <= 400) {//Meta 1 de tempo
 				tempoBonus = 1000;
-			}else if(segundosFase <= 180) {//Meta 2 de tempo
+			}else if(segundosFase <= 480) {//Meta 2 de tempo
 				tempoBonus = 750;
-			}else if(segundosFase <= 255) {//Meta 3 de tempo
+			}else if(segundosFase <= 560) {//Meta 3 de tempo
 				tempoBonus = 500;
-			}else if(segundosFase >= 256) {//Meta 4 de tempo
+			}else if(segundosFase >= 640) {//Meta 4 de tempo
 				tempoBonus = 250;
 			}
 		}else if(pontuacao.getFase().equals("4")) {
-			if(segundosFase <= 160) {//Meta 1 de tempo
+			if(segundosFase <= 570) {//Meta 1 de tempo
 				tempoBonus = 1000;
-			}else if(segundosFase <= 180) {//Meta 2 de tempo
+			}else if(segundosFase <= 630) {//Meta 2 de tempo
 				tempoBonus = 750;
-			}else if(segundosFase <= 255) {//Meta 3 de tempo
+			}else if(segundosFase <= 700) {//Meta 3 de tempo
 				tempoBonus = 500;
-			}else if(segundosFase >= 256) {//Meta 4 de tempo
+			}else if(segundosFase >= 760) {//Meta 4 de tempo
 				tempoBonus = 250;
 			}
 		}

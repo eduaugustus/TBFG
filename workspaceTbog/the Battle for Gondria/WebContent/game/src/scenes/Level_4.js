@@ -181,7 +181,6 @@ class Level_4 extends Phaser.Scene {
     this.spawns = spawnLayer.objects;
     this.soldados = new Soldados(this,layer1);
     for (let i = 0; i < this.spawns.length; i++) {
-    	console.log(i);
     	if (this.spawns[i].name === "spawn_bandeira") {
     		this.bandeira = new Bandeira(this, this.spawns[i].x, this.spawns[i].y, this.player);
     	}

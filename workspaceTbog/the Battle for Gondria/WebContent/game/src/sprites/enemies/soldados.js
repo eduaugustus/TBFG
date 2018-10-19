@@ -59,7 +59,8 @@ class Soldados {
 		for (let i = 0; i < this.array.children.entries.length; i++) {
             let soldado = this.array.children.entries[i];
             if(soldado.y>480){
-            	soldado.lifes= 0 ;
+            	soldado.isDead = true;
+            	soldado.destroy();
             }
             if(soldado.lifes>0&& !soldado.isHit.left&&!soldado.isHit.right){
             	let xDistance = player.x-soldado.x;
@@ -112,9 +113,9 @@ class Soldados {
             	}
             	
             }else if(soldado.lifes==0){
-            	this.scene.player.score += 100;
             	soldado.isDead = true;
             	soldado.lifes--;
+            	this.scene.player.score += 100;
             	soldado.anims.play('morte');
                 setTimeout(() => {
                     soldado.destroy();
