@@ -51,7 +51,6 @@ class Soldados {
             this.player.lifes -= 1;
             this.player.hit.play();
             player.setVelocityY(-150);
-            this.player.hit.play();
         }
     }
     
@@ -84,9 +83,11 @@ class Soldados {
             		if(xDistance<40&&xDistance>=0){
             			if(!soldado.isAttacking){            	
             				soldado.anims.play('soldado_attack_right',true);
+            				setTimeout(()=>this.scene.player.espada.play(),500)
             			}
             			soldado.isAttacking = true;
-            			setTimeout(()=>{this.collides = true},500)
+            			setTimeout(()=>{this.collides = true
+            				},500)
             			
             			setTimeout(()=>{
             				if(soldado.attacking==true)
@@ -95,9 +96,11 @@ class Soldados {
             		}else if(xDistance>-40&&xDistance<0){
             			if(!soldado.isAttacking){            	
             				soldado.anims.play('soldado_attack_left',true);
+            				setTimeout(()=>this.scene.player.espada.play(),500)
             			}
             			soldado.isAttacking = true;
-            			setTimeout(()=>{this.collides = true},500);
+            			setTimeout(()=>{this.collides = true
+            				},500);
             			setTimeout(()=>{
             				if(soldado.attacking==true)
             					soldado.isAttacking = false
