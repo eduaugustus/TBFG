@@ -108,7 +108,6 @@ class Soldados {
             	soldado.lifes--;
             	soldado.anims.play('morte');
                 setTimeout(() => {
-//                    this.atualizaPontuacao();
                     soldado.destroy();
                 }, 466);
 

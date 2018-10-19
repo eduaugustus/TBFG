@@ -105,9 +105,9 @@ $(document).ready(function(){
 					
 					var anchor
 					if(fase == "0"){
-						anchor = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Fiz '+dados[i].pontuacao+' pontos em todas as fases do game The Battle For Gondria! Jogue em:" data-url="http://35.232.177.172/tbfg/" data-hashtags="TheBattleForGondira,passei,souMtGuerreiro" data-related="TGondria" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+						anchor = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Fiz '+dados[i].pontuacao+' pontos em todas as fases do game The Battle For Gondria! Jogue em:" data-url="http://joinvillechallengers.ga/tbfg/" data-hashtags="TheBattleForGondira,passei,souMtGuerreiro,vemJogar,Beta" data-related="TGondria" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
 					}else{
-						anchor = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Fiz '+dados[i].pontuacao+' pontos na fase '+fase+' do game The Battle For Gondria! Jogue em:" data-url="http://35.232.177.172/tbfg/" data-hashtags="TheBattleForGondira,passei,souMtGuerreiro" data-related="TGondria" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
+						anchor = '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Fiz '+dados[i].pontuacao+' pontos na fase '+fase+' do game The Battle For Gondria! Jogue em:" data-url="http://joinvillechallengers.ga/tbfg/" data-hashtags="TheBattleForGondira,passei,souMtGuerreiro,vemJogar,Beta" data-related="TGondria" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
 					}
 					$('#div_twitter').html(anchor);
 					

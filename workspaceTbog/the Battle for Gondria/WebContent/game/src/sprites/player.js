@@ -162,7 +162,6 @@ export default class Player {
           colisao = false;
         }
 
-        //ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
         if (colisao == true) {
           setTimeout(() => {
             if (sprite.body.blocked.down) {
@@ -252,7 +251,6 @@ export default class Player {
     for (let i = 0; i < enemies.children.entries.length; i++) {
       
       let enemy = enemies.children.entries[i];
-      console.log(enemy);
       let xdistance = enemy.x - this.sprite.body.x;
       let ydistance = enemy.y - this.sprite.body.y;
       if (enemy.canHit) {

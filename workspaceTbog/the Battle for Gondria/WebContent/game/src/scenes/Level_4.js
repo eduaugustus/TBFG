@@ -19,9 +19,6 @@ class Level_4 extends Phaser.Scene {
   preload() {
 	this.SceneBoss= 'Level_4_boss';
     this.secs = 0;
-    
-
-    // this.load.audio('slime_jump', 'assets/sounds/slime_jump.mp3');
   }
 
 
@@ -35,23 +32,6 @@ class Level_4 extends Phaser.Scene {
       this.music.stop();
       this.music.play();
     }
-    // if (this.music == undefined) {
-    //   this.music = this.sound.add('music_2');
-    //   this.music.setLoop(true);
-    //   this.music.setVolume(0.5);
-    //   this.music.play();
-    // } else {
-    //   this.music.stop();
-    //   this.music.play();
-    // }
-    // this.ended = false;
-    // let music = this.sound.add('music_1_1');
-    // music.setLoop(true);
-    // music.play();
-    // music.setVolume(0.5);
-    // this.slime_sound = this.sound.add('slime_jump');
-    // this.slime_sound.setVolume(0.3);
-
     // Cria o mapa apartir do arquivos JSON que veio do Tiled
     const map = this.make.tilemap({
       key: "map_fase_4"
@@ -124,22 +104,6 @@ class Level_4 extends Phaser.Scene {
     this.player.criaKeys(this);
     this.colisao = false;
 
-    /*INICIO - Debug para colisão */
-    /*const debugGraphics = this.add.graphics().setAlpha(0.75);
-
-    layer1.renderDebug(debugGraphics, {
-      tileColor: null, // Color of non-colliding tiles
-      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-      faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-    });
-
-    layer2.renderDebug(debugGraphics, {
-      tileColor: null, // Color of non-colliding tiles
-      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-      faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-    });*/
-    /*FIM - Debug para colisão */
-
     //Seta a colisão do player com a layer 1
     this.physics.add.collider(this.player.sprite, layer1);
 
@@ -151,16 +115,6 @@ class Level_4 extends Phaser.Scene {
 
     //Seta os limites do mapa que a camera acompanhará
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-
-    
-    // this.goblins =  new Goblins(this, layer1);
-    // this.parado = true;
-    // if (this.spawns[i].name === "spawn_aldeao") {
-    // this.aldeao = new Aldeao(this, this.spawns[i].x, this.spawns[i].y);
-    // this.aldeao.sprite.play('aldeaoMove');
-    // }
-    // }
-    // this.physics.add.collider(this.aldeao.sprite, layer1);
 
     // Criação da alavanca
     this.alavancas = {
@@ -195,7 +149,6 @@ class Level_4 extends Phaser.Scene {
     };
 
     this.ponte = new Ponte(this.ponteConfig);
-
 
     /*Cria as moedas */
     let coinLayer = map.getObjectLayer("moedas");
@@ -234,31 +187,6 @@ class Level_4 extends Phaser.Scene {
     	}
     }
     this.physics.add.collider(this.bandeira.sprite, layer1);
-    /*Criação da interação da casa*/
-    // this.moved = false;
-    /*Coordenadas da porta da casa que o jogador
-    terá que interagir */
-    // this.casaConfig = {
-    //   x: 4160,
-    //   y: 96,
-    //   portaX: 864,
-    //   portaY: 244
-    // };
-
-    // this.casa = new Casa(this.casaConfig, this, this.player);
-
-    /*Manda a msg para aldeão */
-    // this.msg = 'Aldeao:\n'
-    // +' Voce so podera entrar na casa \n'
-    // +' quando tiver chave consigo.';
-
-    // this.msg = 'Aldeao:\n' +
-    //   ' FALA MEU CHAPA 2';
-
-    // Chama o método que cria o hud do player
-    // this.player.createHUD();
-    // this.player.criaIntervalo();
-    // this.colisao = false;
     this.player.createHUD();
 
     this.player.criaIntervalo();
@@ -268,9 +196,7 @@ class Level_4 extends Phaser.Scene {
     this.player.update(this.soldados, this, this.layer1);
     this.soldados.update(this.player.sprite);
     this.secs = this.player.mins * 60 + this.player.timersecs;
-    // this.aldeao.update(this, this.player, this.msg);
     this.ponte.update(this.player, this.alavancas);
-    // this.casa.update(this.player, this);
     this.layer1.forEachTile(tile => {
       if (tile.index == 817) {
         tile.collideDown = true;

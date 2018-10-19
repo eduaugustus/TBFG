@@ -23,16 +23,10 @@ class MenuFases extends Phaser.Scene {
 
     
     create() {
-//    	this.faseDisponivel = window.fase;
     	this.faseDisponivel = 4;
-//    	alert(this.faseDisponivel)
-    	// music.play();
-
         this.add.image(432, 240, 'bgGeral');
-
         this.voltar = this.add.image(785, 35, 'btnVoltar').setInteractive();
         this.voltar.setScale(0.6);
-
         this.voltar.on('pointerdown', function () {
             let btn = this;
             btn.setTexture("btnVoltarPress");

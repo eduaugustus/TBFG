@@ -21,7 +21,6 @@ class Level_1 extends Phaser.Scene {
        
     }
 
-
     create() {
         this.ended = false;
         if (this.music == undefined) {
@@ -74,7 +73,6 @@ class Level_1 extends Phaser.Scene {
         layer2.setCollisionBetween(1, 6);
 
         layer2.forEachTile(tile => {
-            // alert('oieeeee');
             if (tile.index != -1) {
                 tile.collideDown = false;
                 tile.collideUp = true;
@@ -97,22 +95,6 @@ class Level_1 extends Phaser.Scene {
 
         //Cria e seta os blocos do tileset da layer 2
         this.physics.add.collider(this.player.sprite, layer2);
-
-        // /*INICIO - Debug para colisão */
-        // const debugGraphics = this.add.graphics().setAlpha(0.75);
-
-        // camada1.renderDebug(debugGraphics, {
-        //     tileColor: null, // Color of non-colliding tiles
-        //     collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-        //     faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-        // });
-
-        // layer2.renderDebug(debugGraphics, {
-        //     tileColor: null, // Color of non-colliding tiles
-        //     collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-        //     faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-        // });
-        /*FIM - Debug para colisão */
 
         //Cria uma camera que seguira o player
         this.cameras.main.startFollow(this.player.sprite);
@@ -211,11 +193,6 @@ class Level_1 extends Phaser.Scene {
         };
 
         this.casa = new Casa(this.casaConfig, this, this.player);
-
-        /*Manda a msg para aldeão */
-        // this.msg = 'Aldeao:\n'
-        // +' Voce so podera entrar na casa \n'
-        // +' quando tiver chave consigo.';
 
         this.msg = 'Aldeao:\n' +
             ' FALA MEU CHAPA';

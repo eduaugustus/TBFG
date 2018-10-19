@@ -16,9 +16,7 @@ class AjudaScene extends Phaser.Scene {
   create() {
 
     var music = this.sound.add('menusMusic');
-
-    // music.play();
-
+    
     this.add.image(432, 240, 'bgGeral');
 
     this.voltarBtn = this.add.image(785, 35, 'btnVoltar').setInteractive();

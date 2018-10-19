@@ -9,7 +9,6 @@ class Fantasmas {
                 fantasma.body.allowGravity = false;
                 fantasma.canHit = true;
                 fantasma.anims.play('ghost',true);
-                // goblin.setScale(2);
 
             }
         }

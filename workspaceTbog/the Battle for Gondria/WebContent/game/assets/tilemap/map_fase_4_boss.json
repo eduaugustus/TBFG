@@ -88,6 +88,126 @@
          "y":0
         }, 
         {
+         "color":"#ffff00",
+         "draworder":"topdown",
+         "id":7,
+         "name":"moedas",
+         "objects":[
+                {
+                 "height":0,
+                 "id":14,
+                 "name":"moeda",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":351.666666666667,
+                 "y":278.5
+                }, 
+                {
+                 "height":0,
+                 "id":15,
+                 "name":"moeda",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":546.666666666667,
+                 "y":280.5
+                }, 
+                {
+                 "height":0,
+                 "id":16,
+                 "name":"moeda",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":429.166666666667,
+                 "y":210
+                }, 
+                {
+                 "height":0,
+                 "id":17,
+                 "name":"moeda",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":467.166666666667,
+                 "y":209.5
+                }, 
+                {
+                 "height":0,
+                 "id":18,
+                 "name":"moeda",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":273.666666666667,
+                 "y":214.5
+                }, 
+                {
+                 "height":0,
+                 "id":19,
+                 "name":"moeda",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":625.666666666667,
+                 "y":214
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "color":"#ff0000",
+         "draworder":"topdown",
+         "id":8,
+         "name":"pocoes",
+         "objects":[
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"pocao",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":50.3333333333333,
+                 "y":305.416666666667
+                }, 
+                {
+                 "height":0,
+                 "id":21,
+                 "name":"pocao",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":816.833333333333,
+                 "y":306.916666666667
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "draworder":"topdown",
          "id":4,
          "name":"spawns",
@@ -110,11 +230,11 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":6,
+ "nextlayerid":9,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"2018.08.22",
+ "tiledversion":"1.2.0",
  "tileheight":32,
  "tilesets":[
         {

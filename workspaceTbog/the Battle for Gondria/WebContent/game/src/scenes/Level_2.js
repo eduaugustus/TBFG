@@ -1,8 +1,8 @@
 import Player from "../sprites/player.js";
 import Goblins from "../sprites/enemies/goblins.js";
 import Bandeira from "../sprites/objects/bandeira.js";
-import Moeda from "../sprites/objects/Moeda.js";
 import Chave from "../sprites/objects/Chave.js";
+import Moeda from "../sprites/objects/Moeda.js";
 import Pocao from "../sprites/objects/pocao.js";
 import Aldeao from "../sprites/Aldeao.js";
 import Ponte from "../sprites/objects/ponte.js";
@@ -16,15 +16,8 @@ class Level_2 extends Phaser.Scene {
     }
 
     preload() {
-        
         this.SceneBoss= 'Level_2_boss';
-
-        // this.secs = 0;
-        // this.load.tilemapTiledJSON("map_fase_1", "assets/tilemap/map_fase_1.json");
-
-        // this.load.audio('slime_jump', 'assets/sounds/slime_jump.mp3');
     }
-
 
     create() {
         if (this.music == undefined) {
@@ -38,13 +31,6 @@ class Level_2 extends Phaser.Scene {
         }
         this.goblin_jump = this.sound.add('goblin_jump');
         this.goblin_jump.setVolume(0.1);
-        // this.ended = false;
-        // let music = this.sound.add('music_1_1');
-        // music.setLoop(true);
-        // music.play();
-        // music.setVolume(0.5);
-        // this.slime_sound = this.sound.add('slime_jump');
-        // this.slime_sound.setVolume(0.3);
 
         // Cria o mapa apartir do arquivos JSON que veio do Tiled
         const map = this.make.tilemap({
@@ -75,9 +61,6 @@ class Level_2 extends Phaser.Scene {
         //Cria e seta os blocos do tileset da layer 2
         let layer2 = map.createDynamicLayer("foreground_2", blocos);
 
-       
-
-
         //Seta os blocos que serão colidiveis na layer 1
         layer1.forEachTile(tile => {
             if (tile.index != -1) {
@@ -90,7 +73,6 @@ class Level_2 extends Phaser.Scene {
         layer1.setCollisionByProperty({
             collides: true
         });
-
 
         layer2.forEachTile(tile => {
             // alert('oieeeee');
@@ -107,24 +89,9 @@ class Level_2 extends Phaser.Scene {
             collides: true
         });
 
-        // layerBoss.forEachTile(tile => {
-        //     if (tile.index != -1) {
-        //         tile.collideDown = true;
-        //         tile.collideUp = true;
-        //         tile.collideLeft = true;
-        //         tile.collideRight = true;
-        //     }
-
-        // });
-
-        //Seta os blocos que serão colidiveis na layer 2
-        // layerBoss.setCollisionByProperty({
-        //     collides: true
-        // });
-
         //Cria um player dentro da cena da fase, com coordenadas x e y
         this.player = new Player(this);
-        this.player.spawnPlayer(20, 20);
+        this.player.spawnPlayer(6400,0);
 
         //Seta o bounce do player, escala da sprite, teclas de movimento e 
         //seta a colisão com os mobs como 'false'
@@ -133,29 +100,11 @@ class Level_2 extends Phaser.Scene {
         this.player.criaKeys(this);
         this.colisao = false;
 
-        /*INICIO - Debug para colisão */
-        const debugGraphics = this.add.graphics().setAlpha(0.75);
-
-        // layer1.renderDebug(debugGraphics, {
-        //     tileColor: null, // Color of non-colliding tiles
-        //     collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-        //     faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-        // });
-
-        // layerBoss.renderDebug(debugGraphics, {
-        //     tileColor: null, // Color of non-colliding tiles
-        //     collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-        //     faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-        // });
-        /*FIM - Debug para colisão */
-
         //Seta a colisão do player com a layer 1
         this.physics.add.collider(this.player.sprite, layer1);
 
         //Cria e seta os blocos do tileset da layer 2
         this.physics.add.collider(layer2, this.player.sprite);
-
-        
 
         //Cria uma camera que seguira o player
         this.cameras.main.startFollow(this.player.sprite);
@@ -257,18 +206,9 @@ class Level_2 extends Phaser.Scene {
 
         this.casa = new Casa(this.casaConfig, this, this.player);
 
-        /*Manda a msg para aldeão */
-        // this.msg = 'Aldeao:\n'
-        // +' Voce so podera entrar na casa \n'
-        // +' quando tiver chave consigo.';
-
         this.msg = 'Aldeao:\n' +
             ' FALA MEU CHAPA 2';
 
-        // Chama o método que cria o hud do player
-        // this.player.createHUD();
-        // this.player.criaIntervalo();
-        // this.colisao = false;
         this.player.createHUD();
 
         this.player.criaIntervalo();

@@ -7,7 +7,6 @@ class Goblins {
             if (spawns[i].name === "spawn_Goblin") {
 
                 let goblin = this.array.create(spawns[i].x, spawns[i].y, 'goblin');
-                // goblin.setScale(2);
                 goblin.lifes = 3;
                 goblin.jump = 0;
                 goblin.isHit = {
@@ -194,18 +193,9 @@ class Goblins {
                         }else if (player.x - goblin.x < 200 && player.x - goblin.x > 0 && !goblin.isHit.left&& goblin.body.onFloor()) {
                             goblin.anims.play('goblin_runing_right', true);
                             goblin.setVelocityX(100);
-                            // if (player.y - goblin.y < -20 ) {
-                            //     goblin.setVelocityY(-150);
-                            //     this.scene.goblin_jumps.play();
-                            // }
                         } else if (player.x - goblin.x > -200 && player.x - goblin.x < 0 && !goblin.isHit.right&& goblin.body.onFloor()) {
-                            
                             goblin.anims.play('goblin_runing_left', true);
                             goblin.setVelocityX(-100);
-                            // if (player.y - goblin.y < -20 && goblin.jumps < 15) {
-                            //     this.scene.goblin_jumps.play();
-                            //     goblin.setVelocityY(-150);
-                            // }
                         } else if (!goblin.isHit.right && !goblin.isHit.left) {
                             goblin.setVelocityX(0);
                         }

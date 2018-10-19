@@ -1,4 +1,6 @@
 import Goblins from "../sprites/enemies/goblins.js";
+import Moeda from "../sprites/objects/Moeda.js";
+import Pocao from "../sprites/objects/pocao.js";
 class Level_2_boss extends Phaser.Scene {
 
   constructor() {
@@ -14,10 +16,6 @@ class Level_2_boss extends Phaser.Scene {
     this.player.setScene(this);
 
   }
-  preload() {
-      
-  }
-
 
   create() {
     if (this.music == undefined) {
@@ -52,7 +50,6 @@ class Level_2_boss extends Phaser.Scene {
     //Cria e seta os blocos do tileset da layer 2
     let layer2 = mapBoss.createStaticLayer("foreground_2", tilesetBlocos, 0, 0);
 
-
      //Seta os blocos que serão colidiveis na layer 1
      layer1.forEachTile(tile => {
         if (tile.index != -1) {
@@ -65,7 +62,6 @@ class Level_2_boss extends Phaser.Scene {
     layer1.setCollisionByProperty({
         collides: true
     });
-
 
     layer2.forEachTile(tile => {
         // alert('oieeeee');
@@ -88,7 +84,6 @@ class Level_2_boss extends Phaser.Scene {
     this.player.sprite.setBounce(0.1);
     this.player.sprite.setScale(0.5);
     this.player.criaKeys(this);
-    this.player.createHUD();
     this.player.criaIntervalo();
 
     //Seta a colisão do player com a layer 1
@@ -102,10 +97,26 @@ class Level_2_boss extends Phaser.Scene {
     this.spawns = spawnLayer.objects;
     this.goblins = new Goblins(this, this.spawns);
     this.physics.add.collider(this.goblins.boss, layer1);
-    // this.slime_sound = this.sound.add('slime_boss');
-    // this.slime_sound.setVolume(0.3);//////////////
+    /*Cria as moedas */
+    let coinLayer = mapBoss.getObjectLayer("moedas");
+    console.log(coinLayer);
+    this.moedasObjetos = coinLayer.objects;
 
+    for (let i = 0; i < this.moedasObjetos.length; i++) {
+        this.moeda = new Moeda(this, this.moedasObjetos[i].x, this.moedasObjetos[i].y);
+        this.moeda.sprite.anims.play('giraMoeda');
+    }
 
+    /*Cria as Poções */
+    let PotionLayer = mapBoss.getObjectLayer("pocoes");
+    this.pocoesObjetos = PotionLayer.objects;
+
+    for (let i = 0; i < this.pocoesObjetos.length; i++) {
+        this.pocao = new Pocao(this, this.pocoesObjetos[i].x, this.pocoesObjetos[i].y);
+        this.pocao.sprite.anims.play('potionEffect');
+    }
+
+    this.player.createHUD();
   }
 
   update() {

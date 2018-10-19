@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_Df-iINMOEei7O6cPCTte9Q" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_Df-iIdMOEei7O6cPCTte9Q" bindingContexts="_Df_NXtMOEei7O6cPCTte9Q">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Boss.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/Boss.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/Boss.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;soldados.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/soldados.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/soldados.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;goblin_caverna.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/goblin_caverna.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/goblin_caverna.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;slimes.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/slimes.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/slimes.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;goblins.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/goblins.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/goblins.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Level_2_boss.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/Level_2_boss.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/Level_2_boss.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Level_3_boss.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/Level_3_boss.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/Level_3_boss.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;MenuFases.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/MenuFases.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/MenuFases.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.json.ui.JSONEditor&quot; name=&quot;map_fase_4_boss.json&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/assets/tilemap/map_fase_4_boss.json&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/assets/tilemap/map_fase_4_boss.json&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;porta.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/porta.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/porta.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;JDBCUsuarioDAO.java&quot; tooltip=&quot;the Battle for Gondria/src/br/com/tbog/jdbc/JDBCUsuarioDAO.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/src/br/com/tbog/jdbc/JDBCUsuarioDAO.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ConsultaRanking.java&quot; tooltip=&quot;the Battle for Gondria/src/br/com/tbog/servlets/ConsultaRanking.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/src/br/com/tbog/servlets/ConsultaRanking.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Level_load.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/Level_load.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/Level_load.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;main.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/main.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/main.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Level_4_boss.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/Level_4_boss.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/Level_4_boss.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Level_4.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/Level_4.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/Level_4.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;bandeira.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/bandeira.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/bandeira.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.json.ui.JSONEditor&quot; name=&quot;map_fase_3_boss.json&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/assets/tilemap/map_fase_3_boss.json&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/assets/tilemap/map_fase_3_boss.json&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.json.ui.JSONEditor&quot; name=&quot;map_fase_3.json&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/assets/tilemap/map_fase_3.json&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/assets/tilemap/map_fase_3.json&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Level_3.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/Level_3.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/Level_3.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;user.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/addons/js/user.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/addons/js/user.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;player.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/player.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/player.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Anims.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/Anims.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/Anims.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Aldeao.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/Aldeao.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/Aldeao.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;porta.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/porta.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/porta.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;ponte.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/ponte.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/ponte.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;pocao.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/pocao.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/pocao.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;nuvens.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/nuvens.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/nuvens.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Moeda.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/Moeda.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/Moeda.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Chave.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/Chave.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/Chave.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;casa.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/casa.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/casa.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;bandeira.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/objects/bandeira.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/objects/bandeira.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;soldados.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/soldados.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/soldados.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;slimes.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/slimes.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/slimes.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;goblins.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/goblins.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/goblins.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;goblin_caverna.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/goblin_caverna.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/goblin_caverna.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;fantasmas.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/fantasmas.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/fantasmas.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Boss.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/Boss.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/Boss.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;MenuPause.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/MenuPause.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/MenuPause.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;MenuFases.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/scenes/MenuFases.js&quot;>&#xD;&#xA;&lt;persistable path=&quot;/the Battle for Gondria/WebContent/game/src/scenes/MenuFases.js&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_Df-iIdMOEei7O6cPCTte9Q" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_Df-iItMOEei7O6cPCTte9Q" label="%trimmedwindow.label.eclipseSDK" x="0" y="0" width="1024" height="768">
@@ -88,8 +88,9 @@
                   <children xsi:type="advanced:Placeholder" xmi:id="_Df-iMNMOEei7O6cPCTte9Q" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" ref="_Df_KsNMOEei7O6cPCTte9Q"/>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_Df-iMdMOEei7O6cPCTte9Q" elementId="bottomRight" containerData="1356" selectedElement="_Df-iOdMOEei7O6cPCTte9Q">
+              <children xsi:type="basic:PartStack" xmi:id="_Df-iMdMOEei7O6cPCTte9Q" elementId="bottomRight" containerData="1356" selectedElement="_Df-iNNMOEei7O6cPCTte9Q">
                 <tags>newtablook</tags>
+                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_Df-iMtMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.views.AllMarkersView" ref="_Df_KQtMOEei7O6cPCTte9Q"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_Df-iM9MOEei7O6cPCTte9Q" elementId="org.eclipse.ui.views.PropertySheet" ref="_Df_KVdMOEei7O6cPCTte9Q"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_Df-iNNMOEei7O6cPCTte9Q" elementId="org.eclipse.wst.server.ui.ServersView" ref="_Df_KVtMOEei7O6cPCTte9Q"/>
@@ -125,78 +126,15 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_Df_KE9MOEei7O6cPCTte9Q" elementId="org.eclipse.ui.editorss" selectedElement="_Df_KFNMOEei7O6cPCTte9Q">
-      <children xsi:type="basic:PartStack" xmi:id="_Df_KFNMOEei7O6cPCTte9Q" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_Df_KHdMOEei7O6cPCTte9Q">
+      <children xsi:type="basic:PartStack" xmi:id="_Df_KFNMOEei7O6cPCTte9Q" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_ztau4NM6EeiEaLF4A64BUw">
         <tags>newtablook</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
-        <tags>noFocus</tags>
-        <children xsi:type="basic:Part" xmi:id="_Df_KFdMOEei7O6cPCTte9Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="goblin_caverna.js" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;goblin_caverna.js&quot; partName=&quot;goblin_caverna.js&quot; title=&quot;goblin_caverna.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/goblin_caverna.js&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/goblin_caverna.js&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;6791&quot; selectionTopPixel=&quot;3049&quot;/>&#xD;&#xA;&lt;/editor>"/>
+        <children xsi:type="basic:Part" xmi:id="_ztau4NM6EeiEaLF4A64BUw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="user.js" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;user.js&quot; partName=&quot;user.js&quot; title=&quot;user.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/addons/js/user.js&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/the Battle for Gondria/WebContent/addons/js/user.js&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;2063&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;4007&quot; selectionTopPixel=&quot;1530&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.wst.jsdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KFtMOEei7O6cPCTte9Q" elementId="#JavaScriptEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#JavaScriptEditorContext</tags>
-            <tags>popup:org.eclipse.wst.jsdt.ui.CompilationUnitEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KF9MOEei7O6cPCTte9Q" elementId="#JavaScriptRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#JavaScriptRulerContext</tags>
-            <tags>popup:org.eclipse.wst.jsdt.ui.CompilationUnitEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KGNMOEei7O6cPCTte9Q" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_Df_KGdMOEei7O6cPCTte9Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="soldados.js" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;soldados.js&quot; partName=&quot;soldados.js&quot; title=&quot;soldados.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/soldados.js&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/soldados.js&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;4167&quot; selectionTopPixel=&quot;2060&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.wst.jsdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KGtMOEei7O6cPCTte9Q" elementId="#JavaScriptEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#JavaScriptEditorContext</tags>
-            <tags>popup:org.eclipse.wst.jsdt.ui.CompilationUnitEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KG9MOEei7O6cPCTte9Q" elementId="#JavaScriptRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#JavaScriptRulerContext</tags>
-            <tags>popup:org.eclipse.wst.jsdt.ui.CompilationUnitEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KHNMOEei7O6cPCTte9Q" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_Df_KHdMOEei7O6cPCTte9Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Boss.js" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.jsdt.ui.CompilationUnitEditor&quot; name=&quot;Boss.js&quot; partName=&quot;Boss.js&quot; title=&quot;Boss.js&quot; tooltip=&quot;the Battle for Gondria/WebContent/game/src/sprites/enemies/Boss.js&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/the Battle for Gondria/WebContent/game/src/sprites/enemies/Boss.js&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2153&quot; selectionTopPixel=&quot;1061&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.wst.jsdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KHtMOEei7O6cPCTte9Q" elementId="#JavaScriptEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#JavaScriptEditorContext</tags>
-            <tags>popup:org.eclipse.wst.jsdt.ui.CompilationUnitEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KH9MOEei7O6cPCTte9Q" elementId="#JavaScriptRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#JavaScriptRulerContext</tags>
-            <tags>popup:org.eclipse.wst.jsdt.ui.CompilationUnitEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Df_KINMOEei7O6cPCTte9Q" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
         </children>
       </children>
     </sharedElements>
@@ -266,7 +204,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Server</tags>
-      <tags>highlighted</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_Df_KV9MOEei7O6cPCTte9Q" elementId="org.eclipse.wst.server.ui.ServersView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -283,7 +222,7 @@
         <tags>menuContribution:popup</tags>
         <tags>popup:org.eclipse.wst.server.ui.ServersView</tags>
       </menus>
-      <toolbar xmi:id="_Df_KZdMOEei7O6cPCTte9Q" elementId="org.eclipse.wst.server.ui.ServersView" visible="false"/>
+      <toolbar xmi:id="_Df_KZdMOEei7O6cPCTte9Q" elementId="org.eclipse.wst.server.ui.ServersView"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_Df_KbdMOEei7O6cPCTte9Q" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" closeable="true">
       <tags>View</tags>
@@ -305,6 +244,7 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>highlighted</tags>
       <menus xmi:id="_Df_KctMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.console.ConsoleView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -321,7 +261,7 @@
         <tags>menuContribution:popup</tags>
         <tags>popup:org.eclipse.debug.ui.ProcessConsoleType.#ContextMenu</tags>
       </menus>
-      <toolbar xmi:id="_Df_KdtMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.console.ConsoleView"/>
+      <toolbar xmi:id="_Df_KdtMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.console.ConsoleView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_Df_KhdMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.views.BookmarkView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" closeable="true">
       <tags>View</tags>
@@ -392,40 +332,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_KtNMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_KtdMOEei7O6cPCTte9Q" elementId="new.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_KttMOEei7O6cPCTte9Q" elementId="newWizardDropDown">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_Kt9MOEei7O6cPCTte9Q" elementId="new.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_KuNMOEei7O6cPCTte9Q" elementId="save.group" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_KudMOEei7O6cPCTte9Q" elementId="save">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_KutMOEei7O6cPCTte9Q" elementId="saveAll">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_Ku9MOEei7O6cPCTte9Q" elementId="save.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Df_KvNMOEei7O6cPCTte9Q" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_DgBAWtMOEei7O6cPCTte9Q"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_KvdMOEei7O6cPCTte9Q" elementId="print.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_KvtMOEei7O6cPCTte9Q" elementId="build.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_Kv9MOEei7O6cPCTte9Q" elementId="build.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_KwNMOEei7O6cPCTte9Q" elementId="additions">
-          <tags>Opaque</tags>
-        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_KEgYkNMuEeiEaLF4A64BUw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_DgBAWtMOEei7O6cPCTte9Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_KwdMOEei7O6cPCTte9Q" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -433,48 +340,12 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LAdMOEei7O6cPCTte9Q" elementId="org.eclipse.debug.ui.launchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LAtMOEei7O6cPCTte9Q" elementId="debug">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LA9MOEei7O6cPCTte9Q" elementId="org.eclipse.debug.internal.ui.actions.DebugDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LBNMOEei7O6cPCTte9Q" elementId="org.eclipse.debug.internal.ui.actions.RunDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LBdMOEei7O6cPCTte9Q" elementId="org.eclipse.eclemma.ui.actions.CoverageDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LBtMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LB9MOEei7O6cPCTte9Q" elementId="org.eclipse.jst.j2ee.J2eeMainActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LCNMOEei7O6cPCTte9Q" elementId="J2EEMain">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LCdMOEei7O6cPCTte9Q" elementId="org.eclipse.jst.j2ee.internal.actions.NewJavaEEProject">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LCtMOEei7O6cPCTte9Q" elementId="org.eclipse.jst.j2ee.internal.actions.NewJavaEEArtifact">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LC9MOEei7O6cPCTte9Q" elementId="org.eclipse.search.searchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LDNMOEei7O6cPCTte9Q" elementId="Search">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LDdMOEei7O6cPCTte9Q" elementId="openType">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LDtMOEei7O6cPCTte9Q" elementId="org.eclipse.mylyn.tasks.ui.openTask">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LD9MOEei7O6cPCTte9Q" elementId="org.eclipse.search.OpenSearchDialogPage">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LENMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.edit.text.actionSet.presentation">
         <tags>Draggable</tags>
@@ -490,30 +361,12 @@
           <persistedState key="IIdentifier" value="org.eclipse.ui.genericeditor/org.eclipse.ui.genericeditor.togglehighlight"/>
           <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_Df_LFtMOEei7O6cPCTte9Q" coreExpressionId="programmatic.value"/>
         </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LF9MOEei7O6cPCTte9Q" elementId="Presentation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LGNMOEei7O6cPCTte9Q" elementId="org.eclipse.wst.jsdt.ui.edit.text.java.toggleMarkOccurrences">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LGdMOEei7O6cPCTte9Q" elementId="org.eclipse.wst.server.ui.internal.webbrowser.actionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LGtMOEei7O6cPCTte9Q" elementId="browser">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LG9MOEei7O6cPCTte9Q" elementId="org.eclipse.wst.server.ui.internal.webbrowser.action.open">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LHNMOEei7O6cPCTte9Q" elementId="org.eclipse.wst.ws.explorer.explorer">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LHdMOEei7O6cPCTte9Q" elementId="additions">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LHtMOEei7O6cPCTte9Q" elementId="org.eclipse.wst.ws.internal.explorer.action.LaunchWSEAction">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LH9MOEei7O6cPCTte9Q" elementId="group.nav" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -521,31 +374,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LIdMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LItMOEei7O6cPCTte9Q" elementId="history.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LI9MOEei7O6cPCTte9Q" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LJNMOEei7O6cPCTte9Q" elementId="backardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LJdMOEei7O6cPCTte9Q" elementId="forwardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LJtMOEei7O6cPCTte9Q" elementId="pin.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Df_LJ9MOEei7O6cPCTte9Q" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_DgBAA9MOEei7O6cPCTte9Q"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LKNMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.edit.text.gotoNextAnnotation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LKdMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.edit.text.gotoPreviousAnnotation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LKtMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.edit.text.gotoLastEditPosition">
-          <tags>Opaque</tags>
-        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_KEqJkdMuEeiEaLF4A64BUw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_DgBAA9MOEei7O6cPCTte9Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LK9MOEei7O6cPCTte9Q" elementId="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" visible="false">
         <tags>Draggable</tags>
@@ -560,12 +389,6 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LMNMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.workbench.help" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LMdMOEei7O6cPCTte9Q" elementId="group.help">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LMtMOEei7O6cPCTte9Q" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LM9MOEei7O6cPCTte9Q" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -573,15 +396,6 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Df_LNdMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LNtMOEei7O6cPCTte9Q" elementId="edit.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LN9MOEei7O6cPCTte9Q" elementId="undo">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_Df_LONMOEei7O6cPCTte9Q" elementId="redo">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_Df_LOdMOEei7O6cPCTte9Q" elementId="PerspectiveSpacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
@@ -648,6 +462,8 @@
       <tags>platform:win32</tags>
     </bindings>
     <bindings xmi:id="_Df_Lb9MOEei7O6cPCTte9Q" keySequence="ALT+CTRL+SHIFT+F9" command="_DgBB5tMOEei7O6cPCTte9Q"/>
+    <bindings xmi:id="_F58codMuEeiEaLF4A64BUw" keySequence="CTRL+PAGE_UP" command="_DgBAcdMOEei7O6cPCTte9Q"/>
+    <bindings xmi:id="_F58cotMuEeiEaLF4A64BUw" keySequence="CTRL+PAGE_DOWN" command="_DgAZNdMOEei7O6cPCTte9Q"/>
   </bindingTables>
   <bindingTables xmi:id="_Df_LcNMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.textEditorScope" bindingContext="_Df_NY9MOEei7O6cPCTte9Q">
     <bindings xmi:id="_Df_LcdMOEei7O6cPCTte9Q" keySequence="CTRL+SHIFT+ARROW_LEFT" command="_DgA-tdMOEei7O6cPCTte9Q"/>
@@ -1908,6 +1724,29 @@
     <tags>View</tags>
     <tags>categoryTag:Other</tags>
   </descriptors>
+  <descriptors xmi:id="_GhwqkNMuEeiEaLF4A64BUw" elementId="org.eclipse.ui.views.minimap.MinimapView" label="Minimap" iconURI="platform:/plugin/org.eclipse.ui.workbench.texteditor/icons/full/eview16/minimap.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.views.minimap.MinimapView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.workbench.texteditor"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
+    <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:PerspectiveSpacer</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_8tJPcF9tEeO-yojH_y4TJA" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+      <tags>move_after:Spacer Glue</tags>
+      <tags>HIDEABLE</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_9LgmcF9tEeO-yojH_y4TJA" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:SearchField</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+  </trimContributions>
   <commands xmi:id="_DgAYSdMOEei7O6cPCTte9Q" elementId="org.eclipse.jdt.ui.correction.inlineLocal.assist" commandName="Quick Assist - Inline local variable" description="Invokes quick assist and selects 'Inline local variable'" category="_DgBCe9MOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgAYStMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.edit.text.select.pageUp" commandName="Select Page Up" description="Select to the top of the page" category="_DgBCW9MOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgAYS9MOEei7O6cPCTte9Q" elementId="org.eclipse.egit.ui.history.ResetQuickdiffBaseline" commandName="Reset quickdiff baseline" category="_DgBCf9MOEei7O6cPCTte9Q">
@@ -2497,7 +2336,7 @@
   <commands xmi:id="_DgA_adMOEei7O6cPCTte9Q" elementId="org.eclipse.egit.ui.ContinueRebase" commandName="Continue Rebase" category="_DgBCc9MOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgA_atMOEei7O6cPCTte9Q" elementId="org.eclipse.team.cvs.ui.GenerateDiff" commandName="Create Patch" description="Compare your workspace contents with the server and generate a diff file that can be used as a patch file." category="_DgBCcNMOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgA_a9MOEei7O6cPCTte9Q" elementId="org.eclipse.help.ui.closeTray" commandName="Close User Assistance Tray" description="Close the user assistance tray containing context help information and cheat sheets." category="_DgBCa9MOEei7O6cPCTte9Q"/>
-  <commands xmi:id="_DgA_bNMOEei7O6cPCTte9Q" elementId="org.eclipse.egit.ui.history.CreatePatch" commandName="Create Patch" category="_DgBCf9MOEei7O6cPCTte9Q"/>
+  <commands xmi:id="_DgA_bNMOEei7O6cPCTte9Q" elementId="org.eclipse.egit.ui.history.CreatePatch" commandName="Create Patch..." category="_DgBCf9MOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgA_bdMOEei7O6cPCTte9Q" elementId="org.eclipse.debug.ui.commands.Resume" commandName="Resume" description="Resume" category="_DgBCcdMOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgA_btMOEei7O6cPCTte9Q" elementId="org.eclipse.wst.jsdt.ui.edit.text.java.toggle.comment" commandName="Toggle Comment" description="Toggle comment the selected lines" category="_DgBCXdMOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgA_b9MOEei7O6cPCTte9Q" elementId="org.eclipse.mylyn.context.ui.commands.open.context.dialog" commandName="Show Context Quick View" description="Show Context Quick View" category="_DgBCXNMOEei7O6cPCTte9Q"/>
@@ -2707,7 +2546,7 @@
   <commands xmi:id="_DgBAM9MOEei7O6cPCTte9Q" elementId="org.eclipse.wst.jsdt.ui.edit.text.java.open.external.javadoc" commandName="Open External JSDoc" description="Open the JSDoc of the selected element in an external browser" category="_DgBCX9MOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgBANNMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.editors.revisions.author.toggle" commandName="Toggle Revision Author Display" description="Toggles the display of the revision author" category="_DgBCW9MOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgBANdMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.edit.text.goto.windowEnd" commandName="Window End" description="Go to the end of the window" category="_DgBCW9MOEei7O6cPCTte9Q"/>
-  <commands xmi:id="_DgBANtMOEei7O6cPCTte9Q" elementId="org.eclipse.egit.ui.team.CreatePatch" commandName="Create Patch" category="_DgBCc9MOEei7O6cPCTte9Q"/>
+  <commands xmi:id="_DgBANtMOEei7O6cPCTte9Q" elementId="org.eclipse.egit.ui.team.CreatePatch" commandName="Create Patch..." category="_DgBCc9MOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgBAN9MOEei7O6cPCTte9Q" elementId="org.eclipse.jpt.jpa.eclipselink.ui.persistentTypeAddVirtualAttribute" commandName="Add Virtual Attribute..." category="_DgBCetMOEei7O6cPCTte9Q"/>
   <commands xmi:id="_DgBAONMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.perspectives.showPerspective" commandName="Show Perspective" description="Show a particular perspective" category="_DgBCddMOEei7O6cPCTte9Q">
     <parameters xmi:id="_DgBAOdMOEei7O6cPCTte9Q" elementId="org.eclipse.ui.perspectives.showPerspective.perspectiveId" name="Parameter"/>

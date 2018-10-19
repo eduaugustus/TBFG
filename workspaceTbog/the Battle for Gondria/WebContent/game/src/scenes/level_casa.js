@@ -38,14 +38,6 @@ class Level_casa extends Phaser.Scene {
     // /*INICIO - Debug para colisão */
     const debugGraphics = this.add.graphics().setAlpha(0.75);
 
-    // this.layer1.renderDebug(debugGraphics, {
-    //   tileColor: null, // Color of non-colliding tiles
-    //   collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
-    //   faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
-    // });
-
-    /*FIM - Debug para colisão */
-
     //Seta cena do player
     this.player.setScene(this);
 
