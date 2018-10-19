@@ -85,7 +85,7 @@ class Level_4_boss extends Phaser.Scene {
     this.objetos = objects.objects;
     this.porta = new Porta(this);
 
-    this.player.spawnPlayer(40, 0);
+    this.player.spawnPlayer(140, 352);
 
     //Seta o bounce do player, escala da sprite, teclas de movimento e 
     //seta a colisão com os mobs como 'false'
@@ -122,17 +122,19 @@ class Level_4_boss extends Phaser.Scene {
      /*Cria as Poções */
      let PotionLayer = map.getObjectLayer("pocoes");
      this.pocoesObjetos = PotionLayer.objects;
-
-     for (let i = 0; i < this.pocoesObjetos.length; i++) {
-         this.pocao = new Pocao(this, this.pocoesObjetos[i].x, this.pocoesObjetos[i].y);
-         this.pocao.sprite.anims.play('potionEffect');
-     }
+     this.criaPocoes();
+     
 
     this.player.createHUD();
 
     this.player.criaIntervalo();
   }
-
+  criaPocoes(){
+	  for (let i = 0; i < this.pocoesObjetos.length; i++) {
+	         this.pocao = new Pocao(this, this.pocoesObjetos[i].x, this.pocoesObjetos[i].y);
+	         this.pocao.sprite.anims.play('potionEffect');
+	     }
+  }
   update() {
 	if(this.soldados==undefined){
 		this.player.update(this.boss, this, this.layer1);		

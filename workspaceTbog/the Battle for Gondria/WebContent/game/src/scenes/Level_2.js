@@ -91,7 +91,7 @@ class Level_2 extends Phaser.Scene {
 
         //Cria um player dentro da cena da fase, com coordenadas x e y
         this.player = new Player(this);
-        this.player.spawnPlayer(6400,0);
+        this.player.spawnPlayer(20,200);
 
         //Seta o bounce do player, escala da sprite, teclas de movimento e 
         //seta a colisão com os mobs como 'false'

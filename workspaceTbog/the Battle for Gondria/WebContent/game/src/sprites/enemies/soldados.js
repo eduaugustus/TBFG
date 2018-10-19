@@ -21,6 +21,7 @@ class Soldados {
             } 
         }
         this.scene.physics.add.collider(this.array, camada1);
+//        this.scene.physics.add.collider(this.array,this.array);
         if(camada2!=null){
         	this.scene.physics.add.collider(this.array, camada2);
         }
@@ -64,7 +65,7 @@ class Soldados {
             if(soldado.lifes>0&& !soldado.isHit.left&&!soldado.isHit.right){
             	let xDistance = player.x-soldado.x;
             	let yDistance = player.y-soldado.y;
-            	if(yDistance<60){
+            	if(yDistance<60&&yDistance>-60){
             		if(xDistance<100&&xDistance>=0){
             			if(!soldado.isAttacking){            	
             			soldado.anims.play('soldado_walk_right',true);
@@ -76,26 +77,31 @@ class Soldados {
             			}
             			soldado.setVelocityX(-100)
             		}else{
-            			if(!soldado.isAttacking){            				
+            			soldado.isAttacking = false;          				
             			soldado.anims.play('soldado_stand',true);
-            			}
             			soldado.setVelocityX(0)
             		}
             		if(xDistance<40&&xDistance>=0){
-            			soldado.isAttacking = true;
             			if(!soldado.isAttacking){            	
             				soldado.anims.play('soldado_attack_right',true);
             			}
+            			soldado.isAttacking = true;
             			setTimeout(()=>{this.collides = true},500)
             			
-            			setTimeout(()=>{soldado.isAttacking = false},1000)
+            			setTimeout(()=>{
+            				if(soldado.attacking==true)
+            					soldado.isAttacking = false
+            					},1000)
             		}else if(xDistance>-40&&xDistance<0){
-            			soldado.isAttacking = true;
             			if(!soldado.isAttacking){            	
             				soldado.anims.play('soldado_attack_left',true);
             			}
+            			soldado.isAttacking = true;
             			setTimeout(()=>{this.collides = true},500);
-            			setTimeout(()=>{soldado.isAttacking = false},1000);
+            			setTimeout(()=>{
+            				if(soldado.attacking==true)
+            					soldado.isAttacking = false
+            					},1000);
             		}
             	}else{
         			soldado.setVelocityX(0)

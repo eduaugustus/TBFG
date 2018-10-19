@@ -7,7 +7,7 @@
 		        for (let i = 0; i < spawns.length; i++) {
 		             if (spawns[i].name === 'spawn_Boss') {
 		                let rei = this.array.create(spawns[i].x, spawns[i].y, 'rei');
-		                rei.lifes = 5;
+		                rei.lifes = 4;
 		                // rei.setScale(2);
 		                rei.jumps = 0;
 		                rei.isHit = {
@@ -84,11 +84,17 @@
 				 setTimeout(()=>{
 						 rei.anims.play('rei_stand',true)
 						 rei.x=448;
-						 rei.y= 44;
+						 rei.y= 76;
 						 rei.setVelocityX(0);
 						 rei.setVelocityY(0);
 						 rei.body.allowGravity = false;
 						 this.scene.porta.open();
+						 let portal = this.scene.physics.add.sprite(rei.x, rei.y, "portal", 0);
+						 portal.setScale(1.5);
+						 portal.setAlpha(0.6);
+						 portal.body.allowGravity = false;
+						 portal.anims.play('portal',true);
+						 this.portal = portal;
 						 
 					 },500);
 			 }else if(rei.canMove&&this.scene.soldados == undefined){
@@ -114,9 +120,14 @@
 			 }else if(!rei.canMove&&this.scene.soldados == undefined&&this.scene.porta.aberta == false){
 				 if(!rei.body.allowGravity){
 					 this.scene.cameras.main.shake(150);
+					 this.portal.destroy();
 					 rei.x=448;
 					 rei.y= 100;
-					 rei.body.allowGravity = true;					 
+					 rei.body.allowGravity = true;
+					 if(rei.lifes==3||rei.lifes==2){
+						 this.scene.criaPocoes();
+						 
+					 }
 				 }
 				 if(rei.canHit==false){
 					 setTimeout(()=>rei.canMove=true,1000)

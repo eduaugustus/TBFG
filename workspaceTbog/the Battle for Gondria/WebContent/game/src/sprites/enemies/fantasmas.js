@@ -18,9 +18,10 @@ class Fantasmas {
         if (this.fantasmas.collides) {
             this.fantasmas.collides = false;
             this.colisao = true;
-            player.setVelocityY(-300); 
-            player.setVelocityX(-200);   
+            player.setVelocityY(-150); 
+            player.setVelocityX(ghost.body.velocity.x);   
             this.player.lifes--;
+            ghost.destroy();
         }
     }
     update(player){

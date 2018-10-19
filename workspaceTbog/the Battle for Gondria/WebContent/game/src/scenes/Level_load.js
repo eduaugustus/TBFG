@@ -415,6 +415,10 @@ class Level_load extends Phaser.Scene {
                 this.load.tilemapTiledJSON("map_fase_4_boss", "../../game/assets/tilemap/map_fase_4_boss.json");
                 this.load.audio('music_4', '../../game/assets/musics/music_level_4.mp3');
                 this.load.audio('music_4_2', '../../game/assets/musics/music_level_4_2.mp3');
+                this.load.spritesheet('portal','../../game/assets/images/mobs/portal.png',{
+                	frameWidth:41,
+                	frameHeight:41
+                })
                 this.load.spritesheet('porta','../../game/assets/images/itensCenario/porta.png',{
                 	frameWidth:64,
                 	frameHeight:96
@@ -430,6 +434,15 @@ class Level_load extends Phaser.Scene {
                 this.load.on('complete',()=>{
                 	
                 	let anims  = this.anims;
+                	anims.create({
+                		key: 'portal',
+                        frames: anims.generateFrameNumbers('portal', {
+                            start: 0,
+                            end: 5
+                        }),
+                        frameRate: 10,
+                        repeat: -1
+                	});
                 	anims.create({
                 		key: 'porta_abre',
                         frames: anims.generateFrameNumbers('porta', {

@@ -264,18 +264,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":144,
-                 "name":"spawn_Goblin",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":6739,
-                 "y":242
-                }, 
-                {
-                 "height":0,
                  "id":145,
                  "name":"spawn_fantasma",
                  "point":true,
@@ -360,18 +348,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":152,
-                 "name":"spawn_fantasma",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":10313,
-                 "y":341
-                }, 
-                {
-                 "height":0,
                  "id":153,
                  "name":"spawn_fantasma",
                  "point":true,
@@ -379,8 +355,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":10895,
-                 "y":334
+                 "x":10539,
+                 "y":325
                 }, 
                 {
                  "height":0,
