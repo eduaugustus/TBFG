@@ -2,12 +2,15 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="rei" key="selection"/>
+		<item value="morcego" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ghost"/>
+			<item value=".active"/>
+			<item value="c_player"/>
 			<item value="goblin"/>
 			<item value="canHit"/>
 			<item value="alert"/>
@@ -20,11 +23,9 @@
 			<item value="consultaRanking"/>
 			<item value="formataDataFrontEnd"/>
 			<item value="cadastro"/>
-			<item value="insere"/>
-			<item value="suvmit"/>
-			<item value="cadastra"/>
 		</list>
 		<list key="replacehistory">
+			<item value="morcego"/>
 			<item value="rei"/>
 			<item value="jumps"/>
 			<item value=".."/>

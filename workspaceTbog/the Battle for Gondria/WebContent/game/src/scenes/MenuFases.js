@@ -23,7 +23,7 @@ class MenuFases extends Phaser.Scene {
 
     
     create() {
-    	this.faseDisponivel = 4;
+    	this.faseDisponivel = window.fase;
         this.add.image(432, 240, 'bgGeral');
         this.voltar = this.add.image(785, 35, 'btnVoltar').setInteractive();
         this.voltar.setScale(0.6);

@@ -10,7 +10,7 @@ public class Conexao {
 			/*Instrução que identifica o driver usado para conexão com o BD*/
 			Class.forName("org.gjt.mm.mysql.Driver");
 			conexao = java.sql.DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/bd_gondria", "root", "root");
+					"jdbc:mysql://localhost:3306/bd_gondria", "root", "ao5nyyjgxNgL");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
